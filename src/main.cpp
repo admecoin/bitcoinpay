@@ -1611,7 +1611,7 @@ double ConvertBitsToDouble(unsigned int nBits)
     return dDiff;
 }
 
-int64_t GetBlockValue(int nHeight)
+int64_t GetBlockValue(int nHeight) //M2: need reviewing
 {
     int64_t nSubsidy = 0;
 
