@@ -1634,8 +1634,10 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
 
 	//Testnet 
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
-        if (nHeight < 200)
+        if (nHeight < 200) {
             return 0;
+		}
+
     }
 	
 	// 75% for Masternodes
