@@ -40,7 +40,7 @@ config.log
 config.status
 configure
 libtool
-src/config/bitcoinpay-config.h-config.h
+src/config/bitcoinpay-config.h
 src/config/bitcoinpay-config.h.in
 src/config/stamp-h1
 share/setup.nsi
