@@ -1,4 +1,4 @@
-.gitignore
+#.gitignore
 *.sublime-project
 *.sublime-workspace
 todo.txt
@@ -40,8 +40,8 @@ config.log
 config.status
 configure
 libtool
-src/config/bitcoin-config.h
-src/config/bitcoin-config.h.in
+src/config/bitcoinpay-config.h-config.h
+src/config/bitcoinpay-config.h.in
 src/config/stamp-h1
 share/setup.nsi
 share/qt/Info.plist
@@ -120,7 +120,7 @@ coverage_percent.txt
 linux-coverage-build
 linux-build
 win32-build
-qa/pull-tester/run-bitcoind-for-test.sh
+qa/pull-tester/run-bitcoinpayd-for-test.sh
 qa/pull-tester/tests-config.sh
 qa/pull-tester/cache/*
 qa/pull-tester/test.*/*
