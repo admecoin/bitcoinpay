@@ -1,2 +1,0 @@
-#define BUILD_SUFFIX ed45307
-#define BUILD_DATE "2019-06-13 21:48:43 +0100"
