@@ -103,7 +103,7 @@ public:
         nMinerThreads = 0;
         nTargetTimespan = 1 * 60; // bitcoinpay: 
         nTargetSpacing = 1 * 60;  // bitcoinpay: 1 minute
-        nLastPOWBlock = 350;
+        nLastPOWBlock = 1000; // extend PoW run to help setup the network
         nMaturity = 30;
         nMasternodeCountDrift = 20;
         nModifierUpdateBlock = 1;
