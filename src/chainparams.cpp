@@ -28,7 +28,7 @@ struct SeedSpec6 {
 
 #include "chainparamsseeds.h"
 
-int64_t fGenTime = 1560808800; 
+int64_t fGenTime = 1560808800; //Monday, 17 June 2019 23:00:00 GMT+01:00
 
 void MineGenesis(CBlock genesis) {
 
