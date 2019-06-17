@@ -224,7 +224,7 @@ public:
         pchMessageStart[1] = 0x55;
         pchMessageStart[2] = 0x34;
         pchMessageStart[3] = 0x23;
-        vAlertPubKey = ParseHex("04ba89975265af1d4c6295d3587eb4a0e4b758bde1621ef2ab8f92b98e7ed1c85547c9b7a3f145a66aa2abb91db5c13295828e77d823ea6d9b4bb89912425e1efe");
+        vAlertPubKey = ParseHex("04bc5ca756ed2fb7faf5998d68f196f951b79880e186324e80f92cf1f9ae70bfd8bbac8d74c62eb83927d2ccc0cfe8c193ba3408cd577a5214019ac156643eeb75");
         nDefaultPort = 19333;
         nEnforceBlockUpgradeMajority = 51;
         nRejectBlockOutdatedMajority = 75;
@@ -240,10 +240,10 @@ public:
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = fGenTime;
-        genesis.nNonce = 21148656;
+        genesis.nNonce = 23455158;
 
-        //hashGenesisBlock = genesis.GetHash();
-        //assert(hashGenesisBlock == uint256("0x000000938f4f20c6ccb3fea36539ade5af73d0bb45c55af64c7f7f1bfa5f3381"));
+		//MineGenesis(genesis);
+        assert(hashGenesisBlock == uint256("00000c69bcbe76f8bd800c04728c0f22f1bd6eb1c14ecfbae6bb869de3389312"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
