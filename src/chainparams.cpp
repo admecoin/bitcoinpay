@@ -194,7 +194,7 @@ public:
         fHeadersFirstSyncingActive = false;
 
         nPoolMaxTransactions = 3;
-        strSporkKey = "04d45416e4a64b1b051e2a2ebd80ced5efe148cf5fbcb70e56860957675a2da1a21fd522c42c1ed18a1ec42641589a09cf3f58678d213825dc21798183a005a984";
+        strSporkKey = "041b191ef0f1583f220b18332b0c3190a64da9a296691db7b81da06b71982e39f3caf08f7c6d46c77000bc34ab872d47ddb21fcd5f28f375df813f739b2c5bfc7c";
         strCoinMixingPoolDummyAddress = "BpBXVv2LMB6pRUboFqCYwUACCa8oKHQyqn";
         nStartMasternodePayments = 1403728576; //
         nBudget_Fee_Confirmations = 6; // Number of confirmations for the finalization fee
