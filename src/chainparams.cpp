@@ -119,7 +119,7 @@ public:
          *     CTxOut(nValue=50.00000000, scriptPubKey=0xA9037BAC7050C479B121CF)
          *   vMerkleTree: e0028e
          */
-        const char* pszTimestamp = "28 February 2019 - Bitcoin Pay is born. Made in England UK - Remapper";
+        const char* pszTimestamp = "BBC News 17th June 2019: Egypt's ousted president Mohammed Morsi dies during trial";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
