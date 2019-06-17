@@ -160,12 +160,15 @@ public:
 		
         hashGenesisBlock = genesis.GetHash();
 	 	//MineGenesis(genesis);
-        assert(hashGenesisBlock == uint256("0x000009c615c24f2ef673b50a5f55982e556e8af3aec42a0d0026096776cb85e4"));
+        assert(hashGenesisBlock == uint256("0x00000c342a69614a2c9a4f2e29eb34dcdf140dbbfc5b7b8bdd482df71517eca6"));
         assert(genesis.hashMerkleRoot == uint256("0x9491574ec636e9677195340ac6abd8f4593c309d876fd82d096b598ecd37c325"));
 
 
         //vFixedSeeds.clear();
         //vSeeds.clear();
+        vSeeds.push_back(CDNSSeedData("seed1.bitcoinpay.abcdef", "seed1.bitcoinpay.abcdef"));
+        vSeeds.push_back(CDNSSeedData("seed2.bitcoinpay.abcdef", "seed2.bitcoinpay.abcdef"));		
+
 
         // BitcoinPay addresses start with '1'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 0); // 1
