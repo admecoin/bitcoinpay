@@ -88,10 +88,10 @@ public:
         networkID = CBaseChainParams::MAIN;
         strNetworkID = "main";
         
-		pchMessageStart[0] = 0xa1;
-        pchMessageStart[1] = 0x2b;
-        pchMessageStart[2] = 0xc3;
-        pchMessageStart[3] = 0x4d;
+		pchMessageStart[0] = 0xa2;
+        pchMessageStart[1] = 0x23;
+        pchMessageStart[2] = 0xc5;
+        pchMessageStart[3] = 0x46;
         vAlertPubKey = ParseHex("0498df519f57e2eaa4a7d7ff3347a360520c2f4b8f07d0241b5b6ba5ce8e3d6ecba5443696473a387adff27aa6bb72b952ff23026e088cff9f47cbb387ed52c326");
         nDefaultPort = 2609;
         bnProofOfWorkLimit = ~uint256(0) >> 20; // bitcoinpay starting difficulty is 1 / 2^12
