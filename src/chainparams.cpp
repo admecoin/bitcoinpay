@@ -156,12 +156,12 @@ public:
         genesis.nVersion = 1;
         genesis.nTime = fGenTime;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 3326289;
+        genesis.nNonce = 7536146;
 		
         hashGenesisBlock = genesis.GetHash();
 	 	//MineGenesis(genesis);
-        assert(hashGenesisBlock == uint256("0x00000c342a69614a2c9a4f2e29eb34dcdf140dbbfc5b7b8bdd482df71517eca6"));
-        assert(genesis.hashMerkleRoot == uint256("0x9491574ec636e9677195340ac6abd8f4593c309d876fd82d096b598ecd37c325"));
+        assert(hashGenesisBlock == uint256("00000cb1d8c42b59b495d1b46f7b202b3623c1c78a9e796c604f9134f47675d8"));
+        assert(genesis.hashMerkleRoot == uint256("0902e0dc146fd0f6c6bceac1e1f0106e5314ac3767278ccda808670ae44fbdb9"));
 
 
         //vFixedSeeds.clear();
