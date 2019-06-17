@@ -28,6 +28,40 @@ struct SeedSpec6 {
 
 #include "chainparamsseeds.h"
 
+int64_t fGenTime = 1560808800; 
+
+void MineGenesis(CBlock genesis) {
+
+	printf("Searching for main net genesis block...\n");
+	uint256 hashTarget = CBigNum().SetCompact(genesis.nBits).getuint256();
+	uint256 thash;
+
+	while (true)
+	{
+	thash = genesis.GetHash();
+	if (thash <= hashTarget)
+	    break;
+	if ((genesis.nNonce & 0xFFF) == 0)
+	{
+	    printf("nonce %08X: hash = %s (target = %s)\n", genesis.nNonce, thash.ToString().c_str(), hashTarget.ToString().c_str());
+	}
+	++genesis.nNonce;
+	if (genesis.nNonce == 0)
+	{
+	    printf("NONCE WRAPPED, incrementing time\n");
+	    ++genesis.nTime;
+	}
+	}
+	printf("genesis.nTime = %u \n", genesis.nTime);
+	printf("genesis.nNonce = %u \n", genesis.nNonce);
+	printf("genesis.nVersion = %u \n", genesis.nVersion);
+	printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str()); //first this, then comment this line out and uncomment the one under.
+	printf("genesis.hashMerkleRoot = %s \n", genesis.hashMerkleRoot.ToString().c_str()); //improvised. worked for me, to find merkle root
+
+
+}
+
+
 /**
  * Main network
  */
@@ -55,10 +89,10 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 //    timestamp before)
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
-    boost::assign::map_list_of(0, uint256("0x000009c615c24f2ef673b50a5f55982e556e8af3aec42a0d0026096776cb85e4"));
+    boost::assign::map_list_of(0, uint256("0x001"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1514407942, // * UNIX timestamp of last checkpoint block
+    1560808800, // * UNIX timestamp of last checkpoint block
     1,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2        // * estimated number of transactions per day after checkpoint
@@ -130,7 +164,7 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1551378896;
+        genesis.nTime = fGenTime;
         genesis.nBits = 0x1e0ffff0;
         genesis.nNonce = 1724494;
 		
@@ -223,7 +257,7 @@ public:
         nMaxMoneyOut = 21000000 * COIN;
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1534570200;
+        genesis.nTime = fGenTime;
         genesis.nNonce = 21148656;
 
         //hashGenesisBlock = genesis.GetHash();
@@ -290,7 +324,7 @@ public:
         nTargetTimespan = 24 * 60 * 60; // Pivx: 1 day
         nTargetSpacing = 1 * 60;        // Pivx: 1 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
-        genesis.nTime = 1454124731;
+        genesis.nTime = fGenTime;
         genesis.nBits = 0x207fffff;
         genesis.nNonce = 12345;
 
