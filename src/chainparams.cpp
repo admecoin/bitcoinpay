@@ -89,7 +89,7 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 //    timestamp before)
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
-    boost::assign::map_list_of(0, uint256("0x001"));
+    boost::assign::map_list_of(0, uint256("0x00000c342a69614a2c9a4f2e29eb34dcdf140dbbfc5b7b8bdd482df71517eca6"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
     1560808800, // * UNIX timestamp of last checkpoint block
@@ -126,7 +126,7 @@ public:
         pchMessageStart[1] = 0x23;
         pchMessageStart[2] = 0xc5;
         pchMessageStart[3] = 0x46;
-        vAlertPubKey = ParseHex("0498df519f57e2eaa4a7d7ff3347a360520c2f4b8f07d0241b5b6ba5ce8e3d6ecba5443696473a387adff27aa6bb72b952ff23026e088cff9f47cbb387ed52c326");
+        vAlertPubKey = ParseHex("04397ef02c67dd66fce78fdd72cd58d26c2f5a7da23f15c029463297ca776d2e6b5e123280b9970fd060d2e5a89154334978ec8d250ad6d7afa809b833b22cbaaa");
         nDefaultPort = 2609;
         bnProofOfWorkLimit = ~uint256(0) >> 20; // bitcoinpay starting difficulty is 1 / 2^12
         nSubsidyHalvingInterval = 9999999;
