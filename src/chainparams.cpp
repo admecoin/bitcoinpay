@@ -143,32 +143,23 @@ public:
         nModifierUpdateBlock = 1;
         nMaxMoneyOut = 21000000 * COIN;
 
-        /**
-         * Build the genesis block. Note that the output of the genesis coinbase cannot
-         * be spent as it did not originally exist in the database.
-         *
-         * CBlock(hash=00000ffd590b14, ver=1, hashPrevBlock=00000000000000, hashMerkleRoot=e0028e, nTime=1390095618, nBits=1e0ffff0, nNonce=28917698, vtx=1)
-         *   CTransaction(hash=e0028e, ver=1, vin.size=1, vout.size=1, nLockTime=0)
-         *     CTxIn(COutPoint(000000, -1), coinbase 04ffff001d01044c5957697265642030392f4a616e2f3230313420546865204772616e64204578706572696d656e7420476f6573204c6976653a204f76657273746f636b2e636f6d204973204e6f7720416363657074696e6720426974636f696e73)
-         *     CTxOut(nValue=50.00000000, scriptPubKey=0xA9037BAC7050C479B121CF)
-         *   vMerkleTree: e0028e
-         */
         const char* pszTimestamp = "BBC News 17th June 2019: Egypt's ousted president Mohammed Morsi dies during trial";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         txNew.vout[0].nValue = 1 * COIN;
-        txNew.vout[0].scriptPubKey = CScript() << ParseHex("03c10e83b2703ccf322f7dbd62dd5855ac7c10bd055814ce121ba32607d573b8810c02c0582aed05b4deb9c4b77b26d92428c61256cd42774babea0a073b2ed0c9") << OP_CHECKSIG;
+        txNew.vout[0].scriptPubKey = CScript() << ParseHex("040860819ec4501e4c8df9588d79fd1653302cf6a3758bb75f7b9055cbf5aafa360b9dec03d171aaa0bd0eea195534f38784b80c76520ff214d6769ca312e18d79") << OP_CHECKSIG;
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
         genesis.nTime = fGenTime;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 1724494;
+        genesis.nNonce = 3326289;
 		
         hashGenesisBlock = genesis.GetHash();
+	 	//MineGenesis(genesis);
         assert(hashGenesisBlock == uint256("0x000009c615c24f2ef673b50a5f55982e556e8af3aec42a0d0026096776cb85e4"));
         assert(genesis.hashMerkleRoot == uint256("0x23b8adce6c66b586cfd7a06973843db44477b4226b4198389f74f863bc02f3ef"));
 
