@@ -163,22 +163,10 @@ public:
         assert(hashGenesisBlock == uint256("0x000009c615c24f2ef673b50a5f55982e556e8af3aec42a0d0026096776cb85e4"));
         assert(genesis.hashMerkleRoot == uint256("0x9491574ec636e9677195340ac6abd8f4593c309d876fd82d096b598ecd37c325"));
 
-        // DNS Seeding
-      vSeeds.push_back(CDNSSeedData("209.250.241.176", "209.250.241.176"));
-      vSeeds.push_back(CDNSSeedData("209.250.243.131", "209.250.243.131"));
-      vSeeds.push_back(CDNSSeedData("45.77.239.108", "45.77.239.108"));
-      vSeeds.push_back(CDNSSeedData("45.32.235.211", "45.32.235.211"));
-      vSeeds.push_back(CDNSSeedData("107.191.44.102", "107.191.44.102"));
-	  vSeeds.push_back(CDNSSeedData("108.61.188.67", "108.61.188.67"));
-	  vSeeds.push_back(CDNSSeedData("144.202.0.206", "144.202.0.206"));
-	  vSeeds.push_back(CDNSSeedData("95.179.135.114", "95.179.135.114"));
-	  vSeeds.push_back(CDNSSeedData("209.250.224.122", "209.250.224.122"));
-	  vSeeds.push_back(CDNSSeedData("140.82.55.39", "140.82.55.39"));
-	  vSeeds.push_back(CDNSSeedData("45.32.202.20", "45.32.202.20"));
-	  vSeeds.push_back(CDNSSeedData("140.82.34.15", "140.82.34.15"));
-	  vSeeds.push_back(CDNSSeedData("95.179.166.176", "95.179.166.176"));
-	  vSeeds.push_back(CDNSSeedData("217.69.2.239", "217.69.2.239")); 
-	  
+
+        //vFixedSeeds.clear();
+        //vSeeds.clear();
+
         // BitcoinPay addresses start with '1'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 0); // 1
         // BitcoinPay script addresses start with '3'
