@@ -161,7 +161,7 @@ public:
         hashGenesisBlock = genesis.GetHash();
 	 	//MineGenesis(genesis);
         assert(hashGenesisBlock == uint256("0x000009c615c24f2ef673b50a5f55982e556e8af3aec42a0d0026096776cb85e4"));
-        assert(genesis.hashMerkleRoot == uint256("0x23b8adce6c66b586cfd7a06973843db44477b4226b4198389f74f863bc02f3ef"));
+        assert(genesis.hashMerkleRoot == uint256("0x9491574ec636e9677195340ac6abd8f4593c309d876fd82d096b598ecd37c325"));
 
         // DNS Seeding
       vSeeds.push_back(CDNSSeedData("209.250.241.176", "209.250.241.176"));
