@@ -3121,7 +3121,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
 
     // ----------- swiftTX transaction scanning -----------
 
-    if (IsSporkActive(SPORK_3_SwiftTX_BLOCK_FILTERING)) {
+    if (IsSporkActive(SPORK_3_SWIFTTX_BLOCK_FILTERING)) {
         BOOST_FOREACH (const CTransaction& tx, block.vtx) {
             if (!tx.IsCoinBase()) {
                 //only reject blocks when it's based on complete consensus

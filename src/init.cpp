@@ -1567,7 +1567,7 @@ bool AppInit2(boost::thread_group& threadGroup)
     nLiquidityProvider = GetArg("-liquidityprovider", 0); //0-100
     if (nLiquidityProvider != 0) {
         obfuScationPool.SetMinBlockSpacing(std::min(nLiquidityProvider, 100) * 15);
-        fEnableobfuscation = true;
+        fEnableObfuscation = true;
         nObfuscationRounds = 99999;
     }
 

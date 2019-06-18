@@ -169,7 +169,7 @@ bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
         {
             if(!i->second.isEmpty())
             {
-                if (!BitcoinUnits::parse(BitcoinUnits::BPAY, i->second, &rv.amount)) {
+                if (!BitcoinUnits::parse(BitcoinUnits::BPAY, i->second, &rv.amount))
                 {
                     return false;
                 }
@@ -542,8 +542,9 @@ void TableViewLastColumnResizingFixer::adjustTableColumnsWidth()
 
     int nTableWidth = tableView->horizontalHeader()->width();
     int nColsWidth = getColumnsWidth();
-    if (nColsWidth > nTableWidth) {
-        resizeColumn(secondToLastColumnIndex, getAvailableWidthForColumn(secondToLastColumnIndex));
+    if (nColsWidth > nTableWidth)
+    {
+        resizeColumn(secondToLastColumnIndex,getAvailableWidthForColumn(secondToLastColumnIndex));
     }
 }
 

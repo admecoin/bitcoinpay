@@ -302,7 +302,7 @@ void OverviewPage::showOutOfSyncWarning(bool fShow)
     ui->labelTransactionsStatus->setVisible(fShow);
 }
 
-void OverviewPage::updateobfuscationProgress()
+void OverviewPage::updateObfuscationProgress()
 {
     if (!masternodeSync.IsBlockchainSynced() || ShutdownRequested()) return;
 

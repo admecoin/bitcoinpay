@@ -38,7 +38,7 @@ extern int nSwiftTXDepth;
 extern int nObfuscationRounds;
 extern int nAnonymizeBitcoinPayAmount;
 extern int nLiquidityProvider;
-extern bool fEnableobfuscation;
+extern bool fEnableObfuscation;
 extern int64_t enforceMasternodePaymentsTime;
 extern std::string strMasterNodeAddr;
 extern int keysLoaded;

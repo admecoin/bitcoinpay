@@ -887,6 +887,7 @@ build_os
 build_vendor
 build_cpu
 build
+ARFLAGS
 target_alias
 host_alias
 build_alias
@@ -980,6 +981,7 @@ with_libressl
       ac_precious_vars='build_alias
 host_alias
 target_alias
+ARFLAGS
 CXX
 CXXFLAGS
 LDFLAGS
@@ -1780,6 +1782,7 @@ Optional Packages:
                           DANGEROUS; NOT SUPPORTED)
 
 Some influential environment variables:
+  ARFLAGS     Flags for the archiver, defaults to <cr> if not set
   CXX         C++ compiler command
   CXXFLAGS    C++ compiler flags
   LDFLAGS     linker flags, e.g. -L<lib dir> if you have libraries in a
@@ -3001,6 +3004,15 @@ ac_configure="$SHELL $ac_aux_dir/configure"  # Please don't use this var.
 
 
 
+BITCOIN_DAEMON_NAME=bitcoinpayd
+BITCOIN_GUI_NAME=bitcoinpay-qt
+BITCOIN_CLI_NAME=bitcoinpay-cli
+BITCOIN_TX_NAME=bitcoinpay-tx
+
+
+if test "x${ARFLAGS+set}" != "xset"; then
+  ARFLAGS="cr"
+fi
 
 # Make sure we can run config.sub.
 $SHELL "$ac_aux_dir/config.sub" sun4 >/dev/null 2>&1 ||
