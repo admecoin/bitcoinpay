@@ -211,8 +211,8 @@ void OptionsDialog::setMapper()
     mapper->addMapping(ui->thirdPartyTxUrls, OptionsModel::ThirdPartyTxUrls);
 
 
-    /* obfuscation Rounds */
-    mapper->addMapping(ui->ObfuscationRounds, OptionsModel::ObfuscationRounds);
+    /* Obfuscation Rounds */
+    mapper->addMapping(ui->obfuscationRounds, OptionsModel::ObfuscationRounds);
     mapper->addMapping(ui->anonymizeBitcoinPay, OptionsModel::AnonymizeBitcoinPayAmount);
     mapper->addMapping(ui->showMasternodesTab, OptionsModel::ShowMasternodesTab);
 }

@@ -33,8 +33,8 @@
 
 extern bool fMasterNode;
 extern bool fLiteMode;
-extern bool fEnableRhenFAST;
-extern int nRhenFASTDepth;
+extern bool fEnableSwiftTX;
+extern int nSwiftTXDepth;
 extern int nObfuscationRounds;
 extern int nAnonymizeBitcoinPayAmount;
 extern int nLiquidityProvider;

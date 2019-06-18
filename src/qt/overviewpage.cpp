@@ -200,7 +200,7 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     ui->labelImmatureText->setVisible(showImmature || showWatchOnlyImmature);
     ui->labelWatchImmature->setVisible(showWatchOnlyImmature); // show watch-only immature balance
 
-    updateobfuscationProgress();
+    updateObfuscationProgress();
 
     static int cachedTxLocks = 0;
 
@@ -425,10 +425,10 @@ void OverviewPage::obfuScationStatus()
     if (((nBestHeight - obfuScationPool.cachedNumBlocks) / (GetTimeMillis() - nLastDSProgressBlockTime + 1) > 1)) return;
     nLastDSProgressBlockTime = GetTimeMillis();
 
-    if (!fEnableobfuscation) {
+    if (!fEnableObfuscation) {
         if (nBestHeight != obfuScationPool.cachedNumBlocks) {
             obfuScationPool.cachedNumBlocks = nBestHeight;
-            updateobfuscationProgress();
+            updateObfuscationProgress();
 
             // ui->obfuscationEnabled->setText(tr("Disabled"));
             // ui->obfuscationStatus->setText("");
@@ -442,7 +442,7 @@ void OverviewPage::obfuScationStatus()
     if (nBestHeight != obfuScationPool.cachedNumBlocks) {
         // Balance and number of transactions might have changed
         obfuScationPool.cachedNumBlocks = nBestHeight;
-        updateobfuscationProgress();
+        updateObfuscationProgress();
 
        //  ui->obfuscationEnabled->setText(tr("Enabled"));
     }
@@ -452,7 +452,7 @@ void OverviewPage::obfuScationStatus()
     QString s = tr("Last obfuscation message:\n") + strStatus;
 
     // if (s != ui->obfuscationStatus->text())
-        LogPrintf("Last obfuscation message: %s\n", strStatus.toStdString());
+        LogPrintf("Last Obfuscation message: %s\n", strStatus.toStdString());
 
     // ui->obfuscationStatus->setText(s);
 
@@ -475,29 +475,29 @@ void OverviewPage::obfuscationReset()
 {
     obfuScationPool.Reset();
 
-    QMessageBox::warning(this, tr("obfuscation"),
-        tr("obfuscation was successfully reset."),
+    QMessageBox::warning(this, tr("Obfuscation"),
+        tr("Obfuscation was successfully reset."),
         QMessageBox::Ok, QMessageBox::Ok);
 }
 
-void OverviewPage::toggleobfuscation()
+void OverviewPage::toggleObfuscation()
 {
     QSettings settings;
     // Popup some information on first mixing
     QString hasMixed = settings.value("hasMixed").toString();
     if (hasMixed.isEmpty()) {
-        QMessageBox::information(this, tr("obfuscation"),
-            tr("If you don't want to see internal obfuscation fees/transactions select \"Most Common\" as Type on the \"Transactions\" tab."),
+        QMessageBox::information(this, tr("Obfuscation"),
+            tr("If you don't want to see internal Obfuscation fees/transactions select \"Most Common\" as Type on the \"Transactions\" tab."),
             QMessageBox::Ok, QMessageBox::Ok);
         settings.setValue("hasMixed", "hasMixed");
     }
-    if (!fEnableobfuscation) {
-        int64_t balance = currentBalance;
+    if (!fEnableObfuscation) {
+        CAmount balance = currentBalance;
         float minAmount = 14.90 * COIN;
         if (balance < minAmount) {
             QString strMinAmount(BitcoinUnits::formatWithUnit(nDisplayUnit, minAmount));
-            QMessageBox::warning(this, tr("obfuscation"),
-                tr("obfuscation requires at least %1 to use.").arg(strMinAmount),
+            QMessageBox::warning(this, tr("Obfuscation"),
+                tr("Obfuscation requires at least %1 to use.").arg(strMinAmount),
                 QMessageBox::Ok, QMessageBox::Ok);
             return;
         }
@@ -508,19 +508,19 @@ void OverviewPage::toggleobfuscation()
             if (!ctx.isValid()) {
                 //unlock was cancelled
                 obfuScationPool.cachedNumBlocks = std::numeric_limits<int>::max();
-                QMessageBox::warning(this, tr("obfuscation"),
-                    tr("Wallet is locked and user declined to unlock. Disabling obfuscation."),
+                QMessageBox::warning(this, tr("Obfuscation"),
+                    tr("Wallet is locked and user declined to unlock. Disabling Obfuscation."),
                     QMessageBox::Ok, QMessageBox::Ok);
-                if (fDebug) LogPrintf("Wallet is locked and user declined to unlock. Disabling obfuscation.\n");
+                if (fDebug) LogPrintf("Wallet is locked and user declined to unlock. Disabling Obfuscation.\n");
                 return;
             }
         }
     }
 
-    fEnableobfuscation = !fEnableobfuscation;
+    fEnableObfuscation = !fEnableObfuscation;
     obfuScationPool.cachedNumBlocks = std::numeric_limits<int>::max();
 
-    if (!fEnableobfuscation) {
+    if (!fEnableObfuscation) {
       //  ui->toggleobfuscation->setText(tr("Start obfuscation"));
         obfuScationPool.UnlockCoins();
     } else {
@@ -529,7 +529,7 @@ void OverviewPage::toggleobfuscation()
         /* show obfuscation configuration if client has defaults set */
 
         if (nAnonymizeBitcoinPayAmount == 0) {
-            obfuscationConfig dlg(this);
+            ObfuscationConfig dlg(this);
             dlg.setModel(walletModel);
             dlg.exec();
         }

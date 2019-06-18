@@ -89,7 +89,7 @@ private:
 
 signals:
     void displayUnitChanged(int unit);
-    void ObfuscationRoundsChanged(int);
+    void obfuscationRoundsChanged(int);
     void anonymizeBitcoinPayAmountChanged(int);
     void coinControlFeaturesChanged(bool);
 };

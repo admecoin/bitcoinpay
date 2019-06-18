@@ -469,7 +469,7 @@ std::string HelpMessage(HelpMessageMode mode)
 
     strUsage += HelpMessageGroup(_("SwiftTX options:"));
     strUsage += HelpMessageOpt("-enableswifttx=<n>", strprintf(_("Enable swifttx, show confirmations for locked transactions (bool, default: %s)"), "true"));
-    strUsage += HelpMessageOpt("-swifttxdepth=<n>", strprintf(_("Show N confirmations for a successfully locked transaction (0-9999, default: %u)"), nRhenFASTDepth));
+    strUsage += HelpMessageOpt("-swifttxdepth=<n>", strprintf(_("Show N confirmations for a successfully locked transaction (0-9999, default: %u)"), nSwiftTXDepth));
 
     strUsage += HelpMessageGroup(_("Node relay options:"));
     strUsage += HelpMessageOpt("-datacarrier", strprintf(_("Relay and mine data carrier transactions (default: %u)"), 1));
@@ -746,9 +746,9 @@ bool AppInit2(boost::thread_group& threadGroup)
             LogPrintf("AppInit2 : parameter interaction: -zapwallettxes=<mode> -> setting -rescan=1\n");
     }
 
-    if (!GetBoolArg("-enableswifttx", fEnableRhenFAST)) {
+    if (!GetBoolArg("-enableswifttx", fEnableSwiftTX)) {
         if (SoftSetArg("-swifttxdepth", 0))
-            LogPrintf("AppInit2 : parameter interaction: -enableswifttx=false -> setting -nRhenFASTDepth=0\n");
+            LogPrintf("AppInit2 : parameter interaction: -enableswifttx=false -> setting -nSwiftTXDepth=0\n");
     }
 
     if (mapArgs.count("-reservebalance")) {
@@ -1575,9 +1575,9 @@ bool AppInit2(boost::thread_group& threadGroup)
     if (nAnonymizeBitcoinPayAmount > 999999) nAnonymizeBitcoinPayAmount = 999999;
     if (nAnonymizeBitcoinPayAmount < 2) nAnonymizeBitcoinPayAmount = 2;
 
-    fEnableRhenFAST = GetBoolArg("-enableswifttx", fEnableRhenFAST);
-    nRhenFASTDepth = GetArg("-swifttxdepth", nRhenFASTDepth);
-    nRhenFASTDepth = std::min(std::max(nRhenFASTDepth, 0), 60);
+    fEnableSwiftTX = GetBoolArg("-enableswifttx", fEnableSwiftTX);
+    nSwiftTXDepth = GetArg("-swifttxdepth", nSwiftTXDepth);
+    nSwiftTXDepth = std::min(std::max(nSwiftTXDepth, 0), 60);
 
     //lite mode disables all Masternode and obfuscation related functionality
     fLiteMode = GetBoolArg("-litemode", false);
@@ -1586,7 +1586,7 @@ bool AppInit2(boost::thread_group& threadGroup)
     }
 
     LogPrintf("fLiteMode %d\n", fLiteMode);
-    LogPrintf("nRhenFASTDepth %d\n", nRhenFASTDepth);
+    LogPrintf("nSwiftTXDepth %d\n", nSwiftTXDepth);
     LogPrintf("obfuscation rounds %d\n", nObfuscationRounds);
     LogPrintf("Anonymize bitcoinpay Amount %d\n", nAnonymizeBitcoinPayAmount);
     LogPrintf("Budget Mode %s\n", strBudgetMode.c_str());

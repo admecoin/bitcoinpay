@@ -1,29 +1,29 @@
-#ifndef obfuscationCONFIG_H
-#define obfuscationCONFIG_H
+#ifndef OBFUSCATIONCONFIG_H
+#define OBFUSCATIONCONFIG_H
 
 #include <QDialog>
 
 namespace Ui
 {
-class obfuscationConfig;
+class ObfuscationConfig;
 }
 class WalletModel;
 
 /** Multifunctional dialog to ask for passphrases. Used for encryption, unlocking, and changing the passphrase.
  */
-class obfuscationConfig : public QDialog
+class ObfuscationConfig : public QDialog
 {
     Q_OBJECT
 
 public:
-    obfuscationConfig(QWidget* parent = 0);
-    ~obfuscationConfig();
+    ObfuscationConfig(QWidget* parent = 0);
+    ~ObfuscationConfig();
 
     void setModel(WalletModel* model);
 
 
 private:
-    Ui::obfuscationConfig* ui;
+    Ui::ObfuscationConfig* ui;
     WalletModel* model;
     void configure(bool enabled, int coins, int rounds);
 
@@ -34,4 +34,4 @@ private slots:
     void clickMax();
 };
 
-#endif // obfuscationCONFIG_H
+#endif // OBFUSCATIONCONFIG_H

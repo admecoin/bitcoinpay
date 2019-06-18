@@ -890,8 +890,8 @@ int GetInputAgeIX(uint256 nTXHash, CTxIn& vin)
         if (i != mapTxLocks.end()) {
             sigs = (*i).second.CountSignatures();
         }
-        if (sigs >= RHENFAST_SIGNATURES_REQUIRED) {
-            return nRhenFASTDepth + nResult;
+        if (sigs >= SwiftTX_SIGNATURES_REQUIRED) {
+            return nSwiftTXDepth + nResult;
         }
     }
 
@@ -906,8 +906,8 @@ int GetIXConfirmations(uint256 nTXHash)
     if (i != mapTxLocks.end()) {
         sigs = (*i).second.CountSignatures();
     }
-    if (sigs >= RHENFAST_SIGNATURES_REQUIRED) {
-        return nRhenFASTDepth;
+    if (sigs >= SwiftTX_SIGNATURES_REQUIRED) {
+        return nSwiftTXDepth;
     }
 
     return 0;
@@ -3121,7 +3121,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
 
     // ----------- swiftTX transaction scanning -----------
 
-    if (IsSporkActive(SPORK_3_RHENFAST_BLOCK_FILTERING)) {
+    if (IsSporkActive(SPORK_3_SwiftTX_BLOCK_FILTERING)) {
         BOOST_FOREACH (const CTransaction& tx, block.vtx) {
             if (!tx.IsCoinBase()) {
                 //only reject blocks when it's based on complete consensus
@@ -5422,7 +5422,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
         mnodeman.ProcessMessage(pfrom, strCommand, vRecv);
         budget.ProcessMessage(pfrom, strCommand, vRecv);
         masternodePayments.ProcessMessageMasternodePayments(pfrom, strCommand, vRecv);
-        ProcessMessageRhenFAST(pfrom, strCommand, vRecv);
+        ProcessMessageSwiftTX(pfrom, strCommand, vRecv);
         ProcessSpork(pfrom, strCommand, vRecv);
         masternodeSync.ProcessMessage(pfrom, strCommand, vRecv);
     }

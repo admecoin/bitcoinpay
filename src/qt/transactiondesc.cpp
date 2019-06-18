@@ -37,7 +37,7 @@ QString TransactionDesc::FormatTxStatus(const CWalletTx& wtx)
         int signatures = wtx.GetTransactionLockSignatures();
         QString strUsingIX = "";
         if (signatures >= 0) {
-            if (signatures >= RHENFAST_SIGNATURES_REQUIRED) {
+            if (signatures >= SWIFTTX_SIGNATURES_REQUIRED) {
                 int nDepth = wtx.GetDepthInMainChain();
                 if (nDepth < 0)
                     return tr("conflicted");
@@ -53,11 +53,11 @@ QString TransactionDesc::FormatTxStatus(const CWalletTx& wtx)
                     if (nDepth < 0)
                         return tr("conflicted");
                     else if (GetAdjustedTime() - wtx.nTimeReceived > 2 * 60 && wtx.GetRequestCount() == 0)
-                        return tr("%1/offline (SwiftTX verification in progress - %2 of %3 signatures)").arg(nDepth).arg(signatures).arg(RHENFAST_SIGNATURES_TOTAL);
+                        return tr("%1/offline (SwiftTX verification in progress - %2 of %3 signatures)").arg(nDepth).arg(signatures).arg(SWIFTTX_SIGNATURES_TOTAL);
                     else if (nDepth < 6)
-                        return tr("%1/confirmed (SwiftTX verification in progress - %2 of %3 signatures )").arg(nDepth).arg(signatures).arg(RHENFAST_SIGNATURES_TOTAL);
+                        return tr("%1/confirmed (SwiftTX verification in progress - %2 of %3 signatures )").arg(nDepth).arg(signatures).arg(SWIFTTX_SIGNATURES_TOTAL);
                     else
-                        return tr("%1 confirmations (SwiftTX verification in progress - %2 of %3 signatures)").arg(nDepth).arg(signatures).arg(RHENFAST_SIGNATURES_TOTAL);
+                        return tr("%1 confirmations (SwiftTX verification in progress - %2 of %3 signatures)").arg(nDepth).arg(signatures).arg(SWIFTTX_SIGNATURES_TOTAL);
                 } else {
                     int nDepth = wtx.GetDepthInMainChain();
                     if (nDepth < 0)

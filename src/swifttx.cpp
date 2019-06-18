@@ -28,18 +28,18 @@ int nCompleteTXLocks;
 //txlock - Locks transaction
 //
 //step 1.) Broadcast intention to lock transaction inputs, "txlreg", CTransaction
-//step 2.) Top RHENFAST_SIGNATURES_TOTAL masternodes, open connect to top 1 masternode.
+//step 2.) Top SwiftTX_SIGNATURES_TOTAL masternodes, open connect to top 1 masternode.
 //         Send "txvote", CTransaction, Signature, Approve
-//step 3.) Top 1 masternode, waits for RHENFAST_SIGNATURES_REQUIRED messages. Upon success, sends "txlock'
+//step 3.) Top 1 masternode, waits for SwiftTX_SIGNATURES_REQUIRED messages. Upon success, sends "txlock'
 
-void ProcessMessageRhenFAST(CNode* pfrom, std::string& strCommand, CDataStream& vRecv)
+void ProcessMessageSwiftTX(CNode* pfrom, std::string& strCommand, CDataStream& vRecv)
 {
     if (fLiteMode) return; //disable all obfuscation/masternode related functionality
-    if (!IsSporkActive(SPORK_2_RHENFAST)) return;
+    if (!IsSporkActive(SPORK_2_SwiftTX)) return;
     if (!masternodeSync.IsBlockchainSynced()) return;
 
     if (strCommand == "ix") {
-        //LogPrintf("ProcessMessageRhenFAST::ix\n");
+        //LogPrintf("ProcessMessageSwiftTX::ix\n");
         CDataStream vMsg(vRecv);
         CTransaction tx;
         vRecv >> tx;
@@ -59,7 +59,7 @@ void ProcessMessageRhenFAST(CNode* pfrom, std::string& strCommand, CDataStream& 
             // IX supports normal scripts and unspendable scripts (used in DS collateral and Budget collateral).
             // TODO: Look into other script types that are normal and can be included
             if (!o.scriptPubKey.IsNormalPaymentScript() && !o.scriptPubKey.IsUnspendable()) {
-                LogPrintf("ProcessMessageRhenFAST::ix - Invalid Script %s\n", tx.ToString().c_str());
+                LogPrintf("ProcessMessageSwiftTX::ix - Invalid Script %s\n", tx.ToString().c_str());
                 return;
             }
         }
@@ -81,7 +81,7 @@ void ProcessMessageRhenFAST(CNode* pfrom, std::string& strCommand, CDataStream& 
 
             mapTxLockReq.insert(make_pair(tx.GetHash(), tx));
 
-            LogPrintf("ProcessMessageRhenFAST::ix - Transaction Lock Request: %s %s : accepted %s\n",
+            LogPrintf("ProcessMessageSwiftTX::ix - Transaction Lock Request: %s %s : accepted %s\n",
                 pfrom->addr.ToString().c_str(), pfrom->cleanSubVer.c_str(),
                 tx.GetHash().ToString().c_str());
 
@@ -92,7 +92,7 @@ void ProcessMessageRhenFAST(CNode* pfrom, std::string& strCommand, CDataStream& 
 
             // can we get the conflicting transaction as proof?
 
-            LogPrintf("ProcessMessageRhenFAST::ix - Transaction Lock Request: %s %s : rejected %s\n",
+            LogPrintf("ProcessMessageSwiftTX::ix - Transaction Lock Request: %s %s : rejected %s\n",
                 pfrom->addr.ToString().c_str(), pfrom->cleanSubVer.c_str(),
                 tx.GetHash().ToString().c_str());
 
@@ -106,9 +106,9 @@ void ProcessMessageRhenFAST(CNode* pfrom, std::string& strCommand, CDataStream& 
             std::map<uint256, CTransactionLock>::iterator i = mapTxLocks.find(tx.GetHash());
             if (i != mapTxLocks.end()) {
                 //we only care if we have a complete tx lock
-                if ((*i).second.CountSignatures() >= RHENFAST_SIGNATURES_REQUIRED) {
+                if ((*i).second.CountSignatures() >= SwiftTX_SIGNATURES_REQUIRED) {
                     if (!CheckForConflictingLocks(tx)) {
-                        LogPrintf("ProcessMessageRhenFAST::ix - Found Existing Complete IX Lock\n");
+                        LogPrintf("ProcessMessageSwiftTX::ix - Found Existing Complete IX Lock\n");
 
                         //reprocess the last 15 blocks
                         ReprocessBlocks(15);
@@ -147,7 +147,7 @@ void ProcessMessageRhenFAST(CNode* pfrom, std::string& strCommand, CDataStream& 
 
                 if (mapUnknownVotes[ctx.vinMasternode.prevout.hash] > GetTime() &&
                     mapUnknownVotes[ctx.vinMasternode.prevout.hash] - GetAverageVoteTime() > 60 * 10) {
-                    LogPrintf("ProcessMessageRhenFAST::ix - masternode is spamming transaction votes: %s %s\n",
+                    LogPrintf("ProcessMessageSwiftTX::ix - masternode is spamming transaction votes: %s %s\n",
                         ctx.vinMasternode.ToString().c_str(),
                         ctx.txHash.ToString().c_str());
                     return;
@@ -251,22 +251,22 @@ void DoConsensusVote(CTransaction& tx, int64_t nBlockHeight)
 {
     if (!fMasterNode) return;
 
-    int n = mnodeman.GetMasternodeRank(activeMasternode.vin, nBlockHeight, MIN_RHENFAST_PROTO_VERSION);
+    int n = mnodeman.GetMasternodeRank(activeMasternode.vin, nBlockHeight, MIN_SwiftTX_PROTO_VERSION);
 
     if (n == -1) {
         LogPrint("swifttx", "SwiftTX::DoConsensusVote - Unknown Masternode\n");
         return;
     }
 
-    if (n > RHENFAST_SIGNATURES_TOTAL) {
-        LogPrint("swifttx", "SwiftTX::DoConsensusVote - Masternode not in the top %d (%d)\n", RHENFAST_SIGNATURES_TOTAL, n);
+    if (n > SwiftTX_SIGNATURES_TOTAL) {
+        LogPrint("swifttx", "SwiftTX::DoConsensusVote - Masternode not in the top %d (%d)\n", SwiftTX_SIGNATURES_TOTAL, n);
         return;
     }
     /*
         nBlockHeight calculated from the transaction is the authoritive source
     */
 
-    LogPrint("swifttx", "SwiftTX::DoConsensusVote - In the top %d (%d)\n", RHENFAST_SIGNATURES_TOTAL, n);
+    LogPrint("swifttx", "SwiftTX::DoConsensusVote - In the top %d (%d)\n", SwiftTX_SIGNATURES_TOTAL, n);
 
     CConsensusVote ctx;
     ctx.vinMasternode = activeMasternode.vin;
@@ -290,7 +290,7 @@ void DoConsensusVote(CTransaction& tx, int64_t nBlockHeight)
 //received a consensus vote
 bool ProcessConsensusVote(CNode* pnode, CConsensusVote& ctx)
 {
-    int n = mnodeman.GetMasternodeRank(ctx.vinMasternode, ctx.nBlockHeight, MIN_RHENFAST_PROTO_VERSION);
+    int n = mnodeman.GetMasternodeRank(ctx.vinMasternode, ctx.nBlockHeight, MIN_SwiftTX_PROTO_VERSION);
 
     CMasternode* pmn = mnodeman.Find(ctx.vinMasternode);
     if (pmn != NULL)
@@ -303,8 +303,8 @@ bool ProcessConsensusVote(CNode* pnode, CConsensusVote& ctx)
         return false;
     }
 
-    if (n > RHENFAST_SIGNATURES_TOTAL) {
-        LogPrint("swifttx", "SwiftTX::ProcessConsensusVote - Masternode not in the top %d (%d) - %s\n", RHENFAST_SIGNATURES_TOTAL, n, ctx.GetHash().ToString().c_str());
+    if (n > SwiftTX_SIGNATURES_TOTAL) {
+        LogPrint("swifttx", "SwiftTX::ProcessConsensusVote - Masternode not in the top %d (%d) - %s\n", SwiftTX_SIGNATURES_TOTAL, n, ctx.GetHash().ToString().c_str());
         return false;
     }
 
@@ -342,7 +342,7 @@ bool ProcessConsensusVote(CNode* pnode, CConsensusVote& ctx)
 
         LogPrint("swifttx", "SwiftTX::ProcessConsensusVote - Transaction Lock Votes %d - %s !\n", (*i).second.CountSignatures(), ctx.GetHash().ToString().c_str());
 
-        if ((*i).second.CountSignatures() >= RHENFAST_SIGNATURES_REQUIRED) {
+        if ((*i).second.CountSignatures() >= SwiftTX_SIGNATURES_REQUIRED) {
             LogPrint("swifttx", "SwiftTX::ProcessConsensusVote - Transaction Lock Is Complete %s !\n", (*i).second.GetHash().ToString().c_str());
 
             CTransaction& tx = mapTxLockReq[ctx.txHash];
@@ -506,15 +506,15 @@ bool CConsensusVote::Sign()
 bool CTransactionLock::SignaturesValid()
 {
     BOOST_FOREACH (CConsensusVote vote, vecConsensusVotes) {
-        int n = mnodeman.GetMasternodeRank(vote.vinMasternode, vote.nBlockHeight, MIN_RHENFAST_PROTO_VERSION);
+        int n = mnodeman.GetMasternodeRank(vote.vinMasternode, vote.nBlockHeight, MIN_SwiftTX_PROTO_VERSION);
 
         if (n == -1) {
             LogPrintf("CTransactionLock::SignaturesValid() - Unknown Masternode\n");
             return false;
         }
 
-        if (n > RHENFAST_SIGNATURES_TOTAL) {
-            LogPrintf("CTransactionLock::SignaturesValid() - Masternode not in the top %s\n", RHENFAST_SIGNATURES_TOTAL);
+        if (n > SwiftTX_SIGNATURES_TOTAL) {
+            LogPrintf("CTransactionLock::SignaturesValid() - Masternode not in the top %s\n", SwiftTX_SIGNATURES_TOTAL);
             return false;
         }
 

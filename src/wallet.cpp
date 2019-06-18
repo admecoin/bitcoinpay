@@ -3588,8 +3588,8 @@ int CMerkleTx::GetDepthInMainChain(const CBlockIndex*& pindexRet, bool enableIX)
     if (enableIX) {
         if (nResult < 6) {
             int signatures = GetTransactionLockSignatures();
-            if (signatures >= RHENFAST_SIGNATURES_REQUIRED) {
-                return nRhenFASTDepth + nResult;
+            if (signatures >= SwiftTX_SIGNATURES_REQUIRED) {
+                return nSwiftTXDepth + nResult;
             }
         }
     }
@@ -3614,8 +3614,8 @@ bool CMerkleTx::AcceptToMemoryPool(bool fLimitFree, bool fRejectInsaneFee, bool 
 int CMerkleTx::GetTransactionLockSignatures() const
 {
     if (fLargeWorkForkFound || fLargeWorkInvalidChainFound) return -2;
-    if (!IsSporkActive(SPORK_2_RHENFAST)) return -3;
-    if (!fEnableRhenFAST) return -1;
+    if (!IsSporkActive(SPORK_2_SwiftTX)) return -3;
+    if (!fEnableSwiftTX) return -1;
 
     //compile consessus vote
     std::map<uint256, CTransactionLock>::iterator i = mapTxLocks.find(GetHash());
@@ -3628,7 +3628,7 @@ int CMerkleTx::GetTransactionLockSignatures() const
 
 bool CMerkleTx::IsTransactionLockTimedOut() const
 {
-    if (!fEnableRhenFAST) return 0;
+    if (!fEnableSwiftTX) return 0;
 
     //compile consessus vote
     std::map<uint256, CTransactionLock>::iterator i = mapTxLocks.find(GetHash());

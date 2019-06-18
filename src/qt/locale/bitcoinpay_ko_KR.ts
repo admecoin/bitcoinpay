@@ -3823,7 +3823,7 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
     </message>
     <message>
         <source>SwiftTX doesn't support sending values that high yet. Transactions are currently limited to %1 BPAY.</source>
-        <translation>RhenFAST는 아직 높은 값을 전송하는 것을 지원하지 않습니다. 트랜잭션은 현재 %1 BPAY로 제한됩니다.</translation>
+        <translation>SwiftTX는 아직 높은 값을 전송하는 것을 지원하지 않습니다. 트랜잭션은 현재 %1 BPAY로 제한됩니다.</translation>
     </message>
 </context>
 <context>
@@ -4045,7 +4045,7 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
     </message>
     <message>
         <source>SwiftTX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
-        <translation>RhenFAST는 최소 6회 확인이 필요한 입력으로 몇 분 후에 다시 시도해야 할 수 있습니다.</translation>
+        <translation>SwiftTX는 최소 6회 확인이 필요한 입력으로 몇 분 후에 다시 시도해야 할 수 있습니다.</translation>
     </message>
     <message>
         <source>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit &lt;https://www.openssl.org/&gt; and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</source>

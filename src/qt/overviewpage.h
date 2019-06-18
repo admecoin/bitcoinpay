@@ -35,7 +35,7 @@ public:
     void setClientModel(ClientModel* clientModel);
     void setWalletModel(WalletModel* walletModel);
     void showOutOfSyncWarning(bool fShow);
-    void updateobfuscationProgress();
+    void updateObfuscationProgress();
 
 public slots:
     void obfuScationStatus();
@@ -62,7 +62,7 @@ private:
     TransactionFilterProxy* filter;
 
 private slots:
-    void toggleobfuscation();
+    void toggleObfuscation();
     void obfuscationAuto();
     void obfuscationReset();
     void updateDisplayUnit();

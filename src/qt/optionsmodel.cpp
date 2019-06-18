@@ -335,7 +335,7 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
         case ObfuscationRounds:
             nObfuscationRounds = value.toInt();
             settings.setValue("nObfuscationRounds", nObfuscationRounds);
-            emit ObfuscationRoundsChanged(nObfuscationRounds);
+            emit obfuscationRoundsChanged(nObfuscationRounds);
             break;
         case AnonymizeBitcoinPayAmount:
             nAnonymizeBitcoinPayAmount = value.toInt();

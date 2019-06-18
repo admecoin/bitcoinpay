@@ -1401,7 +1401,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="checkRhenFAST">
+        <widget class="QCheckBox" name="checkSwiftTX">
          <property name="enabled">
           <bool>true</bool>
          </property>
