@@ -449,7 +449,7 @@ void OverviewPage::obfuScationStatus()
 
     QString strStatus = QString(obfuScationPool.GetStatus().c_str());
 
-    QString s = tr("Last obfuscation message:\n") + strStatus;
+    QString s = tr("Last Obfuscation message:\n") + strStatus;
 
     // if (s != ui->obfuscationStatus->text())
         LogPrintf("Last Obfuscation message: %s\n", strStatus.toStdString());
