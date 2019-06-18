@@ -49,7 +49,7 @@ public:
     QString address;
     QString label;
     AvailableCoinsType inputType;
-    bool useRhenFAST;
+    bool useSwiftTX;
     CAmount amount;
     // If from a payment request, this is used for storing the memo
     QString message;
