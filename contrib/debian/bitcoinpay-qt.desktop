@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=bitcoinpay
+Comment=bitcoinpay P2P Cryptocurrency
+Exec=bitcoinpay-qt %u
+Terminal=false
+Type=Application
+Icon=bitcoinpay128
+MimeType=x-scheme-handler/bitcoinpay;
+Categories=Office;Finance;
+Name[en_GB]=bitcoinpay-qt.desktop
