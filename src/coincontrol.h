@@ -14,7 +14,7 @@ class CCoinControl
 public:
     CTxDestination destChange;
     bool useObfuScation;
-    bool useRhenFAST;
+    bool useSwiftTX;
     bool fSplitBlock;
     int nSplitBlock;
     //! If false, allows unselected inputs, but requires all selected inputs be used
@@ -33,7 +33,7 @@ public:
     {
         destChange = CNoDestination();
         setSelected.clear();
-        useRhenFAST = false;
+        useSwiftTX = false;
         useObfuScation = true;
         fAllowOtherInputs = false;
         fAllowWatchOnly = false;

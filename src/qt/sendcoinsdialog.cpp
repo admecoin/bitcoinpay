@@ -63,22 +63,22 @@ SendCoinsDialog::SendCoinsDialog(QWidget* parent) : QDialog(parent),
     QSettings settings;
     if (!settings.contains("bUseObfuScation"))
         settings.setValue("bUseObfuScation", false);
-    if (!settings.contains("bUseRhenFAST"))
-        settings.setValue("bUseRhenFAST", false);
+    if (!settings.contains("buseSwiftTX"))
+        settings.setValue("buseSwiftTX", false);
 
     bool useObfuScation = settings.value("bUseObfuScation").toBool();
-    bool useRhenFAST = settings.value("bUseRhenFAST").toBool();
+    bool useSwiftTX = settings.value("buseSwiftTX").toBool();
     if (fLiteMode) {
         ui->checkUseCoinMixing->setChecked(false);
         ui->checkUseCoinMixing->setVisible(false);
         ui->checkRhenFAST->setVisible(false);
         CoinControlDialog::coinControl->useObfuScation = false;
-        CoinControlDialog::coinControl->useRhenFAST = false;
+        CoinControlDialog::coinControl->useSwiftTX = false;
     } else {
         ui->checkUseCoinMixing->setChecked(useObfuScation);
-        ui->checkRhenFAST->setChecked(useRhenFAST);
+        ui->checkRhenFAST->setChecked(useSwiftTX);
         CoinControlDialog::coinControl->useObfuScation = useObfuScation;
-        CoinControlDialog::coinControl->useRhenFAST = useRhenFAST;
+        CoinControlDialog::coinControl->useSwiftTX = useSwiftTX;
     }
 
     connect(ui->checkUseCoinMixing, SIGNAL(stateChanged(int)), this, SLOT(updateDisplayUnit()));
@@ -284,11 +284,11 @@ void SendCoinsDialog::on_sendButton_clicked()
     }
 
     if (ui->checkRhenFAST->isChecked()) {
-        recipients[0].useRhenFAST = true;
+        recipients[0].useSwiftTX = true;
         strFunds += " ";
         strFunds += tr("and SwiftTX");
     } else {
-        recipients[0].useRhenFAST = false;
+        recipients[0].useSwiftTX = false;
     }
 
 
@@ -600,8 +600,8 @@ void SendCoinsDialog::updateDisplayUnit()
 void SendCoinsDialog::updateRhenFAST()
 {
     QSettings settings;
-    settings.setValue("bUseRhenFAST", ui->checkRhenFAST->isChecked());
-    CoinControlDialog::coinControl->useRhenFAST = ui->checkRhenFAST->isChecked();
+    settings.setValue("buseSwiftTX", ui->checkRhenFAST->isChecked());
+    CoinControlDialog::coinControl->useSwiftTX = ui->checkRhenFAST->isChecked();
     coinControlUpdateLabels();
 }
 
