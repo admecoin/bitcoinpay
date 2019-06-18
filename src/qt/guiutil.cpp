@@ -421,10 +421,10 @@ ToolTipToRichTextFilter::ToolTipToRichTextFilter(int size_threshold, QObject* pa
 {
 }
 
-bool ToolTipToRichTextFilter::eventFilter(QObject* obj, QEvent* evt)
+bool ToolTipToRichTextFilter::eventFilter(QObject *obj, QEvent *evt)
 {
     if (evt->type() == QEvent::ToolTipChange) {
-        QWidget* widget = static_cast<QWidget*>(obj);
+        QWidget *widget = static_cast<QWidget*>(obj);
         QString tooltip = widget->toolTip();
         if (tooltip.size() > size_threshold && !tooltip.startsWith("<qt")) {
             // Escape the current message as HTML and replace \n by <br> if it's not rich text
@@ -442,14 +442,14 @@ bool ToolTipToRichTextFilter::eventFilter(QObject* obj, QEvent* evt)
 
 void TableViewLastColumnResizingFixer::connectViewHeadersSignals()
 {
-    connect(tableView->horizontalHeader(), SIGNAL(sectionResized(int, int, int)), this, SLOT(on_sectionResized(int, int, int)));
+    connect(tableView->horizontalHeader(), SIGNAL(sectionResized(int,int,int)), this, SLOT(on_sectionResized(int,int,int)));
     connect(tableView->horizontalHeader(), SIGNAL(geometriesChanged()), this, SLOT(on_geometriesChanged()));
 }
 
 // We need to disconnect these while handling the resize events, otherwise we can enter infinite loops.
 void TableViewLastColumnResizingFixer::disconnectViewHeadersSignals()
 {
-    disconnect(tableView->horizontalHeader(), SIGNAL(sectionResized(int, int, int)), this, SLOT(on_sectionResized(int, int, int)));
+    disconnect(tableView->horizontalHeader(), SIGNAL(sectionResized(int,int,int)), this, SLOT(on_sectionResized(int,int,int)));
     disconnect(tableView->horizontalHeader(), SIGNAL(geometriesChanged()), this, SLOT(on_geometriesChanged()));
 }
 
@@ -650,7 +650,6 @@ bool SetStartOnSystemStartup(bool fAutoStart)
 boost::filesystem::path static GetAutostartDir()
 {
     namespace fs = boost::filesystem;
-
     char* pszConfigHome = getenv("XDG_CONFIG_HOME");
     if (pszConfigHome) return fs::path(pszConfigHome) / "autostart";
     char* pszHome = getenv("HOME");
