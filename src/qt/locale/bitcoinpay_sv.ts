@@ -583,7 +583,7 @@ Skriv in en lösenfras i den mellersta boxen. Tryck kryptera för att beräkna d
         <translation>flik vertygsrad</translation>
     </message>
     <message>
-        <source>BitcoinPay Core</source>
+        <source>BitcoinPay</source>
         <translation>bitcoinpay Kärna</translation>
     </message>
     <message>
@@ -603,11 +603,11 @@ Skriv in en lösenfras i den mellersta boxen. Tryck kryptera för att beräkna d
         <translation>Utforska masternoder</translation>
     </message>
     <message>
-        <source>&amp;About BitcoinPay Core</source>
+        <source>&amp;About BitcoinPay</source>
         <translation>Om bitcoinpay Kärnan</translation>
     </message>
     <message>
-        <source>Show information about BitcoinPay Core</source>
+        <source>Show information about BitcoinPay</source>
         <translation>Visa information om bitcoinpay Kärnan</translation>
     </message>
     <message>
@@ -631,7 +631,7 @@ Skriv in en lösenfras i den mellersta boxen. Tryck kryptera för att beräkna d
         <translation>Kryptera och avkryptera privata nycklar genom användning av lösenfras</translation>
     </message>
     <message>
-        <source>BitcoinPay Core client</source>
+        <source>BitcoinPay client</source>
         <translation>bitcoinpay kärn klient</translation>
     </message>
     <message>
@@ -841,14 +841,14 @@ Skriv in en lösenfras i den mellersta boxen. Tryck kryptera för att beräkna d
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>BitcoinPay Core</source>
+        <source>BitcoinPay</source>
         <translation>bitcoinpay Kärna</translation>
     </message>
     </context>
 <context>
     <name>Intro</name>
     <message>
-        <source>BitcoinPay Core</source>
+        <source>BitcoinPay</source>
         <translation>bitcoinpay Kärna</translation>
     </message>
     <message>
@@ -1181,7 +1181,7 @@ Skriv in en lösenfras i den mellersta boxen. Tryck kryptera för att beräkna d
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>BitcoinPay Core</source>
+        <source>BitcoinPay</source>
         <translation>bitcoinpay Kärna</translation>
     </message>
     </context>

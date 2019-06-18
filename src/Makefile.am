@@ -72,7 +72,7 @@ if BUILD_BITCOIN_UTILS
 endif
 
 .PHONY: FORCE
-# BitcoinPay Core #
+# BitcoinPay #
 BITCOIN_CORE_H = \
   activemasternode.h \
   addrman.h \

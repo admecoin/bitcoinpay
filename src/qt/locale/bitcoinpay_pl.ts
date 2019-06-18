@@ -518,7 +518,7 @@
         <translation>&amp;Pomoc</translation>
     </message>
     <message>
-        <source>BitcoinPay Core</source>
+        <source>BitcoinPay</source>
         <translation>&amp;Rdzeń bitcoin</translation>
     </message>
     <message>
@@ -538,11 +538,11 @@
         <translation>Przeglądaj masternodes</translation>
     </message>
     <message>
-        <source>&amp;About BitcoinPay Core</source>
+        <source>&amp;About BitcoinPay</source>
         <translation>&amp;O rdzeniu bitcoina</translation>
     </message>
     <message>
-        <source>Show information about BitcoinPay Core</source>
+        <source>Show information about BitcoinPay</source>
         <translation>Pokaż informacje o rdzeniu bitcoina</translation>
     </message>
     <message>
@@ -594,11 +594,11 @@
         <translation>Okno eksplorera bloków</translation>
     </message>
     <message>
-        <source>Show the BitcoinPay Core help message to get a list with possible bitcoinpay command-line options</source>
+        <source>Show the BitcoinPay help message to get a list with possible bitcoinpay command-line options</source>
         <translation>Pokaż wiadomość pomocy rdzenia bitcoinpay, aby dostać listę możliwych opcji bitcoinpay command-line</translation>
     </message>
     <message>
-        <source>BitcoinPay Core client</source>
+        <source>BitcoinPay client</source>
         <translation>Rdzeń bitcoinpay klient</translation>
     </message>
     <message>
@@ -916,7 +916,7 @@ MultiWysyłlka: %1</translation>
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>BitcoinPay Core</source>
+        <source>BitcoinPay</source>
         <translation>&amp;Rdzeń bitcoin</translation>
     </message>
     </context>
@@ -931,7 +931,7 @@ MultiWysyłlka: %1</translation>
         <translation>Użyj niestandardowej ścieżki danych</translation>
     </message>
     <message>
-        <source>BitcoinPay Core</source>
+        <source>BitcoinPay</source>
         <translation>&amp;Rdzeń bitcoin</translation>
     </message>
     <message>
@@ -1932,7 +1932,7 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations </t
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>BitcoinPay Core</source>
+        <source>BitcoinPay</source>
         <translation>&amp;Rdzeń bitcoin</translation>
     </message>
     </context>

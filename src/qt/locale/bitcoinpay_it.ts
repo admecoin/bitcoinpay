@@ -590,8 +590,8 @@
         <translation>Schede degli strumenti</translation>
     </message>
     <message>
-        <source>BitcoinPay Core</source>
-        <translation>BitcoinPay Core</translation>
+        <source>BitcoinPay</source>
+        <translation>BitcoinPay</translation>
     </message>
     <message>
         <source>Send coins to a bitcoinpay address</source>
@@ -610,12 +610,12 @@
         <translation>Esplora i masternodes</translation>
     </message>
     <message>
-        <source>&amp;About BitcoinPay Core</source>
-        <translation>&amp;Informazioni BitcoinPay Core</translation>
+        <source>&amp;About BitcoinPay</source>
+        <translation>&amp;Informazioni BitcoinPay</translation>
     </message>
     <message>
-        <source>Show information about BitcoinPay Core</source>
-        <translation>Visualizza informazioni su BitcoinPay Core</translation>
+        <source>Show information about BitcoinPay</source>
+        <translation>Visualizza informazioni su BitcoinPay</translation>
     </message>
     <message>
         <source>Modify configuration options for bitcoinpay</source>
@@ -646,8 +646,8 @@
         <translation>Finestra Block Explorer</translation>
     </message>
     <message>
-        <source>Show the BitcoinPay Core help message to get a list with possible bitcoinpay command-line options</source>
-        <translation>Mostra il messaggio di aiuto BitcoinPay Core per ottenere un elenco con le possibili opzioni di riga di comando bitcoinpay</translation>
+        <source>Show the BitcoinPay help message to get a list with possible bitcoinpay command-line options</source>
+        <translation>Mostra il messaggio di aiuto BitcoinPay per ottenere un elenco con le possibili opzioni di riga di comando bitcoinpay</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -893,8 +893,8 @@ MultiSend: %1</translation>
         <translation>versione</translation>
     </message>
     <message>
-        <source>BitcoinPay Core</source>
-        <translation>BitcoinPay Core</translation>
+        <source>BitcoinPay</source>
+        <translation>BitcoinPay</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
@@ -920,8 +920,8 @@ MultiSend: %1</translation>
         <translation>Benvenuto</translation>
     </message>
     <message>
-        <source>BitcoinPay Core</source>
-        <translation>BitcoinPay Core</translation>
+        <source>BitcoinPay</source>
+        <translation>BitcoinPay</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1177,8 +1177,8 @@ MultiSend: %1</translation>
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>BitcoinPay Core</source>
-        <translation>BitcoinPay Core</translation>
+        <source>BitcoinPay</source>
+        <translation>BitcoinPay</translation>
     </message>
     </context>
 <context>

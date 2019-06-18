@@ -13,7 +13,7 @@
  * for both bitcoinpayd and bitcoinpay-qt, to make it harder for attackers to
  * target servers or GUI users specifically.
  */
-const std::string CLIENT_NAME("BitcoinPay Core");
+const std::string CLIENT_NAME("BitcoinPay");
 
 /**
  * Client version number

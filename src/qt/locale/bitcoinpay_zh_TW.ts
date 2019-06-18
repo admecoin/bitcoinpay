@@ -582,8 +582,8 @@
         <translation>Tabs 工具列</translation>
     </message>
     <message>
-        <source>BitcoinPay Core</source>
-        <translation>BitcoinPay Core</translation>
+        <source>BitcoinPay</source>
+        <translation>BitcoinPay</translation>
     </message>
     <message>
         <source>Send coins to a bitcoinpay address</source>
@@ -602,12 +602,12 @@
         <translation>瀏覽 Masternodes</translation>
     </message>
     <message>
-        <source>&amp;About BitcoinPay Core</source>
-        <translation>&amp;關於 BitcoinPay Core</translation>
+        <source>&amp;About BitcoinPay</source>
+        <translation>&amp;關於 BitcoinPay</translation>
     </message>
     <message>
-        <source>Show information about BitcoinPay Core</source>
-        <translation>顯示 BitcoinPay Core 相關資訊</translation>
+        <source>Show information about BitcoinPay</source>
+        <translation>顯示 BitcoinPay 相關資訊</translation>
     </message>
     <message>
         <source>Modify configuration options for bitcoinpay</source>
@@ -662,12 +662,12 @@
         <translation>區塊鏈瀏覽視窗</translation>
     </message>
     <message>
-        <source>Show the BitcoinPay Core help message to get a list with possible bitcoinpay command-line options</source>
-        <translation>顯示 BitcoinPay Core 幫助訊息以取得 bitcoinpay 命令列表選項</translation>
+        <source>Show the BitcoinPay help message to get a list with possible bitcoinpay command-line options</source>
+        <translation>顯示 BitcoinPay 幫助訊息以取得 bitcoinpay 命令列表選項</translation>
     </message>
     <message>
-        <source>BitcoinPay Core client</source>
-        <translation>BitcoinPay Core 客戶端</translation>
+        <source>BitcoinPay client</source>
+        <translation>BitcoinPay 客戶端</translation>
     </message>
     </context>
 <context>
@@ -696,15 +696,15 @@
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>BitcoinPay Core</source>
-        <translation>BitcoinPay Core</translation>
+        <source>BitcoinPay</source>
+        <translation>BitcoinPay</translation>
     </message>
     </context>
 <context>
     <name>Intro</name>
     <message>
-        <source>BitcoinPay Core</source>
-        <translation>BitcoinPay Core</translation>
+        <source>BitcoinPay</source>
+        <translation>BitcoinPay</translation>
     </message>
     </context>
 <context>
@@ -888,8 +888,8 @@
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>BitcoinPay Core</source>
-        <translation>BitcoinPay Core</translation>
+        <source>BitcoinPay</source>
+        <translation>BitcoinPay</translation>
     </message>
     </context>
 <context>

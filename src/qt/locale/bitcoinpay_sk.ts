@@ -598,8 +598,8 @@
         <translation>Panel nástrojov Záložky</translation>
     </message>
     <message>
-        <source>BitcoinPay Core</source>
-        <translation>BitcoinPay Core</translation>
+        <source>BitcoinPay</source>
+        <translation>BitcoinPay</translation>
     </message>
     <message>
         <source>Send coins to a bitcoinpay address</source>
@@ -618,12 +618,12 @@
         <translation>Prezrieť masternody</translation>
     </message>
     <message>
-        <source>&amp;About BitcoinPay Core</source>
-        <translation>O BitcoinPay Core</translation>
+        <source>&amp;About BitcoinPay</source>
+        <translation>O BitcoinPay</translation>
     </message>
     <message>
-        <source>Show information about BitcoinPay Core</source>
-        <translation>Zobraziť informácie o BitcoinPay Core</translation>
+        <source>Show information about BitcoinPay</source>
+        <translation>Zobraziť informácie o BitcoinPay</translation>
     </message>
     <message>
         <source>Modify configuration options for bitcoinpay</source>
@@ -678,12 +678,12 @@
         <translation>Okno blockchain prehliadača</translation>
     </message>
     <message>
-        <source>Show the BitcoinPay Core help message to get a list with possible bitcoinpay command-line options</source>
-        <translation>Zobraziť pomocnú správu programu BitcoinPay Core a získajte zoznam možností príkazového riadka bitcoinpay</translation>
+        <source>Show the BitcoinPay help message to get a list with possible bitcoinpay command-line options</source>
+        <translation>Zobraziť pomocnú správu programu BitcoinPay a získajte zoznam možností príkazového riadka bitcoinpay</translation>
     </message>
     <message>
-        <source>BitcoinPay Core client</source>
-        <translation>BitcoinPay Core klient</translation>
+        <source>BitcoinPay client</source>
+        <translation>BitcoinPay klient</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -908,15 +908,15 @@ MultiSend: %1</translation>
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>BitcoinPay Core</source>
-        <translation>BitcoinPay Core</translation>
+        <source>BitcoinPay</source>
+        <translation>BitcoinPay</translation>
     </message>
     </context>
 <context>
     <name>Intro</name>
     <message>
-        <source>BitcoinPay Core</source>
-        <translation>BitcoinPay Core</translation>
+        <source>BitcoinPay</source>
+        <translation>BitcoinPay</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1164,8 +1164,8 @@ MultiSend: %1</translation>
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>BitcoinPay Core</source>
-        <translation>BitcoinPay Core</translation>
+        <source>BitcoinPay</source>
+        <translation>BitcoinPay</translation>
     </message>
     </context>
 <context>

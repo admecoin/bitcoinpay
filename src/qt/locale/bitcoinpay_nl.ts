@@ -292,7 +292,7 @@
     </message>
     <message>
         <source>Enter the BIP 38 encrypted private key. Enter the passphrase in the middle box. Click Decrypt Key to compute the private key. After the key is decrypted, clicking 'Import Address' will add this private key to the wallet.</source>
-        <translation>Voer de BIP 38 versleutelde geheime sleutel in. Voer het wachtwoord in, in het middelste veld. Druk op Ontsleutelen Sleutel om de geheime sleutel te berekenen.  Nadat de geheime sleutel is ontsleuteld, zal het klikken op 'Adres Importeren' de geheime sleutel toevoegen aan de portemonnee.</translation>
+        <translation>Voer de BIP 38 versleutelde geheime sleutel in. Voer het wachtwoord in, in het middelste veld. Druk op Ontsleutelen Sleutel om de geheime sleutel te berekenen.  Nadat de geheime sleutel is ontsleuteld, zal het klikken op 'Adres Importeren' de geheime sleutel toevoegen aan de portemonnee.</translation>
     </message>
     <message>
         <source>The bitcoinpay address the message was signed with</source>
@@ -590,7 +590,7 @@
         <translation>Tabblad werkbalk</translation>
     </message>
     <message>
-        <source>BitcoinPay Core</source>
+        <source>BitcoinPay</source>
         <translation>bitcoinpay Kern</translation>
     </message>
     <message>
@@ -610,11 +610,11 @@
         <translation>Bekijk masternodes</translation>
     </message>
     <message>
-        <source>&amp;About BitcoinPay Core</source>
+        <source>&amp;About BitcoinPay</source>
         <translation>&amp;Over bitcoinpay Kern</translation>
     </message>
     <message>
-        <source>Show information about BitcoinPay Core</source>
+        <source>Show information about BitcoinPay</source>
         <translation>Toon informatie over bitcoinpay Kern</translation>
     </message>
     <message>
@@ -964,7 +964,7 @@
         <translation>versie</translation>
     </message>
     <message>
-        <source>BitcoinPay Core</source>
+        <source>BitcoinPay</source>
         <translation>bitcoinpay Kern</translation>
     </message>
     <message>
@@ -979,7 +979,7 @@
         <translation>Welkom</translation>
     </message>
     <message>
-        <source>BitcoinPay Core</source>
+        <source>BitcoinPay</source>
         <translation>bitcoinpay Kern</translation>
     </message>
     <message>
@@ -1426,8 +1426,8 @@
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>BitcoinPay Core is shutting down...</source>
-        <translation>BitcoinPay Core is aan het afsluiten...</translation>
+        <source>BitcoinPay is shutting down...</source>
+        <translation>BitcoinPay is aan het afsluiten...</translation>
     </message>
     </context>
 <context>
@@ -1512,7 +1512,7 @@
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>BitcoinPay Core</source>
+        <source>BitcoinPay</source>
         <translation>bitcoinpay Kern</translation>
     </message>
     <message>

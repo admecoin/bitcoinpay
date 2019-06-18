@@ -575,7 +575,7 @@ Syötä salausavain laatikon keskelle. Paina salaa tuottaaksesi salatun yksityis
         <translation>&amp;Apua</translation>
     </message>
     <message>
-        <source>BitcoinPay Core</source>
+        <source>BitcoinPay</source>
         <translation>bitcoinpay Ydin</translation>
     </message>
     <message>
@@ -595,11 +595,11 @@ Syötä salausavain laatikon keskelle. Paina salaa tuottaaksesi salatun yksityis
         <translation>Selaa masternodeja</translation>
     </message>
     <message>
-        <source>&amp;About BitcoinPay Core</source>
-        <translation>BitcoinPay Core &amp;ytimestä</translation>
+        <source>&amp;About BitcoinPay</source>
+        <translation>BitcoinPay &amp;ytimestä</translation>
     </message>
     <message>
-        <source>Show information about BitcoinPay Core</source>
+        <source>Show information about BitcoinPay</source>
         <translation>Näytä tietoja bitcoinpay Ytimestä</translation>
     </message>
     <message>
@@ -655,11 +655,11 @@ Syötä salausavain laatikon keskelle. Paina salaa tuottaaksesi salatun yksityis
         <translation>Lohkon tutkija näkymä</translation>
     </message>
     <message>
-        <source>Show the BitcoinPay Core help message to get a list with possible bitcoinpay command-line options</source>
+        <source>Show the BitcoinPay help message to get a list with possible bitcoinpay command-line options</source>
         <translation>Näytä bitcoinpay Ydin apuviesti saadaksesi lista mahdollisista bitcoinpay komentolinja komennoista.</translation>
     </message>
     <message>
-        <source>BitcoinPay Core client</source>
+        <source>BitcoinPay client</source>
         <translation>bitcoinpay Ydin asiakasohjelma</translation>
     </message>
     <message>
@@ -894,7 +894,7 @@ Syötä salausavain laatikon keskelle. Paina salaa tuottaaksesi salatun yksityis
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>BitcoinPay Core</source>
+        <source>BitcoinPay</source>
         <translation>bitcoinpay Ydin</translation>
     </message>
     <message>
@@ -913,11 +913,11 @@ Syötä salausavain laatikon keskelle. Paina salaa tuottaaksesi salatun yksityis
         <translation>Tervetuloa</translation>
     </message>
     <message>
-        <source>Welcome to BitcoinPay Core.</source>
+        <source>Welcome to BitcoinPay.</source>
         <translation>Tervetuloa bitcoinpay Ytimeen.</translation>
     </message>
     <message>
-        <source>BitcoinPay Core</source>
+        <source>BitcoinPay</source>
         <translation>bitcoinpay Ydin</translation>
     </message>
     <message>
@@ -1104,7 +1104,7 @@ Please check the address and try again.</source>
     </message>
     <message>
         <source>This option is the quickest and will cost about ~0.025 BPAY to anonymize 10000 BPAY</source>
-        <translation>Tämä vaihtoehto on nopein ja maksaa noin ~0.025 BPAY anonymoidaksesi 10000 bitcoinpay</translation>
+        <translation>Tämä vaihtoehto on nopein ja maksaa noin ~0.025 BPAY anonymoidaksesi 10000 bitcoinpay</translation>
     </message>
     <message>
         <source>This option is moderately fast and will cost about 0.05 BPAY to anonymize 10000 BPAY</source>
@@ -1675,7 +1675,7 @@ Please check the address and try again.</source>
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>BitcoinPay Core</source>
+        <source>BitcoinPay</source>
         <translation>bitcoinpay Ydin</translation>
     </message>
     </context>

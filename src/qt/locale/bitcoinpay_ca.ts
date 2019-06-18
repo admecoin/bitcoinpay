@@ -270,12 +270,12 @@
         <translation>A&amp;juda</translation>
     </message>
     <message>
-        <source>BitcoinPay Core</source>
-        <translation>BitcoinPay Core</translation>
+        <source>BitcoinPay</source>
+        <translation>BitcoinPay</translation>
     </message>
     <message>
-        <source>&amp;About BitcoinPay Core</source>
-        <translation>&amp;Sobre BitcoinPay Core</translation>
+        <source>&amp;About BitcoinPay</source>
+        <translation>&amp;Sobre BitcoinPay</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -468,12 +468,12 @@
         <translation>versió</translation>
     </message>
     <message>
-        <source>BitcoinPay Core</source>
-        <translation>BitcoinPay Core</translation>
+        <source>BitcoinPay</source>
+        <translation>BitcoinPay</translation>
     </message>
     <message>
-        <source>About BitcoinPay Core</source>
-        <translation>Sobre BitcoinPay Core</translation>
+        <source>About BitcoinPay</source>
+        <translation>Sobre BitcoinPay</translation>
     </message>
     <message>
         <source>Usage:</source>
@@ -491,12 +491,12 @@
         <translation>Benvingut</translation>
     </message>
     <message>
-        <source>Welcome to BitcoinPay Core.</source>
-        <translation>Benvingut a BitcoinPay Core.</translation>
+        <source>Welcome to BitcoinPay.</source>
+        <translation>Benvingut a BitcoinPay.</translation>
     </message>
     <message>
-        <source>BitcoinPay Core</source>
-        <translation>BitcoinPay Core</translation>
+        <source>BitcoinPay</source>
+        <translation>BitcoinPay</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1048,8 +1048,8 @@
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>BitcoinPay Core</source>
-        <translation>BitcoinPay Core</translation>
+        <source>BitcoinPay</source>
+        <translation>BitcoinPay</translation>
     </message>
     <message>
         <source>Version %1</source>

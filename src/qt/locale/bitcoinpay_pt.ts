@@ -1242,8 +1242,8 @@
         <translation>Carteira esta bloqueada.</translation>
     </message>
     <message>
-        <source>Wallet needed to be rewritten: restart BitcoinPay Core to complete</source>
-        <translation>Carteira precisa ser reescrita: reinicie o BitcoinPay Core para completar.</translation>
+        <source>Wallet needed to be rewritten: restart BitcoinPay to complete</source>
+        <translation>Carteira precisa ser reescrita: reinicie o BitcoinPay para completar.</translation>
     </message>
     <message>
         <source>Wallet options:</source>

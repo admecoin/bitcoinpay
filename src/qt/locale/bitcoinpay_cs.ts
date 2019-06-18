@@ -598,8 +598,8 @@
         <translation>Nástrojová lišta záložek</translation>
     </message>
     <message>
-        <source>BitcoinPay Core</source>
-        <translation>BitcoinPay Core</translation>
+        <source>BitcoinPay</source>
+        <translation>BitcoinPay</translation>
     </message>
     <message>
         <source>Send coins to a bitcoinpay address</source>
@@ -618,12 +618,12 @@
         <translation>Procházet masternody</translation>
     </message>
     <message>
-        <source>&amp;About BitcoinPay Core</source>
-        <translation>&amp;O BitcoinPay Core</translation>
+        <source>&amp;About BitcoinPay</source>
+        <translation>&amp;O BitcoinPay</translation>
     </message>
     <message>
-        <source>Show information about BitcoinPay Core</source>
-        <translation>Zobraz informace o BitcoinPay Core</translation>
+        <source>Show information about BitcoinPay</source>
+        <translation>Zobraz informace o BitcoinPay</translation>
     </message>
     <message>
         <source>Modify configuration options for bitcoinpay</source>
@@ -678,12 +678,12 @@
         <translation>Okno blokového průzkumníka</translation>
     </message>
     <message>
-        <source>Show the BitcoinPay Core help message to get a list with possible bitcoinpay command-line options</source>
-        <translation>Zobrazit BitcoinPay Core pomocnou zpráv pro získání seznamu možných parametrů bitcoinpay pro příkazy do příkazové řádky</translation>
+        <source>Show the BitcoinPay help message to get a list with possible bitcoinpay command-line options</source>
+        <translation>Zobrazit BitcoinPay pomocnou zpráv pro získání seznamu možných parametrů bitcoinpay pro příkazy do příkazové řádky</translation>
     </message>
     <message>
-        <source>BitcoinPay Core client</source>
-        <translation>BitcoinPay Core klient</translation>
+        <source>BitcoinPay client</source>
+        <translation>BitcoinPay klient</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -1116,12 +1116,12 @@ MultiSend: %1</translation>
         <translation>verze</translation>
     </message>
     <message>
-        <source>BitcoinPay Core</source>
-        <translation>BitcoinPay Core</translation>
+        <source>BitcoinPay</source>
+        <translation>BitcoinPay</translation>
     </message>
     <message>
-        <source>About BitcoinPay Core</source>
-        <translation>O BitcoinPay Core</translation>
+        <source>About BitcoinPay</source>
+        <translation>O BitcoinPay</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1155,16 +1155,16 @@ MultiSend: %1</translation>
         <translation>Vítejte</translation>
     </message>
     <message>
-        <source>Welcome to BitcoinPay Core.</source>
-        <translation>Vítejte v BitcoinPay Core.</translation>
+        <source>Welcome to BitcoinPay.</source>
+        <translation>Vítejte v BitcoinPay.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where BitcoinPay Core will store its data.</source>
-        <translation>Při prvním spuštění programu si můžete vybrat, kam bude BitcoinPay Core ukládat svá data.</translation>
+        <source>As this is the first time the program is launched, you can choose where BitcoinPay will store its data.</source>
+        <translation>Při prvním spuštění programu si můžete vybrat, kam bude BitcoinPay ukládat svá data.</translation>
     </message>
     <message>
-        <source>BitcoinPay Core will download and store a copy of the bitcoinpay block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>BitcoinPay Core stáhne a uloží kopii bitcoinpay blockchainu. Nejméně %1GB dat bude do této složky uloženo a v průběhu času bude ukládat další data. Peněženka bude v této složce uložena také.</translation>
+        <source>BitcoinPay will download and store a copy of the bitcoinpay block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>BitcoinPay stáhne a uloží kopii bitcoinpay blockchainu. Nejméně %1GB dat bude do této složky uloženo a v průběhu času bude ukládat další data. Peněženka bude v této složce uložena také.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1175,8 +1175,8 @@ MultiSend: %1</translation>
         <translation>Použít vlastní složku pro data</translation>
     </message>
     <message>
-        <source>BitcoinPay Core</source>
-        <translation>BitcoinPay Core</translation>
+        <source>BitcoinPay</source>
+        <translation>BitcoinPay</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -2278,8 +2278,8 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>BitcoinPay Core</source>
-        <translation>BitcoinPay Core</translation>
+        <source>BitcoinPay</source>
+        <translation>BitcoinPay</translation>
     </message>
     </context>
 <context>

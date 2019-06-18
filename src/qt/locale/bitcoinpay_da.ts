@@ -598,7 +598,7 @@
         <translation>Værktøjslinier</translation>
     </message>
     <message>
-        <source>BitcoinPay Core</source>
+        <source>BitcoinPay</source>
         <translation>bitcoinpay kerne</translation>
     </message>
     <message>
@@ -618,11 +618,11 @@
         <translation>Vis masternoder</translation>
     </message>
     <message>
-        <source>&amp;About BitcoinPay Core</source>
+        <source>&amp;About BitcoinPay</source>
         <translation>&amp;Om bitcoinpay kerne</translation>
     </message>
     <message>
-        <source>Show information about BitcoinPay Core</source>
+        <source>Show information about BitcoinPay</source>
         <translation>Vis information om bitcoinpay kerne</translation>
     </message>
     <message>
@@ -678,11 +678,11 @@
         <translation>Blockexplorer vindue</translation>
     </message>
     <message>
-        <source>Show the BitcoinPay Core help message to get a list with possible bitcoinpay command-line options</source>
+        <source>Show the BitcoinPay help message to get a list with possible bitcoinpay command-line options</source>
         <translation>Vis hjelpetekster fra bitcoinpay kernen for at få en liste med mulige bitcoinpay kommandolinie-startparametre</translation>
     </message>
     <message>
-        <source>BitcoinPay Core client</source>
+        <source>BitcoinPay client</source>
         <translation>bitcoinpay kerneklient</translation>
     </message>
     <message>
@@ -1160,7 +1160,7 @@ Adresse: %4
         <translation>version</translation>
     </message>
     <message>
-        <source>BitcoinPay Core</source>
+        <source>BitcoinPay</source>
         <translation>bitcoinpay kerne</translation>
     </message>
     <message>
@@ -1168,7 +1168,7 @@ Adresse: %4
         <translation>(%1-bit)</translation>
     </message>
     <message>
-        <source>About BitcoinPay Core</source>
+        <source>About BitcoinPay</source>
         <translation>om bitcoinpay kerne</translation>
     </message>
     <message>
@@ -1215,15 +1215,15 @@ Adresse: %4
         <translation>Velkommen</translation>
     </message>
     <message>
-        <source>Welcome to BitcoinPay Core.</source>
+        <source>Welcome to BitcoinPay.</source>
         <translation>Velkommen til bitcoinpay kerne</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where BitcoinPay Core will store its data.</source>
+        <source>As this is the first time the program is launched, you can choose where BitcoinPay will store its data.</source>
         <translation>Da det er første gang programmet startes, kan De vælge hvor bitcoinpay kernen skal lagre sine data</translation>
     </message>
     <message>
-        <source>BitcoinPay Core will download and store a copy of the bitcoinpay block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <source>BitcoinPay will download and store a copy of the bitcoinpay block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
         <translation>bitcoinpay kernen vil nu hente og gemme en kopi af bitcoinpay blockchain. Der skal være mindst %1GB ledigt på lagermediet, og behovet vil stige efterhånden som tiden går. Selve tegnebogen vil også blive gemt her.</translation>
     </message>
     <message>
@@ -1235,7 +1235,7 @@ Adresse: %4
         <translation>Anvend en mappe valgt af brugeren</translation>
     </message>
     <message>
-        <source>BitcoinPay Core</source>
+        <source>BitcoinPay</source>
         <translation>bitcoinpay kerne</translation>
     </message>
     <message>
@@ -3093,7 +3093,7 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>BitcoinPay Core is shutting down...</source>
+        <source>BitcoinPay is shutting down...</source>
         <translation>bitcoinpay kernen lukker ned</translation>
     </message>
     <message>
@@ -3243,7 +3243,7 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>BitcoinPay Core</source>
+        <source>BitcoinPay</source>
         <translation>bitcoinpay kerne</translation>
     </message>
     <message>
@@ -3259,7 +3259,7 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation>DASH "core" udviklerne</translation>
     </message>
     <message>
-        <source>The BitcoinPay Core developers</source>
+        <source>The BitcoinPay developers</source>
         <translation>bitcoinpay "core" udviklerne</translation>
     </message>
     <message>
@@ -3861,8 +3861,8 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation>Forbind til den opgivne adresse og lyt efter JSON-.RPC forbindelser. Brug [host]:port notation for IPv6. Der kan indsættes flere linier (standard: Forbind til alle interfaces)</translation>
     </message>
     <message>
-        <source>Cannot obtain a lock on data directory %s. BitcoinPay Core is probably already running.</source>
-        <translation>Kan ikke låse datamappen %s. BitcoinPay Core kører sandsynligvis allerede.</translation>
+        <source>Cannot obtain a lock on data directory %s. BitcoinPay is probably already running.</source>
+        <translation>Kan ikke låse datamappen %s. BitcoinPay kører sandsynligvis allerede.</translation>
     </message>
     <message>
         <source>Change automatic finalized budget voting behavior. mode=auto: Vote for only exact finalized budget match to my generated budget. (string, default: auto)</source>
@@ -4058,7 +4058,7 @@ For eksempel: alertnotify=Echo %% | mail - s "bitcoinpay ALARM!" e-mail@administ
 </translation>
     </message>
     <message>
-        <source>Unable to bind to %s on this computer. BitcoinPay Core is probably already running.</source>
+        <source>Unable to bind to %s on this computer. BitcoinPay is probably already running.</source>
         <translation>Det var ikke muligt at forbinde %s på denne computer. bitcoinpay kører sandsynligvis allerede.</translation>
     </message>
     <message>
@@ -4086,8 +4086,8 @@ For eksempel: alertnotify=Echo %% | mail - s "bitcoinpay ALARM!" e-mail@administ
         <translation>Advarsel! -paytxfee er sat meget højt. Det er dette gebyr De kommer til at betale for transaktionen, hvis De gennemfører. </translation>
     </message>
     <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong BitcoinPay Core will not work properly.</source>
-        <translation>Advarsel! Kontroller at computerens dato og tid er korrekt indstillet. Hvis tiden ikke er rigtig, vil BitcoinPay Core ikke fungere ordentligt.</translation>
+        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong BitcoinPay will not work properly.</source>
+        <translation>Advarsel! Kontroller at computerens dato og tid er korrekt indstillet. Hvis tiden ikke er rigtig, vil BitcoinPay ikke fungere ordentligt.</translation>
     </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
@@ -4234,8 +4234,8 @@ For eksempel: alertnotify=Echo %% | mail - s "bitcoinpay ALARM!" e-mail@administ
         <translation>Copyright (C) 2014-%i The Dash Core Developers </translation>
     </message>
     <message>
-        <source>Copyright (C) 2015-%i The BitcoinPay Core Developers</source>
-        <translation>Copyright (C) 2015-%i The BitcoinPay Core Developers</translation>
+        <source>Copyright (C) 2015-%i The BitcoinPay Developers</source>
+        <translation>Copyright (C) 2015-%i The BitcoinPay Developers</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>
@@ -4306,8 +4306,8 @@ For eksempel: alertnotify=Echo %% | mail - s "bitcoinpay ALARM!" e-mail@administ
         <translation>Fejl ved indlæsning af wallet.dat: Tegnebogen er beskadiget</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of BitcoinPay Core</source>
-        <translation>Fejl ved indlæsning af wallet.dat: Tegnebogen kræver en nyere version af BitcoinPay Core</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of BitcoinPay</source>
+        <translation>Fejl ved indlæsning af wallet.dat: Tegnebogen kræver en nyere version af BitcoinPay</translation>
     </message>
     <message>
         <source>Error opening block database</source>
@@ -4418,8 +4418,8 @@ For eksempel: alertnotify=Echo %% | mail - s "bitcoinpay ALARM!" e-mail@administ
         <translation>Info:</translation>
     </message>
     <message>
-        <source>Initialization sanity check failed. BitcoinPay Core is shutting down.</source>
-        <translation>Initiering af sanitetskontrollen fejlede. BitcoinPay Core lukker ned. </translation>
+        <source>Initialization sanity check failed. BitcoinPay is shutting down.</source>
+        <translation>Initiering af sanitetskontrollen fejlede. BitcoinPay lukker ned. </translation>
     </message>
     <message>
         <source>Input is not valid.</source>
@@ -4994,8 +4994,8 @@ For eksempel: alertnotify=Echo %% | mail - s "bitcoinpay ALARM!" e-mail@administ
         <translation>Tegnebogen er låst</translation>
     </message>
     <message>
-        <source>Wallet needed to be rewritten: restart BitcoinPay Core to complete</source>
-        <translation>Tegnebogen måtte genskrives. Genstart BitcoinPay Core for at gøre færdig</translation>
+        <source>Wallet needed to be rewritten: restart BitcoinPay to complete</source>
+        <translation>Tegnebogen måtte genskrives. Genstart BitcoinPay for at gøre færdig</translation>
     </message>
     <message>
         <source>Wallet options:</source>

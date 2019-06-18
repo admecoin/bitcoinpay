@@ -594,8 +594,8 @@
         <translation>Панель вкладок</translation>
     </message>
     <message>
-        <source>BitcoinPay Core</source>
-        <translation>BitcoinPay Core</translation>
+        <source>BitcoinPay</source>
+        <translation>BitcoinPay</translation>
     </message>
     <message>
         <source>Send coins to a bitcoinpay address</source>
@@ -614,12 +614,12 @@
         <translation>Обзор мастернод</translation>
     </message>
     <message>
-        <source>&amp;About BitcoinPay Core</source>
-        <translation>&amp;О BitcoinPay Core</translation>
+        <source>&amp;About BitcoinPay</source>
+        <translation>&amp;О BitcoinPay</translation>
     </message>
     <message>
-        <source>Show information about BitcoinPay Core</source>
-        <translation>Показать информацию о BitcoinPay Core</translation>
+        <source>Show information about BitcoinPay</source>
+        <translation>Показать информацию о BitcoinPay</translation>
     </message>
     <message>
         <source>Modify configuration options for bitcoinpay</source>
@@ -674,12 +674,12 @@
         <translation>Окно обзора блока</translation>
     </message>
     <message>
-        <source>Show the BitcoinPay Core help message to get a list with possible bitcoinpay command-line options</source>
+        <source>Show the BitcoinPay help message to get a list with possible bitcoinpay command-line options</source>
         <translation>Смотрите помощь к программе, чтобы получить документацию ко всем возможным опциям комманды bitcoinpay</translation>
     </message>
     <message>
-        <source>BitcoinPay Core client</source>
-        <translation>Клиент BitcoinPay Core</translation>
+        <source>BitcoinPay client</source>
+        <translation>Клиент BitcoinPay</translation>
     </message>
     <message numerus="yes">
         <source>%n active connection(s) to bitcoinpay network</source>
@@ -1176,16 +1176,16 @@ MultiSend: %1</translation>
         <translation>версия</translation>
     </message>
     <message>
-        <source>BitcoinPay Core</source>
-        <translation>BitcoinPay Core</translation>
+        <source>BitcoinPay</source>
+        <translation>BitcoinPay</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
         <translation>(%1-бит)</translation>
     </message>
     <message>
-        <source>About BitcoinPay Core</source>
-        <translation>О BitcoinPay Core</translation>
+        <source>About BitcoinPay</source>
+        <translation>О BitcoinPay</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1231,16 +1231,16 @@ MultiSend: %1</translation>
         <translation>Добро пожаловать</translation>
     </message>
     <message>
-        <source>Welcome to BitcoinPay Core.</source>
-        <translation>Добро пожаловать в BitcoinPay Core.</translation>
+        <source>Welcome to BitcoinPay.</source>
+        <translation>Добро пожаловать в BitcoinPay.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where BitcoinPay Core will store its data.</source>
-        <translation>Поскольку это первый запуск программы, вы можете выбрать, где будут храниться данные BitcoinPay Core.</translation>
+        <source>As this is the first time the program is launched, you can choose where BitcoinPay will store its data.</source>
+        <translation>Поскольку это первый запуск программы, вы можете выбрать, где будут храниться данные BitcoinPay.</translation>
     </message>
     <message>
-        <source>BitcoinPay Core will download and store a copy of the bitcoinpay block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>BitcoinPay Core загрузит и сохранит копию цепочки блоков bitcoinpay. Каталог будет занимать около %1GB и со временем размер будет увеличиваться. Кроме того, в этом каталоге будет храниться кошелек.</translation>
+        <source>BitcoinPay will download and store a copy of the bitcoinpay block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>BitcoinPay загрузит и сохранит копию цепочки блоков bitcoinpay. Каталог будет занимать около %1GB и со временем размер будет увеличиваться. Кроме того, в этом каталоге будет храниться кошелек.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1251,8 +1251,8 @@ MultiSend: %1</translation>
         <translation>Использовать другой каталог данных:</translation>
     </message>
     <message>
-        <source>BitcoinPay Core</source>
-        <translation>BitcoinPay Core</translation>
+        <source>BitcoinPay</source>
+        <translation>BitcoinPay</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -2815,8 +2815,8 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>BitcoinPay Core is shutting down...</source>
-        <translation>BitcoinPay Core выключается...</translation>
+        <source>BitcoinPay is shutting down...</source>
+        <translation>BitcoinPay выключается...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -2905,8 +2905,8 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>BitcoinPay Core</source>
-        <translation>BitcoinPay Core</translation>
+        <source>BitcoinPay</source>
+        <translation>BitcoinPay</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -2921,8 +2921,8 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation>Разработчики Dash Core</translation>
     </message>
     <message>
-        <source>The BitcoinPay Core developers</source>
-        <translation>Разработчики BitcoinPay Core</translation>
+        <source>The BitcoinPay developers</source>
+        <translation>Разработчики BitcoinPay</translation>
     </message>
     <message>
         <source>[testnet]</source>
@@ -3207,8 +3207,8 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation>Copyright (C) 2014-%i Разработчики Dash Core</translation>
     </message>
     <message>
-        <source>Copyright (C) 2015-%i The BitcoinPay Core Developers</source>
-        <translation>Copyright (C) 2015-%i Разработчики BitcoinPay Core</translation>
+        <source>Copyright (C) 2015-%i The BitcoinPay Developers</source>
+        <translation>Copyright (C) 2015-%i Разработчики BitcoinPay</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>
