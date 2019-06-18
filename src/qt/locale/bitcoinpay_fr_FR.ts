@@ -1020,7 +1020,7 @@ Veuillez vérifier l'adresse et réessayer.</translation>
     </message>
 </context>
 <context>
-    <name>CoinMixingConfig</name>
+    <name>obfuscationConfig</name>
     <message>
         <source>Basic Privacy</source>
         <translation>Confidentialité de base</translation>

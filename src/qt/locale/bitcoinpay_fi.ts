@@ -1069,9 +1069,9 @@ Please check the address and try again.</source>
     </message>
 </context>
 <context>
-    <name>CoinMixingConfig</name>
+    <name>obfuscationConfig</name>
     <message>
-        <source>Configure CoinMixing</source>
+        <source>Configure obfuscation</source>
         <translation>Konfiguroi Hämäys</translation>
     </message>
     <message>
@@ -1119,7 +1119,7 @@ Please check the address and try again.</source>
         <translation>0.1 per 10000 bitcoinpay, jotka anonymisoit.</translation>
     </message>
     <message>
-        <source>CoinMixing Configuration</source>
+        <source>obfuscation Configuration</source>
         <translation>Hämäys konfiguraatio</translation>
     </message>
     </context>

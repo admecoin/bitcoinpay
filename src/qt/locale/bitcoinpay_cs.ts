@@ -1420,9 +1420,9 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
     </message>
 </context>
 <context>
-    <name>CoinMixingConfig</name>
+    <name>obfuscationConfig</name>
     <message>
-        <source>Configure CoinMixing</source>
+        <source>Configure obfuscation</source>
         <translation>Konfigurace obfuskace</translation>
     </message>
     <message>
@@ -1462,7 +1462,7 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
         <translation>0.1 BPAY za 10000 BPAY anonymizujete.</translation>
     </message>
     <message>
-        <source>CoinMixing Configuration</source>
+        <source>obfuscation Configuration</source>
         <translation>Konfigurace obufuskace</translation>
     </message>
     </context>
@@ -1635,7 +1635,7 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
         <translation>Stav:</translation>
     </message>
     <message>
-        <source>CoinMixing Balance:</source>
+        <source>obfuscation Balance:</source>
         <translation>Obfuskační Balance:</translation>
     </message>
     <message>
@@ -1647,7 +1647,7 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
         <translation>Zapnuté/Vypnuté</translation>
     </message>
     <message>
-        <source>CoinMixing</source>
+        <source>obfuscation</source>
         <translation>Obfuskace</translation>
     </message>
     <message>
@@ -1679,15 +1679,15 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
         <translation>Anonymizováno</translation>
     </message>
     <message>
-        <source>CoinMixing was successfully reset.</source>
+        <source>obfuscation was successfully reset.</source>
         <translation>Obfuskace byla úspěšně resetována</translation>
     </message>
     <message>
-        <source>Start CoinMixing</source>
+        <source>Start obfuscation</source>
         <translation>Spustit Obfuskaci</translation>
     </message>
     <message>
-        <source>Stop CoinMixing</source>
+        <source>Stop obfuscation</source>
         <translation>Zastavit Obfuskaci</translation>
     </message>
     <message>
@@ -2082,7 +2082,7 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
         <translation>Minimalizovat</translation>
     </message>
     <message>
-        <source>CoinMixing</source>
+        <source>obfuscation</source>
         <translation>Obfuskace</translation>
     </message>
     <message>

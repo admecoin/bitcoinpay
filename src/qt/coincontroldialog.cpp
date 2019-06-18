@@ -16,7 +16,7 @@
 
 #include "coincontrol.h"
 #include "main.h"
-#include "coinmixing.h"
+#include "obfuscation.h"
 #include "wallet.h"
 
 #include <boost/assign/list_of.hpp> // for 'map_list_of()'
@@ -133,7 +133,7 @@ CoinControlDialog::CoinControlDialog(QWidget* parent) : QDialog(parent),
     ui->treeWidget->setColumnWidth(COLUMN_AMOUNT, 100);
     ui->treeWidget->setColumnWidth(COLUMN_LABEL, 170);
     ui->treeWidget->setColumnWidth(COLUMN_ADDRESS, 190);
-    ui->treeWidget->setColumnWidth(COLUMN_COINMIXING_ROUNDS, 88);
+    ui->treeWidget->setColumnWidth(COLUMN_OBFUSCATION_ROUNDS, 88);
     ui->treeWidget->setColumnWidth(COLUMN_DATE, 80);
     ui->treeWidget->setColumnWidth(COLUMN_CONFIRMATIONS, 100);
     ui->treeWidget->setColumnWidth(COLUMN_PRIORITY, 100);
@@ -431,10 +431,10 @@ void CoinControlDialog::viewItemChanged(QTreeWidgetItem* item, int column)
         else {
             coinControl->Select(outpt);
             CTxIn vin(outpt);
-            int rounds = pwalletMain->GetInputCoinMixingRounds(vin);
-            if (coinControl->useObfuScation && rounds < nCoinMixingRounds) {
+            int rounds = pwalletMain->GetInputObfuscationRounds(vin);
+            if (coinControl->useObfuScation && rounds < nObfuscationRounds) {
                 QMessageBox::warning(this, windowTitle(),
-                    tr("Non-anonymized input selected. <b>CoinMixing will be disabled.</b><br><br>If you still want to use CoinMixing, please deselect all non-nonymized inputs first and then check CoinMixing checkbox again."),
+                    tr("Non-anonymized input selected. <b>Obfuscation will be disabled.</b><br><br>If you still want to use Obfuscation, please deselect all non-nonymized inputs first and then check Obfuscation checkbox again."),
                     QMessageBox::Ok, QMessageBox::Ok);
                 coinControl->useObfuScation = false;
             }
@@ -803,12 +803,12 @@ void CoinControlDialog::updateView()
 
             // ds+ rounds
             CTxIn vin = CTxIn(out.tx->GetHash(), out.i);
-            int rounds = pwalletMain->GetInputCoinMixingRounds(vin);
+            int rounds = pwalletMain->GetInputObfuscationRounds(vin);
 
             if (rounds >= 0)
-                itemOutput->setText(COLUMN_COINMIXING_ROUNDS, strPad(QString::number(rounds), 11, " "));
+                itemOutput->setText(COLUMN_OBFUSCATION_ROUNDS, strPad(QString::number(rounds), 11, " "));
             else
-                itemOutput->setText(COLUMN_COINMIXING_ROUNDS, strPad(QString(tr("n/a")), 11, " "));
+                itemOutput->setText(COLUMN_OBFUSCATION_ROUNDS, strPad(QString(tr("n/a")), 11, " "));
 
 
             // confirmations

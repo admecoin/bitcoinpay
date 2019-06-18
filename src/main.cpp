@@ -19,7 +19,7 @@
 #include "masternodeman.h"
 #include "merkleblock.h"
 #include "net.h"
-#include "coinmixing.h"
+#include "obfuscation.h"
 #include "pow.h"
 #include "spork.h"
 #include "swifttx.h"
@@ -1204,7 +1204,7 @@ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState& state, const CTransa
 
         // Don't accept it if it can't get into a block
         // but prioritise dstx and don't check fees for it
-        if (mapCoinMixingBroadcastTxes.count(hash)) {
+        if (mapobfuscationBroadcastTxes.count(hash)) {
             mempool.PrioritiseTransaction(hash, hash.ToString(), 1000, 0.1 * COIN);
         } else if (!ignoreFees) {
             CAmount txMinFee = GetMinRelayFee(tx, nSize, true);
@@ -4340,7 +4340,7 @@ bool static AlreadyHave(const CInv& inv)
                pcoinsTip->HaveCoins(inv.hash);
     }
     case MSG_DSTX:
-        return mapCoinMixingBroadcastTxes.count(inv.hash);
+        return mapobfuscationBroadcastTxes.count(inv.hash);
     case MSG_BLOCK:
         return mapBlockIndex.count(inv.hash);
     case MSG_TXLOCK_REQUEST:
@@ -4587,10 +4587,10 @@ void static ProcessGetData(CNode* pfrom)
                 }
 
                 if (!pushed && inv.type == MSG_DSTX) {
-                    if (mapCoinMixingBroadcastTxes.count(inv.hash)) {
+                    if (mapobfuscationBroadcastTxes.count(inv.hash)) {
                         CDataStream ss(SER_NETWORK, PROTOCOL_VERSION);
                         ss.reserve(1000);
-                        ss << mapCoinMixingBroadcastTxes[inv.hash].tx << mapCoinMixingBroadcastTxes[inv.hash].vin << mapCoinMixingBroadcastTxes[inv.hash].vchSig << mapCoinMixingBroadcastTxes[inv.hash].sigTime;
+                        ss << mapobfuscationBroadcastTxes[inv.hash].tx << mapobfuscationBroadcastTxes[inv.hash].vin << mapobfuscationBroadcastTxes[inv.hash].vchSig << mapobfuscationBroadcastTxes[inv.hash].sigTime;
 
                         pfrom->PushMessage("dstx", ss);
                         pushed = true;
@@ -4994,14 +4994,14 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
                 ignoreFees = true;
                 pmn->allowFreeTx = false;
 
-                if (!mapCoinMixingBroadcastTxes.count(tx.GetHash())) {
-                    CCoinMixingBroadcastTx dstx;
+                if (!mapobfuscationBroadcastTxes.count(tx.GetHash())) {
+                    CobfuscationBroadcastTx dstx;
                     dstx.tx = tx;
                     dstx.vin = vin;
                     dstx.vchSig = vchSig;
                     dstx.sigTime = sigTime;
 
-                    mapCoinMixingBroadcastTxes.insert(make_pair(tx.GetHash(), dstx));
+                    mapobfuscationBroadcastTxes.insert(make_pair(tx.GetHash(), dstx));
                 }
             }
         }
@@ -5418,7 +5418,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
         }
     } else {
         //probably one the extensions
-        obfuScationPool.ProcessMessageCoinMixing(pfrom, strCommand, vRecv);
+        obfuScationPool.ProcessMessageobfuscation(pfrom, strCommand, vRecv);
         mnodeman.ProcessMessage(pfrom, strCommand, vRecv);
         budget.ProcessMessage(pfrom, strCommand, vRecv);
         masternodePayments.ProcessMessageMasternodePayments(pfrom, strCommand, vRecv);

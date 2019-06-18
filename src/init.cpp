@@ -411,7 +411,7 @@ std::string HelpMessage(HelpMessageMode mode)
         strUsage += HelpMessageOpt("-stopafterblockimport", strprintf(_("Stop running after importing blocks from disk (default: %u)"), 0));
         strUsage += HelpMessageOpt("-sporkkey=<privkey>", _("Enable spork administration functionality with the appropriate private key."));
     }
-    string debugCategories = "addrman, alert, bench, coindb, db, lock, rand, rpc, selectcoins, mempool, net, bitcoinpay, (coinmixing, swifttx, masternode, mnpayments, mnbudget)"; // Don't translate these and qt below
+    string debugCategories = "addrman, alert, bench, coindb, db, lock, rand, rpc, selectcoins, mempool, net, bitcoinpay, (obfuscation, swifttx, masternode, mnpayments, mnbudget)"; // Don't translate these and qt below
     if (mode == HMM_BITCOIN_QT)
         debugCategories += ", qt";
     strUsage += HelpMessageOpt("-debug=<category>", strprintf(_("Output debugging information (default: %u, supplying <category> is optional)"), 0) + ". " +
@@ -441,7 +441,7 @@ std::string HelpMessage(HelpMessageMode mode)
     }
     strUsage += HelpMessageOpt("-shrinkdebugfile", _("Shrink debug.log file on client startup (default: 1 when no -debug)"));
     strUsage += HelpMessageOpt("-testnet", _("Use the test network"));
-    strUsage += HelpMessageOpt("-litemode=<n>", strprintf(_("Disable all bitcoinpay specific functionality (Masternodes, CoinMixing, SwiftTX, Budgeting) (0-1, default: %u)"), 0));
+    strUsage += HelpMessageOpt("-litemode=<n>", strprintf(_("Disable all bitcoinpay specific functionality (Masternodes, obfuscation, SwiftTX, Budgeting) (0-1, default: %u)"), 0));
 
 #ifdef ENABLE_WALLET
     strUsage += HelpMessageGroup(_("Staking options:"));
@@ -461,11 +461,11 @@ std::string HelpMessage(HelpMessageMode mode)
     strUsage += HelpMessageOpt("-masternodeaddr=<n>", strprintf(_("Set external address:port to get to this masternode (example: %s)"), "128.127.106.235:2609"));
     strUsage += HelpMessageOpt("-budgetvotemode=<mode>", _("Change automatic finalized budget voting behavior. mode=auto: Vote for only exact finalized budget match to my generated budget. (string, default: auto)"));
 
-    strUsage += HelpMessageGroup(_("CoinMixing options:"));
-    strUsage += HelpMessageOpt("-enablecoinmixing=<n>", strprintf(_("Enable use of automated coinmixing for funds stored in this wallet (0-1, default: %u)"), 0));
-    strUsage += HelpMessageOpt("-coinmixingrounds=<n>", strprintf(_("Use N separate masternodes to anonymize funds  (2-8, default: %u)"), 2));
+    strUsage += HelpMessageGroup(_("obfuscation options:"));
+    strUsage += HelpMessageOpt("-enableobfuscation=<n>", strprintf(_("Enable use of automated obfuscation for funds stored in this wallet (0-1, default: %u)"), 0));
+    strUsage += HelpMessageOpt("-obfuscationrounds=<n>", strprintf(_("Use N separate masternodes to anonymize funds  (2-8, default: %u)"), 2));
     strUsage += HelpMessageOpt("-anonymizebitcoinpayamount=<n>", strprintf(_("Keep N BPAY anonymized (default: %u)"), 0));
-    strUsage += HelpMessageOpt("-liquidityprovider=<n>", strprintf(_("Provide liquidity to CoinMixing by infrequently mixing coins on a continual basis (0-100, default: %u, 1=very frequent, high fees, 100=very infrequent, low fees)"), 0));
+    strUsage += HelpMessageOpt("-liquidityprovider=<n>", strprintf(_("Provide liquidity to obfuscation by infrequently mixing coins on a continual basis (0-100, default: %u, 1=very frequent, high fees, 100=very infrequent, low fees)"), 0));
 
     strUsage += HelpMessageGroup(_("SwiftTX options:"));
     strUsage += HelpMessageOpt("-enableswifttx=<n>", strprintf(_("Enable swifttx, show confirmations for locked transactions (bool, default: %s)"), "true"));
@@ -1513,7 +1513,7 @@ bool AppInit2(boost::thread_group& threadGroup)
     }
 
     if (fMasterNode) {
-        LogPrintf("IS COINMIXING MASTER NODE\n");
+        LogPrintf("IS obfuscation MASTER NODE\n");
         strMasterNodeAddr = GetArg("-masternodeaddr", "");
 
         LogPrintf(" addr %s\n", strMasterNodeAddr.c_str());
@@ -1558,17 +1558,17 @@ bool AppInit2(boost::thread_group& threadGroup)
         }
     }
 
-    fEnableCoinMixing = GetBoolArg("-enablecoinmixing", false);
+    fEnableobfuscation = GetBoolArg("-enableobfuscation", false);
 
-    nCoinMixingRounds = GetArg("-coinmixingrounds", 2);
-    if (nCoinMixingRounds > 16) nCoinMixingRounds = 16;
-    if (nCoinMixingRounds < 1) nCoinMixingRounds = 1;
+    nObfuscationRounds = GetArg("-obfuscationrounds", 2);
+    if (nObfuscationRounds > 16) nObfuscationRounds = 16;
+    if (nObfuscationRounds < 1) nObfuscationRounds = 1;
 
     nLiquidityProvider = GetArg("-liquidityprovider", 0); //0-100
     if (nLiquidityProvider != 0) {
         obfuScationPool.SetMinBlockSpacing(std::min(nLiquidityProvider, 100) * 15);
-        fEnableCoinMixing = true;
-        nCoinMixingRounds = 99999;
+        fEnableobfuscation = true;
+        nObfuscationRounds = 99999;
     }
 
     nAnonymizeBitcoinPayAmount = GetArg("-anonymizebitcoinpayamount", 0);
@@ -1579,7 +1579,7 @@ bool AppInit2(boost::thread_group& threadGroup)
     nRhenFASTDepth = GetArg("-swifttxdepth", nRhenFASTDepth);
     nRhenFASTDepth = std::min(std::max(nRhenFASTDepth, 0), 60);
 
-    //lite mode disables all Masternode and CoinMixing related functionality
+    //lite mode disables all Masternode and obfuscation related functionality
     fLiteMode = GetBoolArg("-litemode", false);
     if (fMasterNode && fLiteMode) {
         return InitError("You can not start a masternode in litemode");
@@ -1587,13 +1587,13 @@ bool AppInit2(boost::thread_group& threadGroup)
 
     LogPrintf("fLiteMode %d\n", fLiteMode);
     LogPrintf("nRhenFASTDepth %d\n", nRhenFASTDepth);
-    LogPrintf("CoinMixing rounds %d\n", nCoinMixingRounds);
+    LogPrintf("obfuscation rounds %d\n", nObfuscationRounds);
     LogPrintf("Anonymize bitcoinpay Amount %d\n", nAnonymizeBitcoinPayAmount);
     LogPrintf("Budget Mode %s\n", strBudgetMode.c_str());
 
     /* Denominations
 
-       A note about convertability. Within CoinMixing pools, each denomination
+       A note about convertability. Within obfuscation pools, each denomination
        is convertable to another.
 
        For example:

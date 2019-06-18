@@ -3,23 +3,23 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef COINMIXING_H
-#define COINMIXING_H
+#ifndef obfuscation_H
+#define obfuscation_H
 
 #include "main.h"
 #include "masternode-payments.h"
 #include "masternode-sync.h"
 #include "masternodeman.h"
-#include "coinmixing-relay.h"
+#include "obfuscation-relay.h"
 #include "sync.h"
 
 class CTxIn;
-class CCoinMixingPool;
+class CobfuscationPool;
 class CObfuScationSigner;
 class CMasterNodeVote;
 class CBitcoinAddress;
-class CCoinMixingQueue;
-class CCoinMixingBroadcastTx;
+class CobfuscationQueue;
+class CobfuscationBroadcastTx;
 class CActiveMasternode;
 
 // pool states for mixing
@@ -38,25 +38,25 @@ class CActiveMasternode;
 #define MASTERNODE_REJECTED 0
 #define MASTERNODE_RESET -1
 
-#define COINMIXING_QUEUE_TIMEOUT 30
-#define COINMIXING_SIGNING_TIMEOUT 15
+#define obfuscation_QUEUE_TIMEOUT 30
+#define obfuscation_SIGNING_TIMEOUT 15
 
 // used for anonymous relaying of inputs/outputs/sigs
-#define COINMIXING_RELAY_IN 1
-#define COINMIXING_RELAY_OUT 2
-#define COINMIXING_RELAY_SIG 3
+#define obfuscation_RELAY_IN 1
+#define obfuscation_RELAY_OUT 2
+#define obfuscation_RELAY_SIG 3
 
-static const int64_t COINMIXING_COLLATERAL = (10 * COIN);
-static const int64_t COINMIXING_POOL_MAX = (99999.99 * COIN);
+static const int64_t obfuscation_COLLATERAL = (10 * COIN);
+static const int64_t obfuscation_POOL_MAX = (99999.99 * COIN);
 
-extern CCoinMixingPool obfuScationPool;
+extern CobfuscationPool obfuScationPool;
 extern CObfuScationSigner obfuScationSigner;
-extern std::vector<CCoinMixingQueue> vecCoinMixingQueue;
+extern std::vector<CobfuscationQueue> vecobfuscationQueue;
 extern std::string strMasterNodePrivKey;
-extern map<uint256, CCoinMixingBroadcastTx> mapCoinMixingBroadcastTxes;
+extern map<uint256, CobfuscationBroadcastTx> mapobfuscationBroadcastTxes;
 extern CActiveMasternode activeMasternode;
 
-/** Holds an CoinMixing input
+/** Holds an obfuscation input
  */
 class CTxDSIn : public CTxIn
 {
@@ -75,7 +75,7 @@ public:
     }
 };
 
-/** Holds an CoinMixing output
+/** Holds an obfuscation output
  */
 class CTxDSOut : public CTxOut
 {
@@ -91,7 +91,7 @@ public:
     }
 };
 
-// A clients transaction in the coinmixing pool
+// A clients transaction in the obfuscation pool
 class CObfuScationEntry
 {
 public:
@@ -110,7 +110,7 @@ public:
         amount = 0;
     }
 
-    /// Add entries to use for CoinMixing
+    /// Add entries to use for obfuscation
     bool Add(const std::vector<CTxIn> vinIn, int64_t amountIn, const CTransaction collateralIn, const std::vector<CTxOut> voutIn)
     {
         if (isSet) {
@@ -151,15 +151,15 @@ public:
 
     bool IsExpired()
     {
-        return (GetTime() - addedTime) > COINMIXING_QUEUE_TIMEOUT; // 120 seconds
+        return (GetTime() - addedTime) > obfuscation_QUEUE_TIMEOUT; // 120 seconds
     }
 };
 
 
 /**
- * A currently inprogress CoinMixing merge and denomination information
+ * A currently inprogress obfuscation merge and denomination information
  */
-class CCoinMixingQueue
+class CobfuscationQueue
 {
 public:
     CTxIn vin;
@@ -168,7 +168,7 @@ public:
     bool ready; //ready for submit
     std::vector<unsigned char> vchSig;
 
-    CCoinMixingQueue()
+    CobfuscationQueue()
     {
         nDenom = 0;
         vin = CTxIn();
@@ -210,7 +210,7 @@ public:
         return false;
     }
 
-    /** Sign this CoinMixing transaction
+    /** Sign this obfuscation transaction
      *  \return true if all conditions are met:
      *     1) we have an active Masternode,
      *     2) we have a valid Masternode private key,
@@ -221,19 +221,19 @@ public:
 
     bool Relay();
 
-    /// Is this CoinMixing expired?
+    /// Is this obfuscation expired?
     bool IsExpired()
     {
-        return (GetTime() - time) > COINMIXING_QUEUE_TIMEOUT; // 120 seconds
+        return (GetTime() - time) > obfuscation_QUEUE_TIMEOUT; // 120 seconds
     }
 
     /// Check if we have a valid Masternode address
     bool CheckSignature();
 };
 
-/** Helper class to store CoinMixing transaction (tx) information.
+/** Helper class to store obfuscation transaction (tx) information.
  */
-class CCoinMixingBroadcastTx
+class CobfuscationBroadcastTx
 {
 public:
     CTransaction tx;
@@ -259,12 +259,12 @@ public:
     bool VerifyMessage(CPubKey pubkey, std::vector<unsigned char>& vchSig, std::string strMessage, std::string& errorMessage);
 };
 
-/** Used to keep track of current status of CoinMixing pool
+/** Used to keep track of current status of obfuscation pool
  */
-class CCoinMixingPool
+class CobfuscationPool
 {
 private:
-    mutable CCriticalSection cs_coinmixing;
+    mutable CCriticalSection cs_obfuscation;
 
     std::vector<CObfuScationEntry> entries; // Masternode/clients entries
     CMutableTransaction finalTransaction;   // the finalized transaction ready for signing
@@ -330,9 +330,9 @@ public:
     int sessionDenom;    //Users must submit an denom matching this
     int cachedNumBlocks; //used for the overview screen
 
-    CCoinMixingPool()
+    CobfuscationPool()
     {
-        /* CoinMixing uses collateral addresses to trust parties entering the pool
+        /* obfuscation uses collateral addresses to trust parties entering the pool
             to behave themselves. If they don't it takes their money. */
 
         cachedLastSuccess = 0;
@@ -345,26 +345,26 @@ public:
         SetNull();
     }
 
-    /** Process a CoinMixing message using the CoinMixing protocol
+    /** Process a obfuscation message using the obfuscation protocol
      * \param pfrom
      * \param strCommand lower case command string; valid values are:
      *        Command  | Description
      *        -------- | -----------------
-     *        dsa      | CoinMixing Acceptable
-     *        dsc      | CoinMixing Complete
-     *        dsf      | CoinMixing Final tx
-     *        dsi      | CoinMixing vIn
-     *        dsq      | CoinMixing Queue
-     *        dss      | CoinMixing Signal Final Tx
-     *        dssu     | CoinMixing status update
-     *        dssub    | CoinMixing Subscribe To
+     *        dsa      | obfuscation Acceptable
+     *        dsc      | obfuscation Complete
+     *        dsf      | obfuscation Final tx
+     *        dsi      | obfuscation vIn
+     *        dsq      | obfuscation Queue
+     *        dss      | obfuscation Signal Final Tx
+     *        dssu     | obfuscation status update
+     *        dssub    | obfuscation Subscribe To
      * \param vRecv
      */
-    void ProcessMessageCoinMixing(CNode* pfrom, std::string& strCommand, CDataStream& vRecv);
+    void ProcessMessageobfuscation(CNode* pfrom, std::string& strCommand, CDataStream& vRecv);
 
     void InitCollateralAddress()
     {
-        SetCollateralAddress(Params().CoinMixingPoolDummyAddress());
+        SetCollateralAddress(Params().obfuscationPoolDummyAddress());
     }
 
     void SetMinBlockSpacing(int minBlockSpacingIn)
@@ -411,11 +411,11 @@ public:
     void UpdateState(unsigned int newState)
     {
         if (fMasterNode && (newState == POOL_STATUS_ERROR || newState == POOL_STATUS_SUCCESS)) {
-            LogPrint("coinmixing", "CCoinMixingPool::UpdateState() - Can't set state to ERROR or SUCCESS as a Masternode. \n");
+            LogPrint("obfuscation", "CobfuscationPool::UpdateState() - Can't set state to ERROR or SUCCESS as a Masternode. \n");
             return;
         }
 
-        LogPrintf("CCoinMixingPool::UpdateState() == %d | %d \n", state, newState);
+        LogPrintf("CobfuscationPool::UpdateState() == %d | %d \n", state, newState);
         if (state != newState) {
             lastTimeChanged = GetTimeMillis();
             if (fMasterNode) {
@@ -443,11 +443,11 @@ public:
     /// Is this amount compatible with other client in the pool?
     bool IsCompatibleWithSession(int64_t nAmount, CTransaction txCollateral, int& errorID);
 
-    /// Passively run CoinMixing in the background according to the configuration in settings (only for QT)
+    /// Passively run obfuscation in the background according to the configuration in settings (only for QT)
     bool DoAutomaticDenominating(bool fDryRun = false);
-    bool PrepareCoinMixingDenominate();
+    bool PrepareobfuscationDenominate();
 
-    /// Check for process in CoinMixing
+    /// Check for process in obfuscation
     void Check();
     void CheckFinalTransaction();
     /// Charge fees to bad actors (Charge clients a fee if they're abusive)
@@ -467,8 +467,8 @@ public:
     /// Check that all inputs are signed. (Are all inputs signed?)
     bool SignaturesComplete();
     /// As a client, send a transaction to a Masternode to start the denomination process
-    void SendCoinMixingDenominate(std::vector<CTxIn>& vin, std::vector<CTxOut>& vout, int64_t amount);
-    /// Get Masternode updates about the progress of CoinMixing
+    void SendobfuscationDenominate(std::vector<CTxIn>& vin, std::vector<CTxOut>& vout, int64_t amount);
+    /// Get Masternode updates about the progress of obfuscation
     bool StatusUpdate(int newState, int newEntriesCount, int newAccepted, int& errorID, int newSessionID = 0);
 
     /// As a client, check and sign the final transaction
@@ -500,7 +500,7 @@ public:
     std::string GetMessageByID(int messageID);
 
     //
-    // Relay CoinMixing Messages
+    // Relay obfuscation Messages
     //
 
     void RelayFinalTransaction(const int sessionID, const CTransaction& txNew);

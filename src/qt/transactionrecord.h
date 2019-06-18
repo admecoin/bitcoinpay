@@ -81,11 +81,11 @@ public:
         MNReward,
         RecvFromOther,
         SendToSelf,
-        RecvWithCoinMixing,
-        CoinMixingDenominate,
-        CoinMixingCollateralPayment,
-        CoinMixingMakeCollaterals,
-        CoinMixingCreateDenominations,
+        RecvWithobfuscation,
+        obfuscationDenominate,
+        obfuscationCollateralPayment,
+        obfuscationMakeCollaterals,
+        obfuscationCreateDenominations,
         Obfuscated
     };
 

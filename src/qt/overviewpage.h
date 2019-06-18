@@ -35,7 +35,7 @@ public:
     void setClientModel(ClientModel* clientModel);
     void setWalletModel(WalletModel* walletModel);
     void showOutOfSyncWarning(bool fShow);
-    void updateCoinMixingProgress();
+    void updateobfuscationProgress();
 
 public slots:
     void obfuScationStatus();
@@ -62,9 +62,9 @@ private:
     TransactionFilterProxy* filter;
 
 private slots:
-    void toggleCoinMixing();
-    void coinmixingAuto();
-    void coinmixingReset();
+    void toggleobfuscation();
+    void obfuscationAuto();
+    void obfuscationReset();
     void updateDisplayUnit();
     void handleTransactionClicked(const QModelIndex& index);
     void updateAlerts(const QString& warnings);

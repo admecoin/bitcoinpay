@@ -956,7 +956,7 @@ MultiSend: %1</translation>
         <translation>Favor alterar para o "Modo de lista" para usar esta função.</translation>
     </message>
     <message>
-        <source>Non-anonymized input selected. &lt;b&gt;CoinMixing will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use CoinMixing, please deselect all non-nonymized inputs first and then check CoinMixing checkbox again.</source>
+        <source>Non-anonymized input selected. &lt;b&gt;obfuscation will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use obfuscation, please deselect all non-nonymized inputs first and then check obfuscation checkbox again.</source>
         <translation>Input não-anonimizado selecionado. &lt;b&gt;Ofuscação será desabilitada.&lt;/b&gt;&lt;br&gt;&lt;br&gt; Se você ainda quiser usar a Ofuscação, favor desmarcar todos os inputs não anônimos primeiro e então marque a opção de Ofuscação novamente.</translation>
     </message>
     <message>
@@ -1438,9 +1438,9 @@ Favor verificar o endereço e tente novamente.</translation>
     </message>
 </context>
 <context>
-    <name>CoinMixingConfig</name>
+    <name>obfuscationConfig</name>
     <message>
-        <source>Configure CoinMixing</source>
+        <source>Configure obfuscation</source>
         <translation>Configurar Ofuscação</translation>
     </message>
     <message>
@@ -1488,19 +1488,19 @@ Favor verificar o endereço e tente novamente.</translation>
         <translation>0.1 BPAY por 10000 BPAY que deixar anônima.</translation>
     </message>
     <message>
-        <source>CoinMixing Configuration</source>
+        <source>obfuscation Configuration</source>
         <translation>Configuração de ofuscação</translation>
     </message>
     <message>
-        <source>CoinMixing was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening bitcoinpay's configuration screen.</source>
+        <source>obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening bitcoinpay's configuration screen.</source>
         <translation>Ofuscação foi definida com sucesso para o básico (%1 e 2 rodadas) Você pode mudar isto a qualquer tempo ao abrir a configuração de tela bitcoinpay's.</translation>
     </message>
     <message>
-        <source>CoinMixing was successfully set to high (%1 and 8 rounds). You can change this at any time by opening bitcoinpay's configuration screen.</source>
+        <source>obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening bitcoinpay's configuration screen.</source>
         <translation>Ofuscação foi definida com sucesso para alto (%1 e 8 rodadas). Você pode mudar isto a qualquer tempo ao abrir a configuração de tela bitcoinpay's.</translation>
     </message>
     <message>
-        <source>CoinMixing was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening bitcoinpay's configuration screen.</source>
+        <source>obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening bitcoinpay's configuration screen.</source>
         <translation>Ofuscação foi definida com sucesso para máxima (%1 e 16 rodadas). Você pode mudar isto a qualquer tempo ao abrir a configuração de tela bitcoinpay's.</translation>
     </message>
 </context>
@@ -1586,7 +1586,7 @@ Favor verificar o endereço e tente novamente.</translation>
         <translation>Esta configuração determina a quantidade de masternodes individuais em que um input será feito anônimo. &lt;br/&gt;Mais rodadas de anonimidade darão um grau maior de privacidade, mas também custarão mais em taxas. </translation>
     </message>
     <message>
-        <source>CoinMixing rounds to use</source>
+        <source>obfuscation rounds to use</source>
         <translation>Rodadas de ofuscação para usar</translation>
     </message>
     <message>
@@ -1787,7 +1787,7 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation>Situação:</translation>
     </message>
     <message>
-        <source>CoinMixing Balance:</source>
+        <source>obfuscation Balance:</source>
         <translation>Saldo ofuscado:</translation>
     </message>
     <message>
@@ -1799,15 +1799,15 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation>Ativado/Desativado</translation>
     </message>
     <message>
-        <source>Try to manually submit a CoinMixing request.</source>
+        <source>Try to manually submit a obfuscation request.</source>
         <translation>Tente encaminhar uma requisição manualmente de Ofuscação.</translation>
     </message>
     <message>
-        <source>Reset the current status of CoinMixing (can interrupt CoinMixing if it's in the process of Mixing, which can cost you money!)</source>
+        <source>Reset the current status of obfuscation (can interrupt obfuscation if it's in the process of Mixing, which can cost you money!)</source>
         <translation>Reinicia o presente estado de ofuscação (pode interromper a Ofuscação se estiver em processo de Embaralhamento, o que pode lhe custar dinheiro!)</translation>
     </message>
     <message>
-        <source>CoinMixing</source>
+        <source>obfuscation</source>
         <translation>Ofuscação</translation>
     </message>
     <message>
@@ -1867,21 +1867,21 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation>Anonimizado</translation>
     </message>
     <message>
-        <source>Last CoinMixing message:
+        <source>Last obfuscation message:
 </source>
         <translation>Última mensagem de ofuscação:
 </translation>
     </message>
     <message>
-        <source>CoinMixing was successfully reset.</source>
+        <source>obfuscation was successfully reset.</source>
         <translation>Ofuscação foi reiniciada com sucesso.</translation>
     </message>
     <message>
-        <source>CoinMixing requires at least %1 to use.</source>
+        <source>obfuscation requires at least %1 to use.</source>
         <translation>Ofuscação requer pelo menos %1 para usar.</translation>
     </message>
     <message>
-        <source>Wallet is locked and user declined to unlock. Disabling CoinMixing.</source>
+        <source>Wallet is locked and user declined to unlock. Disabling obfuscation.</source>
         <translation>A carteira está travada e o usuário recusou o destravamento. Desabilitando a Ofuscação.</translation>
     </message>
     <message>
@@ -1889,11 +1889,11 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation>Foram encontrados inputos suficientes para anonimizar %1</translation>
     </message>
     <message>
-        <source>Start CoinMixing</source>
+        <source>Start obfuscation</source>
         <translation>Iniciar ofuscação</translation>
     </message>
     <message>
-        <source>Stop CoinMixing</source>
+        <source>Stop obfuscation</source>
         <translation>Parar ofuscação</translation>
     </message>
     <message>
@@ -2492,7 +2492,7 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation>Minimizar</translation>
     </message>
     <message>
-        <source>CoinMixing</source>
+        <source>obfuscation</source>
         <translation>Ofuscação</translation>
     </message>
     <message>
@@ -3172,7 +3172,7 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation>Recebido de</translation>
     </message>
     <message>
-        <source>Received via CoinMixing</source>
+        <source>Received via obfuscation</source>
         <translation>Recebido com Ofuscação</translation>
     </message>
     <message>
@@ -3458,11 +3458,11 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation>Deletar todas as transações da carteira e somente recuperar aquelas partes da blockchain através de -rescan na inicialização</translation>
     </message>
     <message>
-        <source>Disable all bitcoinpay specific functionality (Masternodes, CoinMixing, SwiftTX, Budgeting) (0-1, default: %u)</source>
+        <source>Disable all bitcoinpay specific functionality (Masternodes, obfuscation, SwiftTX, Budgeting) (0-1, default: %u)</source>
         <translation>Desabilitar todas as funcionalidades específicas bitcoinpay (Masternodes, Ofuscação, SwiftTX, Budgeting) (0-1, padrão: %u)</translation>
     </message>
     <message>
-        <source>Enable use of automated coinmixing for funds stored in this wallet (0-1, default: %u)</source>
+        <source>Enable use of automated obfuscation for funds stored in this wallet (0-1, default: %u)</source>
         <translation>Permitir o uso de ofuscação automática para fundos armazenados nesta carteira (0-1, padrão: %u)</translation>
     </message>
     <message>
@@ -3686,7 +3686,7 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation>erro: Carteira travada, não foi possível criar a transação!</translation>
     </message>
     <message>
-        <source>Error: You already have pending entries in the CoinMixing pool</source>
+        <source>Error: You already have pending entries in the obfuscation pool</source>
         <translation>Erro: Você já possui entradas pendentes na pool de Ofuscação</translation>
     </message>
     <message>
@@ -3806,11 +3806,11 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation>Manter N BPAY anônimo (padrão: %u)</translation>
     </message>
     <message>
-        <source>Last CoinMixing was too recent.</source>
+        <source>Last obfuscation was too recent.</source>
         <translation>Última ofuscação foi muito recente.</translation>
     </message>
     <message>
-        <source>Last successful CoinMixing action was too recent.</source>
+        <source>Last successful obfuscation action was too recent.</source>
         <translation>Última ação de ofuscação com sucesso foi muito recente.</translation>
     </message>
     <message>
@@ -3902,19 +3902,19 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation>Número de backups automáticos da carteira (padrão: 10)</translation>
     </message>
     <message>
-        <source>CoinMixing is idle.</source>
+        <source>obfuscation is idle.</source>
         <translation>Ofuscação está ociosa.</translation>
     </message>
     <message>
-        <source>CoinMixing options:</source>
+        <source>obfuscation options:</source>
         <translation>Opções de ofuscação:</translation>
     </message>
     <message>
-        <source>CoinMixing request complete:</source>
+        <source>obfuscation request complete:</source>
         <translation>Requisição de ofuscação completa:</translation>
     </message>
     <message>
-        <source>CoinMixing request incomplete:</source>
+        <source>obfuscation request incomplete:</source>
         <translation>Requisição de ofuscação incompleta:</translation>
     </message>
     <message>
@@ -4126,7 +4126,7 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation>Nome de usuário para conexões JSON-RPC</translation>
     </message>
     <message>
-        <source>Value more than CoinMixing pool maximum allows.</source>
+        <source>Value more than obfuscation pool maximum allows.</source>
         <translation>Valor maior que o máximo permitido pela pool de Ofuscação </translation>
     </message>
     <message>

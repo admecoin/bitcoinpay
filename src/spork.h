@@ -13,7 +13,7 @@
 #include "sync.h"
 #include "util.h"
 
-#include "coinmixing.h"
+#include "obfuscation.h"
 #include "protocol.h"
 #include <boost/lexical_cast.hpp>
 

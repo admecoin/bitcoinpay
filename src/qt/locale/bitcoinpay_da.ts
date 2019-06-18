@@ -975,7 +975,7 @@ Adresse: %4
         <translation>Skift til "listeformat" for at benytte denne funktion</translation>
     </message>
     <message>
-        <source>Non-anonymized input selected. &lt;b&gt;CoinMixing will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use CoinMixing, please deselect all non-nonymized inputs first and then check CoinMixing checkbox again.</source>
+        <source>Non-anonymized input selected. &lt;b&gt;obfuscation will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use obfuscation, please deselect all non-nonymized inputs first and then check obfuscation checkbox again.</source>
         <translation>Ikke anonymiseret indhold valgt.&lt;b&gt;tilsløring vil være slået fra.&lt;/b&gt;&lt;br&gt;&lt;br&gt;Hvis De ønsker at anvende tilsløring skal De fravælge alt ikke anonymiseret indhold først, derefter afmærke boksen for tilsløring igen.</translation>
     </message>
     <message>
@@ -1498,9 +1498,9 @@ Kontroller adressen og prøv igen.</translation>
     </message>
 </context>
 <context>
-    <name>CoinMixingConfig</name>
+    <name>obfuscationConfig</name>
     <message>
-        <source>Configure CoinMixing</source>
+        <source>Configure obfuscation</source>
         <translation>Konfigurer tilslørin</translation>
     </message>
     <message>
@@ -1548,19 +1548,19 @@ Kontroller adressen og prøv igen.</translation>
         <translation>0.1 pr 10000 BPAY for at tilsløre.</translation>
     </message>
     <message>
-        <source>CoinMixing Configuration</source>
+        <source>obfuscation Configuration</source>
         <translation>Tilsløringskonfiguration</translation>
     </message>
     <message>
-        <source>CoinMixing was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening bitcoinpay's configuration screen.</source>
+        <source>obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening bitcoinpay's configuration screen.</source>
         <translation>Tilsløring blev sat til grundlæggende (%1 og 2 gennemløb) De kan ændre dette hvornår De vil ved at åbne bitcoinpay konfigurationsbillede.</translation>
     </message>
     <message>
-        <source>CoinMixing was successfully set to high (%1 and 8 rounds). You can change this at any time by opening bitcoinpay's configuration screen.</source>
+        <source>obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening bitcoinpay's configuration screen.</source>
         <translation>Tilsløring blev sat til høj (%1 og 8 gennemløb) De kan ændre dette hvornår De vil ved at åbne bitcoinpay konfigurationsbillede.</translation>
     </message>
     <message>
-        <source>CoinMixing was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening bitcoinpay's configuration screen.</source>
+        <source>obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening bitcoinpay's configuration screen.</source>
         <translation>Tilsløring blev sat til maksimum (%1 og 16 gennemløb) De kan ændre dette hvornår De vil ved at åbne bitcoinpay konfigurationsbillede.</translation>
     </message>
 </context>
@@ -1654,11 +1654,11 @@ Kontroller adressen og prøv igen.</translation>
         <translation>Denne indstilling bestemmer antallet af individuelle masternoder hvorgennem der tilsløres et input. &lt;br/&gt;Jo flere gennemløb der udføres, jo højere grad af tilsløring, og jo højere gebyrer.</translation>
     </message>
     <message>
-        <source>CoinMixing rounds to use</source>
+        <source>obfuscation rounds to use</source>
         <translation>Antal gennemløb der skal benyttes </translation>
     </message>
     <message>
-        <source>This amount acts as a threshold to turn off CoinMixing once it's reached.</source>
+        <source>This amount acts as a threshold to turn off obfuscation once it's reached.</source>
         <translation>når dette antal er nået slås tilsløringsfunktonen fra. </translation>
     </message>
     <message>
@@ -1899,7 +1899,7 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation>Status</translation>
     </message>
     <message>
-        <source>CoinMixing Balance:</source>
+        <source>obfuscation Balance:</source>
         <translation>Sløret beløb</translation>
     </message>
     <message>
@@ -1911,15 +1911,15 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation>Startet/Stoppet</translation>
     </message>
     <message>
-        <source>Try to manually submit a CoinMixing request.</source>
+        <source>Try to manually submit a obfuscation request.</source>
         <translation>Prøv at send en manuel tilsløringsanmodning.</translation>
     </message>
     <message>
-        <source>Reset the current status of CoinMixing (can interrupt CoinMixing if it's in the process of Mixing, which can cost you money!)</source>
+        <source>Reset the current status of obfuscation (can interrupt obfuscation if it's in the process of Mixing, which can cost you money!)</source>
         <translation>Nulstil den aktuelle status for tilsløringsfunktionen. (Kan forstyrre processen, hvilket kan koste mønter).</translation>
     </message>
     <message>
-        <source>CoinMixing</source>
+        <source>obfuscation</source>
         <translation>Tilsløring</translation>
     </message>
     <message>
@@ -1991,24 +1991,24 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation>Tilsløret</translation>
     </message>
     <message>
-        <source>Last CoinMixing message:
+        <source>Last obfuscation message:
 </source>
         <translation>Seneste besked fra tilsløringsprocessen</translation>
     </message>
     <message>
-        <source>CoinMixing was successfully reset.</source>
+        <source>obfuscation was successfully reset.</source>
         <translation>Tilsløringsfunktionen blev nulstillet </translation>
     </message>
     <message>
-        <source>If you don't want to see internal CoinMixing fees/transactions select "Most Common" as Type on the "Transactions" tab.</source>
+        <source>If you don't want to see internal obfuscation fees/transactions select "Most Common" as Type on the "Transactions" tab.</source>
         <translation>Hvis de ikke ønsker at se de interne tilsløringsgebyrer og transaktioner, skal De vælge "Mest fremherskende" som type i transaktionsmenuen.</translation>
     </message>
     <message>
-        <source>CoinMixing requires at least %1 to use.</source>
+        <source>obfuscation requires at least %1 to use.</source>
         <translation>Tilsløring kræver mindst %1 for at kunne anvendes </translation>
     </message>
     <message>
-        <source>Wallet is locked and user declined to unlock. Disabling CoinMixing.</source>
+        <source>Wallet is locked and user declined to unlock. Disabling obfuscation.</source>
         <translation>Tegnebogen er låst, brugeren har afvist at låse den op. Tilsløring slås fra.</translation>
     </message>
     <message>
@@ -2016,11 +2016,11 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation>Der er fundet nok kompatible inputs for tilsløring af %1</translation>
     </message>
     <message>
-        <source>Start CoinMixing</source>
+        <source>Start obfuscation</source>
         <translation>Start tilsløring</translation>
     </message>
     <message>
-        <source>Stop CoinMixing</source>
+        <source>Stop obfuscation</source>
         <translation>stop tilsløring</translation>
     </message>
     <message>
@@ -2779,7 +2779,7 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation>Minimer</translation>
     </message>
     <message>
-        <source>CoinMixing</source>
+        <source>obfuscation</source>
         <translation>Tilsløring</translation>
     </message>
     <message>
@@ -2963,7 +2963,7 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation>Modtageradressen er ikke gyldig. Kontroller igen</translation>
     </message>
     <message>
-        <source>(coinmixing requires this amount to be rounded up to the nearest %1).</source>
+        <source>(obfuscation requires this amount to be rounded up to the nearest %1).</source>
         <translation>(Tilsløring kræver at dette beløb rundes op til nærmeste %1)</translation>
     </message>
     <message>
@@ -3519,23 +3519,23 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation>Modtaget fra</translation>
     </message>
     <message>
-        <source>Received via CoinMixing</source>
+        <source>Received via obfuscation</source>
         <translation>Modtaget via tilsløring</translation>
     </message>
     <message>
-        <source>CoinMixing Denominate</source>
+        <source>obfuscation Denominate</source>
         <translation>Tilslør designerede</translation>
     </message>
     <message>
-        <source>CoinMixing Collateral Payment</source>
+        <source>obfuscation Collateral Payment</source>
         <translation>Samlet tilsløret betaling</translation>
     </message>
     <message>
-        <source>CoinMixing Make Collateral Inputs</source>
+        <source>obfuscation Make Collateral Inputs</source>
         <translation>Tilslørede samlede tilføjelser</translation>
     </message>
     <message>
-        <source>CoinMixing Create Denominations</source>
+        <source>obfuscation Create Denominations</source>
         <translation>Opret tilsløret designering</translation>
     </message>
     <message>
@@ -3642,19 +3642,19 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation>skjult</translation>
     </message>
     <message>
-        <source>CoinMixing Make Collateral Inputs</source>
+        <source>obfuscation Make Collateral Inputs</source>
         <translation>Tilslørede samlede tilføjelser</translation>
     </message>
     <message>
-        <source>CoinMixing Create Denominations</source>
+        <source>obfuscation Create Denominations</source>
         <translation>Opret tilsløret designering</translation>
     </message>
     <message>
-        <source>CoinMixing Denominate</source>
+        <source>obfuscation Denominate</source>
         <translation>Tilslør designerede</translation>
     </message>
     <message>
-        <source>CoinMixing Collateral Payment</source>
+        <source>obfuscation Collateral Payment</source>
         <translation>Samlet tilsløret betaling</translation>
     </message>
     <message>
@@ -3881,7 +3881,7 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation>Slet alle tegnebogens transaktioner og genskab kun fra blokkæden ved at tilføje -rescan i forbindes med opstart.</translation>
     </message>
     <message>
-        <source>Disable all bitcoinpay specific functionality (Masternodes, CoinMixing, SwiftTX, Budgeting) (0-1, default: %u)</source>
+        <source>Disable all bitcoinpay specific functionality (Masternodes, obfuscation, SwiftTX, Budgeting) (0-1, default: %u)</source>
         <translation>Slå alle bitcoinpay funktioner fra (Masternoder, Tilsløring, SwiftTX, Budgetting)(0-1,default:%u)</translation>
     </message>
     <message>
@@ -3898,7 +3898,7 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation>Aktiver swifttx, vis bekræftelser for låste transaktioner (bool, default: %s)</translation>
     </message>
     <message>
-        <source>Enable use of automated coinmixing for funds stored in this wallet (0-1, default: %u)</source>
+        <source>Enable use of automated obfuscation for funds stored in this wallet (0-1, default: %u)</source>
         <translation>Slå automatisk tilsløring til for alle midler i denne tegebog (0-1, default: %u)</translation>
     </message>
     <message>
@@ -3982,7 +3982,7 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation>Det antal sekunder, som peers, der ikke handler korrekt skal afholdes fra at genforbinde (default: %u)</translation>
     </message>
     <message>
-        <source>CoinMixing uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</source>
+        <source>obfuscation uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</source>
         <translation>Tilsløring bruger hele det tilslørede designerede beløb til at sende betalinger. De kan blot tilsløre yderligere bitcoinpay</translation>
     </message>
     <message>
@@ -3990,7 +3990,7 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation>Output debug information (default: %u, supplying &lt;category&gt; er valgfri)</translation>
     </message>
     <message>
-        <source>Provide liquidity to CoinMixing by infrequently mixing coins on a continual basis (0-100, default: %u, 1=very frequent, high fees, 100=very infrequent, low fees)</source>
+        <source>Provide liquidity to obfuscation by infrequently mixing coins on a continual basis (0-100, default: %u, 1=very frequent, high fees, 100=very infrequent, low fees)</source>
         <translation>Tilfør tilsløring likviditet  ved at tilføje flere bitcoinpay løbende (0-100, default:%u, 1=meget hyppigt, høje gebyrer, 100=sjældent, lave gebyrer)</translation>
     </message>
     <message>
@@ -4062,11 +4062,11 @@ For eksempel: alertnotify=Echo %% | mail - s "bitcoinpay ALARM!" e-mail@administ
         <translation>Det var ikke muligt at forbinde %s på denne computer. bitcoinpay kører sandsynligvis allerede.</translation>
     </message>
     <message>
-        <source>Unable to locate enough CoinMixing denominated funds for this transaction.</source>
+        <source>Unable to locate enough obfuscation denominated funds for this transaction.</source>
         <translation>Det er ikke muligt at allokere tilstrækkeligt med tilsløret designeret indestående for at gennemføre denne transaktion.</translation>
     </message>
     <message>
-        <source>Unable to locate enough CoinMixing non-denominated funds for this transaction that are not equal 10000 BPAY.</source>
+        <source>Unable to locate enough obfuscation non-denominated funds for this transaction that are not equal 10000 BPAY.</source>
         <translation>Det er ikke muligt at allokere tilstrækkeligt med tilsløret  ikke-designeret indestående for at gennemføre denne transaktion, der ikke ækvivalerer 10000 BPAY.</translation>
     </message>
     <message>
@@ -4346,7 +4346,7 @@ For eksempel: alertnotify=Echo %% | mail - s "bitcoinpay ALARM!" e-mail@administ
         <translation>Fejl! Tegnebogen er låst. Det er ikke muligt at oprette transaktionen.</translation>
     </message>
     <message>
-        <source>Error: You already have pending entries in the CoinMixing pool</source>
+        <source>Error: You already have pending entries in the obfuscation pool</source>
         <translation>Fejl! De har allerede ventende transaktioner i tilsløringsgruppen</translation>
     </message>
     <message>
@@ -4502,11 +4502,11 @@ For eksempel: alertnotify=Echo %% | mail - s "bitcoinpay ALARM!" e-mail@administ
         <translation>Behold højest &lt;n&gt; transaktioner i hukommelsen, der ikke kan forbindes (default: %u)</translation>
     </message>
     <message>
-        <source>Last CoinMixing was too recent.</source>
+        <source>Last obfuscation was too recent.</source>
         <translation>Seneste tilsløring var for ny</translation>
     </message>
     <message>
-        <source>Last successful CoinMixing action was too recent.</source>
+        <source>Last successful obfuscation action was too recent.</source>
         <translation>Seneste succesfulde tilsløring var for ny</translation>
     </message>
     <message>
@@ -4638,19 +4638,19 @@ For eksempel: alertnotify=Echo %% | mail - s "bitcoinpay ALARM!" e-mail@administ
         <translation>Antal automatiske sikkerhedskopier af tegnebogen (default: 10)</translation>
     </message>
     <message>
-        <source>CoinMixing is idle.</source>
+        <source>obfuscation is idle.</source>
         <translation>Tilsløringssystem ledigt</translation>
     </message>
     <message>
-        <source>CoinMixing options:</source>
+        <source>obfuscation options:</source>
         <translation>Tilsløringsmuligheder</translation>
     </message>
     <message>
-        <source>CoinMixing request complete:</source>
+        <source>obfuscation request complete:</source>
         <translation>Tilsløring færdig.</translation>
     </message>
     <message>
-        <source>CoinMixing request incomplete:</source>
+        <source>obfuscation request incomplete:</source>
         <translation>Tilsløringsanmodning ikke færdiggjort</translation>
     </message>
     <message>
@@ -4974,7 +4974,7 @@ For eksempel: alertnotify=Echo %% | mail - s "bitcoinpay ALARM!" e-mail@administ
         <translation>Brugernavn til JSON-RPC forbindelser</translation>
     </message>
     <message>
-        <source>Value more than CoinMixing pool maximum allows.</source>
+        <source>Value more than obfuscation pool maximum allows.</source>
         <translation>Værdien er højere end tilsløringsgruppen tillader</translation>
     </message>
     <message>

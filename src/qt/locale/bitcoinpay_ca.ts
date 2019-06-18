@@ -570,13 +570,13 @@
     </message>
     </context>
 <context>
-    <name>CoinMixingConfig</name>
+    <name>obfuscationConfig</name>
     <message>
-        <source>Configure CoinMixing</source>
+        <source>Configure obfuscation</source>
         <translation>Configurar Ofuscació</translation>
     </message>
     <message>
-        <source>CoinMixing Configuration</source>
+        <source>obfuscation Configuration</source>
         <translation>Configuració d'Ofuscació</translation>
     </message>
     </context>
@@ -649,7 +649,7 @@
         <translation>Estat:</translation>
     </message>
     <message>
-        <source>CoinMixing</source>
+        <source>obfuscation</source>
         <translation>Ofuscació</translation>
     </message>
     <message>
@@ -665,11 +665,11 @@
         <translation>Desactivat</translation>
     </message>
     <message>
-        <source>Start CoinMixing</source>
+        <source>Start obfuscation</source>
         <translation>Iniciar Ofuscació</translation>
     </message>
     <message>
-        <source>Stop CoinMixing</source>
+        <source>Stop obfuscation</source>
         <translation>Aturar Ofuscació</translation>
     </message>
     <message>
@@ -936,7 +936,7 @@
         <translation>Minimitzar</translation>
     </message>
     <message>
-        <source>CoinMixing</source>
+        <source>obfuscation</source>
         <translation>Ofuscació</translation>
     </message>
     <message>
@@ -1210,7 +1210,7 @@
         <translation>Informació</translation>
     </message>
     <message>
-        <source>CoinMixing options:</source>
+        <source>obfuscation options:</source>
         <translation>Opcions d'ofuscació:</translation>
     </message>
     <message>

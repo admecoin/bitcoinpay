@@ -43,7 +43,7 @@ public:
         ThreadsScriptVerif,  // int
         DatabaseCache,       // int
         SpendZeroConfChange, // bool
-        CoinMixingRounds,   // int
+        ObfuscationRounds,   // int
         AnonymizeBitcoinPayAmount, //int
         ShowMasternodesTab,  // bool
         Listen,              // bool
@@ -89,7 +89,7 @@ private:
 
 signals:
     void displayUnitChanged(int unit);
-    void coinmixingRoundsChanged(int);
+    void ObfuscationRoundsChanged(int);
     void anonymizeBitcoinPayAmountChanged(int);
     void coinControlFeaturesChanged(bool);
 };

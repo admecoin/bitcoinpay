@@ -11,7 +11,7 @@
 
 #include "bitcoinunits.h"
 #include "guiutil.h"
-#include "coinmixing.h"
+#include "obfuscation.h"
 #include "optionsmodel.h"
 
 #include "main.h" // for MAX_SCRIPTCHECK_THREADS
@@ -211,8 +211,8 @@ void OptionsDialog::setMapper()
     mapper->addMapping(ui->thirdPartyTxUrls, OptionsModel::ThirdPartyTxUrls);
 
 
-    /* CoinMixing Rounds */
-    mapper->addMapping(ui->coinmixingRounds, OptionsModel::CoinMixingRounds);
+    /* obfuscation Rounds */
+    mapper->addMapping(ui->ObfuscationRounds, OptionsModel::ObfuscationRounds);
     mapper->addMapping(ui->anonymizeBitcoinPay, OptionsModel::AnonymizeBitcoinPayAmount);
     mapper->addMapping(ui->showMasternodesTab, OptionsModel::ShowMasternodesTab);
 }

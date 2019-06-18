@@ -1,5 +1,5 @@
 
-#include "coinmixing-relay.h"
+#include "obfuscation-relay.h"
 
 
 CObfuScationRelay::CObfuScationRelay()

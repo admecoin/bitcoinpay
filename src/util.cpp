@@ -112,14 +112,14 @@ string strMasterNodeAddr = "";
 bool fLiteMode = false;
 bool fEnableRhenFAST = true;
 int nRhenFASTDepth = 5;
-int nCoinMixingRounds = 2;
+int nObfuscationRounds = 2;
 int nAnonymizeBitcoinPayAmount = 1000;
 int nLiquidityProvider = 0;
 /** Spork enforcement enabled time */
 int64_t enforceMasternodePaymentsTime = 4085657524;
 bool fSucessfullyLoaded = false;
-bool fEnableCoinMixing = false;
-/** All denominations used by coinmixing */
+bool fEnableobfuscation = false;
+/** All denominations used by obfuscation */
 std::vector<int64_t> obfuScationDenominations;
 string strBudgetMode = "";
 
@@ -233,7 +233,7 @@ bool LogAcceptCategory(const char* category)
             // thread_specific_ptr automatically deletes the set when the thread ends.
             // "bitcoinpay" is a composite category enabling all bitcoinpay-related debug output
             if (ptrCategory->count(string("bitcoinpay"))) {
-                ptrCategory->insert(string("coinmixing"));
+                ptrCategory->insert(string("obfuscation"));
                 ptrCategory->insert(string("swifttx"));
                 ptrCategory->insert(string("masternode"));
                 ptrCategory->insert(string("mnpayments"));

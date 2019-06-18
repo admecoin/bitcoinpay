@@ -434,7 +434,7 @@
     </message>
     </context>
 <context>
-    <name>CoinMixingConfig</name>
+    <name>obfuscationConfig</name>
     </context>
 <context>
     <name>OpenURIDialog</name>
@@ -874,7 +874,7 @@
         <translation>Deletar todas as transações da carteira e somente recuperar aquelas partes do blockchain através de -rescan na inicialização</translation>
     </message>
     <message>
-        <source>Disable all bitcoinpay specific functionality (Masternodes, CoinMixing, SwiftTX, Budgeting) (0-1, default: %u)</source>
+        <source>Disable all bitcoinpay specific functionality (Masternodes, obfuscation, SwiftTX, Budgeting) (0-1, default: %u)</source>
         <translation>Desabilitar todas as funcionacilidades específicas da bitcoinpay (Masternodes, Ofuscação, SwiftTX, Budgeting) (0-1, default %u)</translation>
     </message>
     <message>
@@ -930,15 +930,15 @@
         <translation>Nenhum Masternode compatível encontrado.</translation>
     </message>
     <message>
-        <source>CoinMixing options:</source>
+        <source>obfuscation options:</source>
         <translation>Opções de ofuscação:</translation>
     </message>
     <message>
-        <source>CoinMixing request complete:</source>
+        <source>obfuscation request complete:</source>
         <translation>Requisição de ofuscação completa:</translation>
     </message>
     <message>
-        <source>CoinMixing request incomplete:</source>
+        <source>obfuscation request incomplete:</source>
         <translation>Requisição de ofuscação incompleta:</translation>
     </message>
     <message>
@@ -1222,7 +1222,7 @@
         <translation>Nome de usuário para conexões JSON-RPC</translation>
     </message>
     <message>
-        <source>Value more than CoinMixing pool maximum allows.</source>
+        <source>Value more than obfuscation pool maximum allows.</source>
         <translation>Valor maior do que o máximo permitido pela pool.</translation>
     </message>
     <message>

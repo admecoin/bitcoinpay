@@ -334,8 +334,8 @@ QString TransactionTableModel::formatTxType(const TransactionRecord* wtx) const
         return tr("Masternode Reward");
     case TransactionRecord::RecvFromOther:
         return tr("Received from");
-    case TransactionRecord::RecvWithCoinMixing:
-        return tr("Received via CoinMixing");
+    case TransactionRecord::RecvWithobfuscation:
+        return tr("Received via obfuscation");
     case TransactionRecord::SendToAddress:
     case TransactionRecord::SendToOther:
         return tr("Sent to");
@@ -345,14 +345,14 @@ QString TransactionTableModel::formatTxType(const TransactionRecord* wtx) const
         return tr("Minted");
     case TransactionRecord::Generated:
         return tr("Mined");
-    case TransactionRecord::CoinMixingDenominate:
-        return tr("CoinMixing Denominate");
-    case TransactionRecord::CoinMixingCollateralPayment:
-        return tr("CoinMixing Collateral Payment");
-    case TransactionRecord::CoinMixingMakeCollaterals:
-        return tr("CoinMixing Make Collateral Inputs");
-    case TransactionRecord::CoinMixingCreateDenominations:
-        return tr("CoinMixing Create Denominations");
+    case TransactionRecord::obfuscationDenominate:
+        return tr("obfuscation Denominate");
+    case TransactionRecord::obfuscationCollateralPayment:
+        return tr("obfuscation Collateral Payment");
+    case TransactionRecord::obfuscationMakeCollaterals:
+        return tr("obfuscation Make Collateral Inputs");
+    case TransactionRecord::obfuscationCreateDenominations:
+        return tr("obfuscation Create Denominations");
     case TransactionRecord::Obfuscated:
         return tr("Obfuscated");
 
@@ -368,7 +368,7 @@ QVariant TransactionTableModel::txAddressDecoration(const TransactionRecord* wtx
     case TransactionRecord::StakeMint:
     case TransactionRecord::MNReward:
         return QIcon(":/icons/tx_mined");
-    case TransactionRecord::RecvWithCoinMixing:
+    case TransactionRecord::RecvWithobfuscation:
     case TransactionRecord::RecvWithAddress:
     case TransactionRecord::RecvFromOther:
         return QIcon(":/icons/tx_input");
@@ -393,7 +393,7 @@ QString TransactionTableModel::formatTxToAddress(const TransactionRecord* wtx, b
         return QString::fromStdString(wtx->address) + watchAddress;
     case TransactionRecord::RecvWithAddress:
     case TransactionRecord::MNReward:
-    case TransactionRecord::RecvWithCoinMixing:
+    case TransactionRecord::RecvWithobfuscation:
     case TransactionRecord::SendToAddress:
     case TransactionRecord::Generated:
     case TransactionRecord::StakeMint:

@@ -1,5 +1,5 @@
-#include "coinmixingconfig.h"
-#include "ui_coinmixingconfig.h"
+#include "obfuscationconfig.h"
+#include "ui_obfuscationconfig.h"
 
 #include "bitcoinunits.h"
 #include "guiconstants.h"
@@ -12,8 +12,8 @@
 #include <QPushButton>
 #include <QSettings>
 
-CoinMixingConfig::CoinMixingConfig(QWidget* parent) : QDialog(parent),
-                                                        ui(new Ui::CoinMixingConfig),
+ObfuscationConfig::ObfuscationConfig(QWidget* parent) : QDialog(parent),
+                                                        ui(new Ui::ObfuscationConfig),
                                                         model(0)
 {
     ui->setupUi(this);
@@ -23,65 +23,65 @@ CoinMixingConfig::CoinMixingConfig(QWidget* parent) : QDialog(parent),
     connect(ui->buttonMax, SIGNAL(clicked()), this, SLOT(clickMax()));
 }
 
-CoinMixingConfig::~CoinMixingConfig()
+ObfuscationConfig::~ObfuscationConfig()
 {
     delete ui;
 }
 
-void CoinMixingConfig::setModel(WalletModel* model)
+void ObfuscationConfig::setModel(WalletModel* model)
 {
     this->model = model;
 }
 
-void CoinMixingConfig::clickBasic()
+void ObfuscationConfig::clickBasic()
 {
     configure(true, 1000, 2);
 
     QString strAmount(BitcoinUnits::formatWithUnit(
         model->getOptionsModel()->getDisplayUnit(), 1000 * COIN));
-    QMessageBox::information(this, tr("CoinMixing Configuration"),
+    QMessageBox::information(this, tr("Obfuscation Configuration"),
         tr(
-            "CoinMixing was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening bitcoinpay's configuration screen.")
+            "Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening bitcoinpay's configuration screen.")
             .arg(strAmount));
 
     close();
 }
 
-void CoinMixingConfig::clickHigh()
+void ObfuscationConfig::clickHigh()
 {
     configure(true, 1000, 8);
 
     QString strAmount(BitcoinUnits::formatWithUnit(
         model->getOptionsModel()->getDisplayUnit(), 1000 * COIN));
-    QMessageBox::information(this, tr("CoinMixing Configuration"),
+    QMessageBox::information(this, tr("Obfuscation Configuration"),
         tr(
-            "CoinMixing was successfully set to high (%1 and 8 rounds). You can change this at any time by opening bitcoinpay's configuration screen.")
+            "Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening bitcoinpay's configuration screen.")
             .arg(strAmount));
 
     close();
 }
 
-void CoinMixingConfig::clickMax()
+void ObfuscationConfig::clickMax()
 {
     configure(true, 1000, 16);
 
     QString strAmount(BitcoinUnits::formatWithUnit(
         model->getOptionsModel()->getDisplayUnit(), 1000 * COIN));
-    QMessageBox::information(this, tr("CoinMixing Configuration"),
+    QMessageBox::information(this, tr("Obfuscation Configuration"),
         tr(
-            "CoinMixing was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening bitcoinpay's configuration screen.")
+            "Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening bitcoinpay's configuration screen.")
             .arg(strAmount));
 
     close();
 }
 
-void CoinMixingConfig::configure(bool enabled, int coins, int rounds)
+void ObfuscationConfig::configure(bool enabled, int coins, int rounds)
 {
     QSettings settings;
 
-    settings.setValue("nCoinMixingRounds", rounds);
+    settings.setValue("nObfuscationRounds", rounds);
     settings.setValue("nAnonymizeBitcoinPayAmount", coins);
 
-    nCoinMixingRounds = rounds;
+    nObfuscationRounds = rounds;
     nAnonymizeBitcoinPayAmount = coins;
 }

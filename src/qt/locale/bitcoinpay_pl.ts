@@ -1132,7 +1132,7 @@ Proszę sprawdzić adres i spróbować ponownie</translation>
     </message>
 </context>
 <context>
-    <name>CoinMixingConfig</name>
+    <name>obfuscationConfig</name>
     <message>
         <source>Basic Privacy</source>
         <translation>Podstawowa prywatność</translation>

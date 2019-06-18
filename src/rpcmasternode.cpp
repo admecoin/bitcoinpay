@@ -52,11 +52,11 @@ void SendMoney(const CTxDestination& address, CAmount nValue, CWalletTx& wtxNew,
         throw JSONRPCError(RPC_WALLET_ERROR, "Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.");
 }
 
-Value coinmixing(const Array& params, bool fHelp)
+Value obfuscation(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() == 0)
         throw runtime_error(
-            "coinmixing <bitcoinpayaddress> <amount>\n"
+            "obfuscation <bitcoinpayaddress> <amount>\n"
             "bitcoinpayaddress, reset, or auto (AutoDenominate)"
             "<amount> is a real and will be rounded to the next 0.1" +
             HelpRequiringPassphrase());
@@ -73,12 +73,12 @@ Value coinmixing(const Array& params, bool fHelp)
 
     if (params[0].get_str() == "reset") {
         obfuScationPool.Reset();
-        return "successfully reset coinmixing";
+        return "successfully reset obfuscation";
     }
 
     if (params.size() != 2)
         throw runtime_error(
-            "coinmixing <bitcoinpayaddress> <amount>\n"
+            "obfuscation <bitcoinpayaddress> <amount>\n"
             "bitcoinpayaddress, denominate, or auto (AutoDenominate)"
             "<amount> is a real and will be rounded to the next 0.1" +
             HelpRequiringPassphrase());
@@ -344,7 +344,7 @@ Value getmasternodecount (const Array& params, bool fHelp)
             "{\n"
             "  \"total\": n,        (numeric) Total masternodes\n"
             "  \"stable\": n,       (numeric) Stable count\n"
-            "  \"obfcompat\": n,    (numeric) CoinMixing Compatible\n"
+            "  \"obfcompat\": n,    (numeric) obfuscation Compatible\n"
             "  \"enabled\": n,      (numeric) Enabled masternodes\n"
             "  \"inqueue\": n       (numeric) Masternodes in queue\n"
             "}\n"

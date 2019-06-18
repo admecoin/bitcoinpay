@@ -69,19 +69,19 @@ SendCoinsDialog::SendCoinsDialog(QWidget* parent) : QDialog(parent),
     bool useObfuScation = settings.value("bUseObfuScation").toBool();
     bool useSwiftTX = settings.value("buseSwiftTX").toBool();
     if (fLiteMode) {
-        ui->checkUseCoinMixing->setChecked(false);
-        ui->checkUseCoinMixing->setVisible(false);
+        ui->checkUseobfuscation->setChecked(false);
+        ui->checkUseobfuscation->setVisible(false);
         ui->checkRhenFAST->setVisible(false);
         CoinControlDialog::coinControl->useObfuScation = false;
         CoinControlDialog::coinControl->useSwiftTX = false;
     } else {
-        ui->checkUseCoinMixing->setChecked(useObfuScation);
+        ui->checkUseobfuscation->setChecked(useObfuScation);
         ui->checkRhenFAST->setChecked(useSwiftTX);
         CoinControlDialog::coinControl->useObfuScation = useObfuScation;
         CoinControlDialog::coinControl->useSwiftTX = useSwiftTX;
     }
 
-    connect(ui->checkUseCoinMixing, SIGNAL(stateChanged(int)), this, SLOT(updateDisplayUnit()));
+    connect(ui->checkUseobfuscation, SIGNAL(stateChanged(int)), this, SLOT(updateDisplayUnit()));
     connect(ui->checkRhenFAST, SIGNAL(stateChanged(int)), this, SLOT(updateRhenFAST()));
 
     // Coin Control: clipboard actions
@@ -269,14 +269,14 @@ void SendCoinsDialog::on_sendButton_clicked()
     QString strFee = "";
     recipients[0].inputType = ONLY_DENOMINATED;
 
-    if (ui->checkUseCoinMixing->isChecked()) {
+    if (ui->checkUseobfuscation->isChecked()) {
         recipients[0].inputType = ONLY_DENOMINATED;
         strFunds = tr("using") + " <b>" + tr("anonymous funds") + "</b>";
         QString strNearestAmount(
             BitcoinUnits::formatWithUnit(
                 model->getOptionsModel()->getDisplayUnit(), 0.1 * COIN));
         strFee = QString(tr(
-            "(coinmixing requires this amount to be rounded up to the nearest %1).")
+            "(obfuscation requires this amount to be rounded up to the nearest %1).")
                              .arg(strNearestAmount));
     } else {
         recipients[0].inputType = ALL_COINS;
@@ -572,8 +572,8 @@ void SendCoinsDialog::setBalance(const CAmount& balance, const CAmount& unconfir
     if (model && model->getOptionsModel()) {
         uint64_t bal = 0;
         QSettings settings;
-        settings.setValue("bUseObfuScation", ui->checkUseCoinMixing->isChecked());
-        if (ui->checkUseCoinMixing->isChecked()) {
+        settings.setValue("bUseObfuScation", ui->checkUseobfuscation->isChecked());
+        if (ui->checkUseobfuscation->isChecked()) {
             bal = anonymizedBalance;
         } else {
             bal = balance;
@@ -590,7 +590,7 @@ void SendCoinsDialog::updateDisplayUnit()
 
     setBalance(model->getBalance(), model->getUnconfirmedBalance(), model->getImmatureBalance(), model->getAnonymizedBalance(),
         model->getWatchBalance(), model->getWatchUnconfirmedBalance(), model->getWatchImmatureBalance());
-    CoinControlDialog::coinControl->useObfuScation = ui->checkUseCoinMixing->isChecked();
+    CoinControlDialog::coinControl->useObfuScation = ui->checkUseobfuscation->isChecked();
     coinControlUpdateLabels();
     ui->customFee->setDisplayUnit(model->getOptionsModel()->getDisplayUnit());
     updateMinFeeLabel();
@@ -943,7 +943,7 @@ void SendCoinsDialog::coinControlUpdateLabels()
             CoinControlDialog::payAmounts.append(entry->getValue().amount);
     }
 
-    ui->checkUseCoinMixing->setChecked(CoinControlDialog::coinControl->useObfuScation);
+    ui->checkUseobfuscation->setChecked(CoinControlDialog::coinControl->useObfuScation);
 
     if (CoinControlDialog::coinControl->HasSelected()) {
         // actual coin control calculation

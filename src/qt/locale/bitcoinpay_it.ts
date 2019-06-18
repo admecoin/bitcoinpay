@@ -955,7 +955,7 @@ MultiSend: %1</translation>
     </message>
     </context>
 <context>
-    <name>CoinMixingConfig</name>
+    <name>obfuscationConfig</name>
     </context>
 <context>
     <name>OpenURIDialog</name>

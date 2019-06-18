@@ -72,13 +72,13 @@ void OptionsModel::Init()
         settings.setValue("fCoinControlFeatures", false);
     fCoinControlFeatures = settings.value("fCoinControlFeatures", false).toBool();
 
-    if (!settings.contains("nCoinMixingRounds"))
-        settings.setValue("nCoinMixingRounds", 2);
+    if (!settings.contains("nObfuscationRounds"))
+        settings.setValue("nObfuscationRounds", 2);
 
     if (!settings.contains("nAnonymizeBitcoinPayAmount"))
         settings.setValue("nAnonymizeBitcoinPayAmount", 1000);
 
-    nCoinMixingRounds = settings.value("nCoinMixingRounds").toLongLong();
+    nObfuscationRounds = settings.value("nObfuscationRounds").toLongLong();
     nAnonymizeBitcoinPayAmount = settings.value("nAnonymizeBitcoinPayAmount").toLongLong();
 
     if (!settings.contains("fShowMasternodesTab"))
@@ -144,8 +144,8 @@ void OptionsModel::Init()
     if (!SoftSetArg("-lang", settings.value("language").toString().toStdString()))
         addOverriddenOption("-lang");
 
-    if (settings.contains("nCoinMixingRounds"))
-        SoftSetArg("-coinmixingrounds", settings.value("nCoinMixingRounds").toString().toStdString());
+    if (settings.contains("nObfuscationRounds"))
+        SoftSetArg("-obfuscationrounds", settings.value("nObfuscationRounds").toString().toStdString());
     if (settings.contains("nAnonymizeBitcoinPayAmount"))
         SoftSetArg("-anonymizebitcoinpayamount", settings.value("nAnonymizeBitcoinPayAmount").toString().toStdString());
 
@@ -225,8 +225,8 @@ QVariant OptionsModel::data(const QModelIndex& index, int role) const
             return settings.value("nDatabaseCache");
         case ThreadsScriptVerif:
             return settings.value("nThreadsScriptVerif");
-        case CoinMixingRounds:
-            return QVariant(nCoinMixingRounds);
+        case ObfuscationRounds:
+            return QVariant(nObfuscationRounds);
         case AnonymizeBitcoinPayAmount:
             return QVariant(nAnonymizeBitcoinPayAmount);
         case Listen:
@@ -332,10 +332,10 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
                 setRestartRequired(true);
             }
             break;
-        case CoinMixingRounds:
-            nCoinMixingRounds = value.toInt();
-            settings.setValue("nCoinMixingRounds", nCoinMixingRounds);
-            emit coinmixingRoundsChanged(nCoinMixingRounds);
+        case ObfuscationRounds:
+            nObfuscationRounds = value.toInt();
+            settings.setValue("nObfuscationRounds", nObfuscationRounds);
+            emit ObfuscationRoundsChanged(nObfuscationRounds);
             break;
         case AnonymizeBitcoinPayAmount:
             nAnonymizeBitcoinPayAmount = value.toInt();

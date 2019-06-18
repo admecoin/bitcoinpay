@@ -999,8 +999,8 @@ Address: %4
         <translation>Please switch to "List mode" to use this function.</translation>
     </message>
     <message>
-        <source>Non-anonymized input selected. &lt;b&gt;CoinMixing will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use CoinMixing, please deselect all non-nonymized inputs first and then check CoinMixing checkbox again.</source>
-        <translation>Non-anonymized input selected. &lt;b&gt;CoinMixing will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use CoinMixing, please deselect all non-nonymized inputs first and then check CoinMixing checkbox again.</translation>
+        <source>Non-anonymized input selected. &lt;b&gt;obfuscation will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use obfuscation, please deselect all non-nonymized inputs first and then check obfuscation checkbox again.</source>
+        <translation>Non-anonymized input selected. &lt;b&gt;obfuscation will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use obfuscation, please deselect all non-nonymized inputs first and then check obfuscation checkbox again.</translation>
     </message>
     <message>
         <source>highest</source>
@@ -1522,10 +1522,10 @@ Please check the address and try again.</translation>
     </message>
 </context>
 <context>
-    <name>CoinMixingConfig</name>
+    <name>obfuscationConfig</name>
     <message>
-        <source>Configure CoinMixing</source>
-        <translation>Configure CoinMixing</translation>
+        <source>Configure obfuscation</source>
+        <translation>Configure obfuscation</translation>
     </message>
     <message>
         <source>Basic Privacy</source>
@@ -1572,20 +1572,20 @@ Please check the address and try again.</translation>
         <translation>0.1 BPAY per 10000 BPAY you anonymize.</translation>
     </message>
     <message>
-        <source>CoinMixing Configuration</source>
-        <translation>CoinMixing Configuration</translation>
+        <source>obfuscation Configuration</source>
+        <translation>obfuscation Configuration</translation>
     </message>
     <message>
-        <source>CoinMixing was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening bitcoinpay's configuration screen.</source>
-        <translation>CoinMixing was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening bitcoinpay's configuration screen.</translation>
+        <source>obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening bitcoinpay's configuration screen.</source>
+        <translation>obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening bitcoinpay's configuration screen.</translation>
     </message>
     <message>
-        <source>CoinMixing was successfully set to high (%1 and 8 rounds). You can change this at any time by opening bitcoinpay's configuration screen.</source>
-        <translation>CoinMixing was successfully set to high (%1 and 8 rounds). You can change this at any time by opening bitcoinpay's configuration screen.</translation>
+        <source>obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening bitcoinpay's configuration screen.</source>
+        <translation>obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening bitcoinpay's configuration screen.</translation>
     </message>
     <message>
-        <source>CoinMixing was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening bitcoinpay's configuration screen.</source>
-        <translation>CoinMixing was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening bitcoinpay's configuration screen.</translation>
+        <source>obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening bitcoinpay's configuration screen.</source>
+        <translation>obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening bitcoinpay's configuration screen.</translation>
     </message>
 </context>
 <context>
@@ -1678,12 +1678,12 @@ Please check the address and try again.</translation>
         <translation>This setting determines the amount of individual masternodes that an input will be anonymized through.&lt;br/&gt;More rounds of anonymization gives a higher degree of privacy, but also costs more in fees.</translation>
     </message>
     <message>
-        <source>CoinMixing rounds to use</source>
-        <translation>CoinMixing rounds to use</translation>
+        <source>obfuscation rounds to use</source>
+        <translation>obfuscation rounds to use</translation>
     </message>
     <message>
-        <source>This amount acts as a threshold to turn off CoinMixing once it's reached.</source>
-        <translation>This amount acts as a threshold to turn off CoinMixing once it's reached.</translation>
+        <source>This amount acts as a threshold to turn off obfuscation once it's reached.</source>
+        <translation>This amount acts as a threshold to turn off obfuscation once it's reached.</translation>
     </message>
     <message>
         <source>Amount of bitcoinpay to keep anonymized</source>
@@ -1923,8 +1923,8 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation>Status:</translation>
     </message>
     <message>
-        <source>CoinMixing Balance:</source>
-        <translation>CoinMixing Balance:</translation>
+        <source>obfuscation Balance:</source>
+        <translation>obfuscation Balance:</translation>
     </message>
     <message>
         <source>0 BPAY / 0 Rounds</source>
@@ -1935,16 +1935,16 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation>Enabled/Disabled</translation>
     </message>
     <message>
-        <source>Try to manually submit a CoinMixing request.</source>
-        <translation>Try to manually submit a CoinMixing request.</translation>
+        <source>Try to manually submit a obfuscation request.</source>
+        <translation>Try to manually submit a obfuscation request.</translation>
     </message>
     <message>
-        <source>Reset the current status of CoinMixing (can interrupt CoinMixing if it's in the process of Mixing, which can cost you money!)</source>
-        <translation>Reset the current status of CoinMixing (can interrupt CoinMixing if it's in the process of Mixing, which can cost you money!)</translation>
+        <source>Reset the current status of obfuscation (can interrupt obfuscation if it's in the process of Mixing, which can cost you money!)</source>
+        <translation>Reset the current status of obfuscation (can interrupt obfuscation if it's in the process of Mixing, which can cost you money!)</translation>
     </message>
     <message>
-        <source>CoinMixing</source>
-        <translation>CoinMixing</translation>
+        <source>obfuscation</source>
+        <translation>obfuscation</translation>
     </message>
     <message>
         <source>Completion:</source>
@@ -2023,38 +2023,38 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation><numerusform>Denominated inputs have %5 of %n rounds on average</numerusform><numerusform>Denominated inputs have %5 of %n rounds on average</numerusform></translation>
     </message>
     <message>
-        <source>Last CoinMixing message:
+        <source>Last obfuscation message:
 </source>
-        <translation>Last CoinMixing message:
+        <translation>Last obfuscation message:
 </translation>
     </message>
     <message>
-        <source>CoinMixing was successfully reset.</source>
-        <translation>CoinMixing was successfully reset.</translation>
+        <source>obfuscation was successfully reset.</source>
+        <translation>obfuscation was successfully reset.</translation>
     </message>
     <message>
-        <source>If you don't want to see internal CoinMixing fees/transactions select "Most Common" as Type on the "Transactions" tab.</source>
-        <translation>If you don't want to see internal CoinMixing fees/transactions select "Most Common" as Type on the "Transactions" tab.</translation>
+        <source>If you don't want to see internal obfuscation fees/transactions select "Most Common" as Type on the "Transactions" tab.</source>
+        <translation>If you don't want to see internal obfuscation fees/transactions select "Most Common" as Type on the "Transactions" tab.</translation>
     </message>
     <message>
-        <source>CoinMixing requires at least %1 to use.</source>
-        <translation>CoinMixing requires at least %1 to use.</translation>
+        <source>obfuscation requires at least %1 to use.</source>
+        <translation>obfuscation requires at least %1 to use.</translation>
     </message>
     <message>
-        <source>Wallet is locked and user declined to unlock. Disabling CoinMixing.</source>
-        <translation>Wallet is locked and user declined to unlock. Disabling CoinMixing.</translation>
+        <source>Wallet is locked and user declined to unlock. Disabling obfuscation.</source>
+        <translation>Wallet is locked and user declined to unlock. Disabling obfuscation.</translation>
     </message>
     <message>
         <source>Found enough compatible inputs to anonymize %1</source>
         <translation>Found enough compatible inputs to anonymize %1</translation>
     </message>
     <message>
-        <source>Start CoinMixing</source>
-        <translation>Start CoinMixing</translation>
+        <source>Start obfuscation</source>
+        <translation>Start obfuscation</translation>
     </message>
     <message>
-        <source>Stop CoinMixing</source>
-        <translation>Stop CoinMixing</translation>
+        <source>Stop obfuscation</source>
+        <translation>Stop obfuscation</translation>
     </message>
     <message>
         <source>Mixed</source>
@@ -2812,8 +2812,8 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation>Minimize</translation>
     </message>
     <message>
-        <source>CoinMixing</source>
-        <translation>CoinMixing</translation>
+        <source>obfuscation</source>
+        <translation>obfuscation</translation>
     </message>
     <message>
         <source>per kilobyte</source>
@@ -2996,8 +2996,8 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation>The recipient address is not valid, please recheck.</translation>
     </message>
     <message>
-        <source>(coinmixing requires this amount to be rounded up to the nearest %1).</source>
-        <translation>(coinmixing requires this amount to be rounded up to the nearest %1).</translation>
+        <source>(obfuscation requires this amount to be rounded up to the nearest %1).</source>
+        <translation>(obfuscation requires this amount to be rounded up to the nearest %1).</translation>
     </message>
     <message>
         <source> split into %1 outputs using the UTXO splitter.</source>
@@ -3568,24 +3568,24 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation>Received from</translation>
     </message>
     <message>
-        <source>Received via CoinMixing</source>
-        <translation>Received via CoinMixing</translation>
+        <source>Received via obfuscation</source>
+        <translation>Received via obfuscation</translation>
     </message>
     <message>
-        <source>CoinMixing Denominate</source>
-        <translation>CoinMixing Denominate</translation>
+        <source>obfuscation Denominate</source>
+        <translation>obfuscation Denominate</translation>
     </message>
     <message>
-        <source>CoinMixing Collateral Payment</source>
-        <translation>CoinMixing Collateral Payment</translation>
+        <source>obfuscation Collateral Payment</source>
+        <translation>obfuscation Collateral Payment</translation>
     </message>
     <message>
-        <source>CoinMixing Make Collateral Inputs</source>
-        <translation>CoinMixing Make Collateral Inputs</translation>
+        <source>obfuscation Make Collateral Inputs</source>
+        <translation>obfuscation Make Collateral Inputs</translation>
     </message>
     <message>
-        <source>CoinMixing Create Denominations</source>
-        <translation>CoinMixing Create Denominations</translation>
+        <source>obfuscation Create Denominations</source>
+        <translation>obfuscation Create Denominations</translation>
     </message>
     <message>
         <source>Sent to</source>
@@ -3691,20 +3691,20 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation>Obfuscated</translation>
     </message>
     <message>
-        <source>CoinMixing Make Collateral Inputs</source>
-        <translation>CoinMixing Make Collateral Inputs</translation>
+        <source>obfuscation Make Collateral Inputs</source>
+        <translation>obfuscation Make Collateral Inputs</translation>
     </message>
     <message>
-        <source>CoinMixing Create Denominations</source>
-        <translation>CoinMixing Create Denominations</translation>
+        <source>obfuscation Create Denominations</source>
+        <translation>obfuscation Create Denominations</translation>
     </message>
     <message>
-        <source>CoinMixing Denominate</source>
-        <translation>CoinMixing Denominate</translation>
+        <source>obfuscation Denominate</source>
+        <translation>obfuscation Denominate</translation>
     </message>
     <message>
-        <source>CoinMixing Collateral Payment</source>
-        <translation>CoinMixing Collateral Payment</translation>
+        <source>obfuscation Collateral Payment</source>
+        <translation>obfuscation Collateral Payment</translation>
     </message>
     <message>
         <source>To yourself</source>
@@ -3930,8 +3930,8 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation>Delete all wallet transactions and only recover those parts of the blockchain through -rescan on startup</translation>
     </message>
     <message>
-        <source>Disable all bitcoinpay specific functionality (Masternodes, CoinMixing, SwiftTX, Budgeting) (0-1, default: %u)</source>
-        <translation>Disable all bitcoinpay specific functionality (Masternodes, CoinMixing, SwiftTX, Budgeting) (0-1, default: %u)</translation>
+        <source>Disable all bitcoinpay specific functionality (Masternodes, obfuscation, SwiftTX, Budgeting) (0-1, default: %u)</source>
+        <translation>Disable all bitcoinpay specific functionality (Masternodes, obfuscation, SwiftTX, Budgeting) (0-1, default: %u)</translation>
     </message>
     <message>
         <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>
@@ -3946,8 +3946,8 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation>Enable swifttx, show confirmations for locked transactions (bool, default: %s)</translation>
     </message>
     <message>
-        <source>Enable use of automated coinmixing for funds stored in this wallet (0-1, default: %u)</source>
-        <translation>Enable use of automated coinmixing for funds stored in this wallet (0-1, default: %u)</translation>
+        <source>Enable use of automated obfuscation for funds stored in this wallet (0-1, default: %u)</source>
+        <translation>Enable use of automated obfuscation for funds stored in this wallet (0-1, default: %u)</translation>
     </message>
     <message>
         <source>Enter regression test mode, which uses a special chain in which blocks can be solved instantly.</source>
@@ -4030,16 +4030,16 @@ https://www.transifex.com/bitcoinpay-project/bitcoinpay-project-translations</tr
         <translation>Number of seconds to keep misbehaving peers from reconnecting (default: %u)</translation>
     </message>
     <message>
-        <source>CoinMixing uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</source>
-        <translation>CoinMixing uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</translation>
+        <source>obfuscation uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</source>
+        <translation>obfuscation uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</translation>
     </message>
     <message>
         <source>Output debugging information (default: %u, supplying &lt;category&gt; is optional)</source>
         <translation>Output debugging information (default: %u, supplying &lt;category&gt; is optional)</translation>
     </message>
     <message>
-        <source>Provide liquidity to CoinMixing by infrequently mixing coins on a continual basis (0-100, default: %u, 1=very frequent, high fees, 100=very infrequent, low fees)</source>
-        <translation>Provide liquidity to CoinMixing by infrequently mixing coins on a continual basis (0-100, default: %u, 1=very frequent, high fees, 100=very infrequent, low fees)</translation>
+        <source>Provide liquidity to obfuscation by infrequently mixing coins on a continual basis (0-100, default: %u, 1=very frequent, high fees, 100=very infrequent, low fees)</source>
+        <translation>Provide liquidity to obfuscation by infrequently mixing coins on a continual basis (0-100, default: %u, 1=very frequent, high fees, 100=very infrequent, low fees)</translation>
     </message>
     <message>
         <source>Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect)</source>
@@ -4110,12 +4110,12 @@ for example: alertnotify=echo %%s | mail -s "bitcoinpay Alert" admin@foo.com
         <translation>Unable to bind to %s on this computer. BitcoinPay is probably already running.</translation>
     </message>
     <message>
-        <source>Unable to locate enough CoinMixing denominated funds for this transaction.</source>
-        <translation>Unable to locate enough CoinMixing denominated funds for this transaction.</translation>
+        <source>Unable to locate enough obfuscation denominated funds for this transaction.</source>
+        <translation>Unable to locate enough obfuscation denominated funds for this transaction.</translation>
     </message>
     <message>
-        <source>Unable to locate enough CoinMixing non-denominated funds for this transaction that are not equal 10000 BPAY.</source>
-        <translation>Unable to locate enough CoinMixing non-denominated funds for this transaction that are not equal 10000 BPAY.</translation>
+        <source>Unable to locate enough obfuscation non-denominated funds for this transaction that are not equal 10000 BPAY.</source>
+        <translation>Unable to locate enough obfuscation non-denominated funds for this transaction that are not equal 10000 BPAY.</translation>
     </message>
     <message>
         <source>Unable to locate enough funds for this transaction that are not equal 10000 BPAY.</source>
@@ -4394,8 +4394,8 @@ for example: alertnotify=echo %%s | mail -s "bitcoinpay Alert" admin@foo.com
         <translation>Error: Wallet locked, unable to create transaction!</translation>
     </message>
     <message>
-        <source>Error: You already have pending entries in the CoinMixing pool</source>
-        <translation>Error: You already have pending entries in the CoinMixing pool</translation>
+        <source>Error: You already have pending entries in the obfuscation pool</source>
+        <translation>Error: You already have pending entries in the obfuscation pool</translation>
     </message>
     <message>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
@@ -4586,12 +4586,12 @@ for example: alertnotify=echo %%s | mail -s "bitcoinpay Alert" admin@foo.com
         <translation>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</translation>
     </message>
     <message>
-        <source>Last CoinMixing was too recent.</source>
-        <translation>Last CoinMixing was too recent.</translation>
+        <source>Last obfuscation was too recent.</source>
+        <translation>Last obfuscation was too recent.</translation>
     </message>
     <message>
-        <source>Last successful CoinMixing action was too recent.</source>
-        <translation>Last successful CoinMixing action was too recent.</translation>
+        <source>Last successful obfuscation action was too recent.</source>
+        <translation>Last successful obfuscation action was too recent.</translation>
     </message>
     <message>
         <source>Limit size of signature cache to &lt;n&gt; entries (default: %u)</source>
@@ -4722,20 +4722,20 @@ for example: alertnotify=echo %%s | mail -s "bitcoinpay Alert" admin@foo.com
         <translation>Number of automatic wallet backups (default: 10)</translation>
     </message>
     <message>
-        <source>CoinMixing is idle.</source>
-        <translation>CoinMixing is idle.</translation>
+        <source>obfuscation is idle.</source>
+        <translation>obfuscation is idle.</translation>
     </message>
     <message>
-        <source>CoinMixing options:</source>
-        <translation>CoinMixing options:</translation>
+        <source>obfuscation options:</source>
+        <translation>obfuscation options:</translation>
     </message>
     <message>
-        <source>CoinMixing request complete:</source>
-        <translation>CoinMixing request complete:</translation>
+        <source>obfuscation request complete:</source>
+        <translation>obfuscation request complete:</translation>
     </message>
     <message>
-        <source>CoinMixing request incomplete:</source>
-        <translation>CoinMixing request incomplete:</translation>
+        <source>obfuscation request incomplete:</source>
+        <translation>obfuscation request incomplete:</translation>
     </message>
     <message>
         <source>Only accept block chain matching built-in checkpoints (default: %u)</source>
@@ -5066,8 +5066,8 @@ for example: alertnotify=echo %%s | mail -s "bitcoinpay Alert" admin@foo.com
         <translation>Username for JSON-RPC connections</translation>
     </message>
     <message>
-        <source>Value more than CoinMixing pool maximum allows.</source>
-        <translation>Value more than CoinMixing pool maximum allows.</translation>
+        <source>Value more than obfuscation pool maximum allows.</source>
+        <translation>Value more than obfuscation pool maximum allows.</translation>
     </message>
     <message>
         <source>Verifying blocks...</source>

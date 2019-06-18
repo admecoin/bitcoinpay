@@ -7,7 +7,7 @@
 #include "key.h"
 #include "masternodeman.h"
 #include "net.h"
-#include "coinmixing.h"
+#include "obfuscation.h"
 #include "protocol.h"
 #include "spork.h"
 #include "sync.h"
@@ -34,7 +34,7 @@ int nCompleteTXLocks;
 
 void ProcessMessageRhenFAST(CNode* pfrom, std::string& strCommand, CDataStream& vRecv)
 {
-    if (fLiteMode) return; //disable all coinmixing/masternode related functionality
+    if (fLiteMode) return; //disable all obfuscation/masternode related functionality
     if (!IsSporkActive(SPORK_2_RHENFAST)) return;
     if (!masternodeSync.IsBlockchainSynced()) return;
 

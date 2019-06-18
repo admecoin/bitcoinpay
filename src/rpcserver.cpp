@@ -328,7 +328,7 @@ static const CRPCCommand vRPCCommands[] =
         {"bitcoinpay", "spork", &spork, true, true, false},
         {"bitcoinpay", "getpoolinfo", &getpoolinfo, true, true, false},
 #ifdef ENABLE_WALLET
-        {"bitcoinpay", "coinmixing", &coinmixing, false, false, true}, /* not threadSafe because of SendMoney */
+        {"bitcoinpay", "obfuscation", &obfuscation, false, false, true}, /* not threadSafe because of SendMoney */
 
         /* Wallet */
         {"wallet", "addmultisigaddress", &addmultisigaddress, true, false, true},
