@@ -61,7 +61,7 @@ public:
     /** Make miner wait to have peers to avoid wasting work */
     bool MiningRequiresPeers() const { return fMiningRequiresPeers; }
     /** Headers first syncing is disabled */
-    bool HeadersFirstSyncingActive() const { return fHeadersFirstSyncingActive; };
+    bool HeadersFirstSyncingActive() const { return fHeadersFirstSyncingActive; }
     /** Default value for -checkmempool and -checkblockindex argument */
     bool DefaultConsistencyChecks() const { return fDefaultConsistencyChecks; }
     /** Allow mining of a min-difficulty block */
@@ -91,7 +91,7 @@ public:
     virtual const Checkpoints::CCheckpointData& Checkpoints() const = 0;
     int PoolMaxTransactions() const { return nPoolMaxTransactions; }
     std::string SporkKey() const { return strSporkKey; }
-    std::string obfuscationPoolDummyAddress() const { return strobfuscationPoolDummyAddress; }
+    std::string ObfuscationPoolDummyAddress() const { return strObfuscationPoolDummyAddress; }
     int64_t StartMasternodePayments() const { return nStartMasternodePayments; }
     int64_t Budget_Fee_Confirmations() const { return nBudget_Fee_Confirmations; }
     CBaseChainParams::Network NetworkID() const { return networkID; }
@@ -135,7 +135,7 @@ protected:
     bool fHeadersFirstSyncingActive;
     int nPoolMaxTransactions;
     std::string strSporkKey;
-    std::string strobfuscationPoolDummyAddress;
+    std::string strObfuscationPoolDummyAddress;
     int64_t nStartMasternodePayments;
     int64_t nBudget_Fee_Confirmations;
 };
