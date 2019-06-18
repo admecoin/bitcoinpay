@@ -890,7 +890,7 @@ int GetInputAgeIX(uint256 nTXHash, CTxIn& vin)
         if (i != mapTxLocks.end()) {
             sigs = (*i).second.CountSignatures();
         }
-        if (sigs >= SwiftTX_SIGNATURES_REQUIRED) {
+        if (sigs >= SWIFTTX_SIGNATURES_REQUIRED) {
             return nSwiftTXDepth + nResult;
         }
     }
@@ -906,7 +906,7 @@ int GetIXConfirmations(uint256 nTXHash)
     if (i != mapTxLocks.end()) {
         sigs = (*i).second.CountSignatures();
     }
-    if (sigs >= SwiftTX_SIGNATURES_REQUIRED) {
+    if (sigs >= SWIFTTX_SIGNATURES_REQUIRED) {
         return nSwiftTXDepth;
     }
 
@@ -1204,7 +1204,7 @@ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState& state, const CTransa
 
         // Don't accept it if it can't get into a block
         // but prioritise dstx and don't check fees for it
-        if (mapobfuscationBroadcastTxes.count(hash)) {
+        if (mapObfuscationBroadcastTxes.count(hash)) {
             mempool.PrioritiseTransaction(hash, hash.ToString(), 1000, 0.1 * COIN);
         } else if (!ignoreFees) {
             CAmount txMinFee = GetMinRelayFee(tx, nSize, true);

@@ -461,7 +461,7 @@ std::string HelpMessage(HelpMessageMode mode)
     strUsage += HelpMessageOpt("-masternodeaddr=<n>", strprintf(_("Set external address:port to get to this masternode (example: %s)"), "128.127.106.235:2609"));
     strUsage += HelpMessageOpt("-budgetvotemode=<mode>", _("Change automatic finalized budget voting behavior. mode=auto: Vote for only exact finalized budget match to my generated budget. (string, default: auto)"));
 
-    strUsage += HelpMessageGroup(_("obfuscation options:"));
+    strUsage += HelpMessageGroup(_("Obfuscation options:"));
     strUsage += HelpMessageOpt("-enableobfuscation=<n>", strprintf(_("Enable use of automated obfuscation for funds stored in this wallet (0-1, default: %u)"), 0));
     strUsage += HelpMessageOpt("-obfuscationrounds=<n>", strprintf(_("Use N separate masternodes to anonymize funds  (2-8, default: %u)"), 2));
     strUsage += HelpMessageOpt("-anonymizebitcoinpayamount=<n>", strprintf(_("Keep N BPAY anonymized (default: %u)"), 0));
@@ -1513,7 +1513,7 @@ bool AppInit2(boost::thread_group& threadGroup)
     }
 
     if (fMasterNode) {
-        LogPrintf("IS obfuscation MASTER NODE\n");
+        LogPrintf("IS OBFUSCATION MASTER NODE\n");
         strMasterNodeAddr = GetArg("-masternodeaddr", "");
 
         LogPrintf(" addr %s\n", strMasterNodeAddr.c_str());
@@ -1558,7 +1558,7 @@ bool AppInit2(boost::thread_group& threadGroup)
         }
     }
 
-    fEnableobfuscation = GetBoolArg("-enableobfuscation", false);
+    fEnableObfuscation = GetBoolArg("-enableobfuscation", false);
 
     nObfuscationRounds = GetArg("-obfuscationrounds", 2);
     if (nObfuscationRounds > 16) nObfuscationRounds = 16;
@@ -1587,7 +1587,7 @@ bool AppInit2(boost::thread_group& threadGroup)
 
     LogPrintf("fLiteMode %d\n", fLiteMode);
     LogPrintf("nSwiftTXDepth %d\n", nSwiftTXDepth);
-    LogPrintf("obfuscation rounds %d\n", nObfuscationRounds);
+    LogPrintf("Obfuscation rounds %d\n", nObfuscationRounds);
     LogPrintf("Anonymize bitcoinpay Amount %d\n", nAnonymizeBitcoinPayAmount);
     LogPrintf("Budget Mode %s\n", strBudgetMode.c_str());
 
