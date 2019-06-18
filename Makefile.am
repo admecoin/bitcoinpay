@@ -2,12 +2,16 @@ ACLOCAL_AMFLAGS = -I build-aux/m4
 SUBDIRS = src
 .PHONY: deploy FORCE
 
-GZIP_ENV="-9n"
 export PYTHONPATH
 
-BITCOIND_BIN=$(top_builddir)/src/bitcoinpayd$(EXEEXT)
-BITCOIN_QT_BIN=$(top_builddir)/src/qt/bitcoinpay-qt$(EXEEXT)
-BITCOIN_CLI_BIN=$(top_builddir)/src/bitcoinpay-cli$(EXEEXT)
+if BUILD_BITCOIN_LIBS
+pkgconfigdir = $(libdir)/pkgconfig
+pkgconfig_DATA = libbitcoinconsensus.pc
+endif
+
+BITCOIND_BIN=$(top_builddir)/src/$(BITCOIN_DAEMON_NAME)$(EXEEXT)
+BITCOIN_QT_BIN=$(top_builddir)/src/qt/$(BITCOIN_GUI_NAME)$(EXEEXT)
+BITCOIN_CLI_BIN=$(top_builddir)/src/$(BITCOIN_CLI_NAME)$(EXEEXT)
 BITCOIN_WIN_INSTALLER=$(PACKAGE)-$(PACKAGE_VERSION)-win$(WINDOWS_BITS)-setup$(EXEEXT)
 
 empty :=
@@ -23,7 +27,7 @@ OSX_DSSTORE_GEN=$(top_srcdir)/contrib/macdeploy/custom_dsstore.py
 OSX_DEPLOY_SCRIPT=$(top_srcdir)/contrib/macdeploy/macdeployqtplus
 OSX_FANCY_PLIST=$(top_srcdir)/contrib/macdeploy/fancy.plist
 OSX_INSTALLER_ICONS=$(top_srcdir)/src/qt/res/icons/bitcoin.icns
-OSX_PLIST=$(top_srcdir)/share/qt/Info.plist #not installed
+OSX_PLIST=$(top_builddir)/share/qt/Info.plist #not installed
 OSX_QT_TRANSLATIONS = da,de,es,hu,ru,uk,zh_CN,zh_TW
 
 DIST_DOCS = $(wildcard doc/*.md) $(wildcard doc/release-notes/*.md)

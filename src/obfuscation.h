@@ -3,8 +3,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef obfuscation_H
-#define obfuscation_H
+#ifndef OBFUSCATION_H
+#define OBFUSCATION_H
 
 #include "main.h"
 #include "masternode-payments.h"
@@ -14,12 +14,12 @@
 #include "sync.h"
 
 class CTxIn;
-class CobfuscationPool;
+class CObfuscationPool;
 class CObfuScationSigner;
 class CMasterNodeVote;
 class CBitcoinAddress;
-class CobfuscationQueue;
-class CobfuscationBroadcastTx;
+class CObfuscationQueue;
+class CObfuscationBroadcastTx;
 class CActiveMasternode;
 
 // pool states for mixing
@@ -38,25 +38,25 @@ class CActiveMasternode;
 #define MASTERNODE_REJECTED 0
 #define MASTERNODE_RESET -1
 
-#define obfuscation_QUEUE_TIMEOUT 30
-#define obfuscation_SIGNING_TIMEOUT 15
+#define OBFUSCATION_QUEUE_TIMEOUT 30
+#define OBFUSCATION_SIGNING_TIMEOUT 15
 
 // used for anonymous relaying of inputs/outputs/sigs
-#define obfuscation_RELAY_IN 1
-#define obfuscation_RELAY_OUT 2
-#define obfuscation_RELAY_SIG 3
+#define OBFUSCATION_RELAY_IN 1
+#define OBFUSCATION_RELAY_OUT 2
+#define OBFUSCATION_RELAY_SIG 3
 
-static const int64_t obfuscation_COLLATERAL = (10 * COIN);
-static const int64_t obfuscation_POOL_MAX = (99999.99 * COIN);
+static const CAmount OBFUSCATION_COLLATERAL = (10 * COIN);
+static const CAmount OBFUSCATION_POOL_MAX = (99999.99 * COIN);
 
-extern CobfuscationPool obfuScationPool;
+extern CObfuscationPool obfuScationPool;
 extern CObfuScationSigner obfuScationSigner;
-extern std::vector<CobfuscationQueue> vecobfuscationQueue;
+extern std::vector<CObfuscationQueue> vecObfuscationQueue;
 extern std::string strMasterNodePrivKey;
-extern map<uint256, CobfuscationBroadcastTx> mapobfuscationBroadcastTxes;
+extern map<uint256, CObfuscationBroadcastTx> mapObfuscationBroadcastTxes;
 extern CActiveMasternode activeMasternode;
 
-/** Holds an obfuscation input
+/** Holds an Obfuscation input
  */
 class CTxDSIn : public CTxIn
 {
@@ -75,7 +75,7 @@ public:
     }
 };
 
-/** Holds an obfuscation output
+/** Holds an Obfuscation output
  */
 class CTxDSOut : public CTxOut
 {
@@ -98,7 +98,7 @@ public:
     bool isSet;
     std::vector<CTxDSIn> sev;
     std::vector<CTxDSOut> vout;
-    int64_t amount;
+    CAmount amount;
     CTransaction collateral;
     CTransaction txSupporting;
     int64_t addedTime; // time in UTC milliseconds
@@ -110,7 +110,7 @@ public:
         amount = 0;
     }
 
-    /// Add entries to use for obfuscation
+    /// Add entries to use for Obfuscation
     bool Add(const std::vector<CTxIn> vinIn, int64_t amountIn, const CTransaction collateralIn, const std::vector<CTxOut> voutIn)
     {
         if (isSet) {
@@ -151,15 +151,15 @@ public:
 
     bool IsExpired()
     {
-        return (GetTime() - addedTime) > obfuscation_QUEUE_TIMEOUT; // 120 seconds
+        return (GetTime() - addedTime) > OBFUSCATION_QUEUE_TIMEOUT; // 120 seconds
     }
 };
 
 
 /**
- * A currently inprogress obfuscation merge and denomination information
+ * A currently inprogress Obfuscation merge and denomination information
  */
-class CobfuscationQueue
+class CObfuscationQueue
 {
 public:
     CTxIn vin;
@@ -168,7 +168,7 @@ public:
     bool ready; //ready for submit
     std::vector<unsigned char> vchSig;
 
-    CobfuscationQueue()
+    CObfuscationQueue()
     {
         nDenom = 0;
         vin = CTxIn();
@@ -210,7 +210,7 @@ public:
         return false;
     }
 
-    /** Sign this obfuscation transaction
+    /** Sign this Obfuscation transaction
      *  \return true if all conditions are met:
      *     1) we have an active Masternode,
      *     2) we have a valid Masternode private key,
@@ -221,19 +221,19 @@ public:
 
     bool Relay();
 
-    /// Is this obfuscation expired?
+    /// Is this Obfuscation expired?
     bool IsExpired()
     {
-        return (GetTime() - time) > obfuscation_QUEUE_TIMEOUT; // 120 seconds
+        return (GetTime() - time) > OBFUSCATION_QUEUE_TIMEOUT; // 120 seconds
     }
 
     /// Check if we have a valid Masternode address
     bool CheckSignature();
 };
 
-/** Helper class to store obfuscation transaction (tx) information.
+/** Helper class to store Obfuscation transaction (tx) information.
  */
-class CobfuscationBroadcastTx
+class CObfuscationBroadcastTx
 {
 public:
     CTransaction tx;
@@ -247,7 +247,7 @@ public:
 class CObfuScationSigner
 {
 public:
-    /// Is the inputs associated with this public key? (and there is 10000 BPAY - checking if valid masternode)
+    /// Is the inputs associated with this public key? (and there is 10000 bitcoinpay - checking if valid masternode)
     bool IsVinAssociatedWithPubkey(CTxIn& vin, CPubKey& pubkey);
     /// Set the private/public key values, returns true if successful
     bool GetKeysFromSecret(std::string strSecret, CKey& keyRet, CPubKey& pubkeyRet);
@@ -259,9 +259,9 @@ public:
     bool VerifyMessage(CPubKey pubkey, std::vector<unsigned char>& vchSig, std::string strMessage, std::string& errorMessage);
 };
 
-/** Used to keep track of current status of obfuscation pool
+/** Used to keep track of current status of Obfuscation pool
  */
-class CobfuscationPool
+class CObfuscationPool
 {
 private:
     mutable CCriticalSection cs_obfuscation;
@@ -330,9 +330,9 @@ public:
     int sessionDenom;    //Users must submit an denom matching this
     int cachedNumBlocks; //used for the overview screen
 
-    CobfuscationPool()
+    CObfuscationPool()
     {
-        /* obfuscation uses collateral addresses to trust parties entering the pool
+        /* Obfuscation uses collateral addresses to trust parties entering the pool
             to behave themselves. If they don't it takes their money. */
 
         cachedLastSuccess = 0;
@@ -345,26 +345,26 @@ public:
         SetNull();
     }
 
-    /** Process a obfuscation message using the obfuscation protocol
+    /** Process a Obfuscation message using the Obfuscation protocol
      * \param pfrom
      * \param strCommand lower case command string; valid values are:
      *        Command  | Description
      *        -------- | -----------------
-     *        dsa      | obfuscation Acceptable
-     *        dsc      | obfuscation Complete
-     *        dsf      | obfuscation Final tx
-     *        dsi      | obfuscation vIn
-     *        dsq      | obfuscation Queue
-     *        dss      | obfuscation Signal Final Tx
-     *        dssu     | obfuscation status update
-     *        dssub    | obfuscation Subscribe To
+     *        dsa      | Obfuscation Acceptable
+     *        dsc      | Obfuscation Complete
+     *        dsf      | Obfuscation Final tx
+     *        dsi      | Obfuscation vIn
+     *        dsq      | Obfuscation Queue
+     *        dss      | Obfuscation Signal Final Tx
+     *        dssu     | Obfuscation status update
+     *        dssub    | Obfuscation Subscribe To
      * \param vRecv
      */
-    void ProcessMessageobfuscation(CNode* pfrom, std::string& strCommand, CDataStream& vRecv);
+    void ProcessMessageObfuscation(CNode* pfrom, std::string& strCommand, CDataStream& vRecv);
 
     void InitCollateralAddress()
     {
-        SetCollateralAddress(Params().obfuscationPoolDummyAddress());
+        SetCollateralAddress(Params().ObfuscationPoolDummyAddress());
     }
 
     void SetMinBlockSpacing(int minBlockSpacingIn)
@@ -411,11 +411,11 @@ public:
     void UpdateState(unsigned int newState)
     {
         if (fMasterNode && (newState == POOL_STATUS_ERROR || newState == POOL_STATUS_SUCCESS)) {
-            LogPrint("obfuscation", "CobfuscationPool::UpdateState() - Can't set state to ERROR or SUCCESS as a Masternode. \n");
+            LogPrint("obfuscation", "CObfuscationPool::UpdateState() - Can't set state to ERROR or SUCCESS as a Masternode. \n");
             return;
         }
 
-        LogPrintf("CobfuscationPool::UpdateState() == %d | %d \n", state, newState);
+        LogPrintf("CObfuscationPool::UpdateState() == %d | %d \n", state, newState);
         if (state != newState) {
             lastTimeChanged = GetTimeMillis();
             if (fMasterNode) {
@@ -441,13 +441,13 @@ public:
     bool IsCompatibleWithEntries(std::vector<CTxOut>& vout);
 
     /// Is this amount compatible with other client in the pool?
-    bool IsCompatibleWithSession(int64_t nAmount, CTransaction txCollateral, int& errorID);
+    bool IsCompatibleWithSession(CAmount nAmount, CTransaction txCollateral, int& errorID);
 
-    /// Passively run obfuscation in the background according to the configuration in settings (only for QT)
+    /// Passively run Obfuscation in the background according to the configuration in settings (only for QT)
     bool DoAutomaticDenominating(bool fDryRun = false);
-    bool PrepareobfuscationDenominate();
+    bool PrepareObfuscationDenominate();
 
-    /// Check for process in obfuscation
+    /// Check for process in Obfuscation
     void Check();
     void CheckFinalTransaction();
     /// Charge fees to bad actors (Charge clients a fee if they're abusive)
@@ -461,14 +461,14 @@ public:
     /// If the collateral is valid given by a client
     bool IsCollateralValid(const CTransaction& txCollateral);
     /// Add a clients entry to the pool
-    bool AddEntry(const std::vector<CTxIn>& newInput, const int64_t& nAmount, const CTransaction& txCollateral, const std::vector<CTxOut>& newOutput, int& errorID);
+    bool AddEntry(const std::vector<CTxIn>& newInput, const CAmount& nAmount, const CTransaction& txCollateral, const std::vector<CTxOut>& newOutput, int& errorID);
     /// Add signature to a vin
     bool AddScriptSig(const CTxIn& newVin);
     /// Check that all inputs are signed. (Are all inputs signed?)
     bool SignaturesComplete();
     /// As a client, send a transaction to a Masternode to start the denomination process
-    void SendobfuscationDenominate(std::vector<CTxIn>& vin, std::vector<CTxOut>& vout, int64_t amount);
-    /// Get Masternode updates about the progress of obfuscation
+    void SendObfuscationDenominate(std::vector<CTxIn>& vin, std::vector<CTxOut>& vout, CAmount amount);
+    /// Get Masternode updates about the progress of Obfuscation
     bool StatusUpdate(int newState, int newEntriesCount, int newAccepted, int& errorID, int newSessionID = 0);
 
     /// As a client, check and sign the final transaction
@@ -485,7 +485,7 @@ public:
 
     /// Split up large inputs or make fee sized inputs
     bool MakeCollateralAmounts();
-    bool CreateDenominated(int64_t nTotalValue);
+    bool CreateDenominated(CAmount nTotalValue);
 
     /// Get the denominations for a list of outputs (returns a bitshifted integer)
     int GetDenominations(const std::vector<CTxOut>& vout, bool fSingleRandomDenom = false);
@@ -494,19 +494,19 @@ public:
     void GetDenominationsToString(int nDenom, std::string& strDenom);
 
     /// Get the denominations for a specific amount of bitcoinpay.
-    int GetDenominationsByAmount(int64_t nAmount, int nDenomTarget = 0); // is not used anymore?
-    int GetDenominationsByAmounts(std::vector<int64_t>& vecAmount);
+    int GetDenominationsByAmount(CAmount nAmount, int nDenomTarget = 0); // is not used anymore?
+    int GetDenominationsByAmounts(std::vector<CAmount>& vecAmount);
 
     std::string GetMessageByID(int messageID);
 
     //
-    // Relay obfuscation Messages
+    // Relay Obfuscation Messages
     //
 
     void RelayFinalTransaction(const int sessionID, const CTransaction& txNew);
     void RelaySignaturesAnon(std::vector<CTxIn>& vin);
     void RelayInAnon(std::vector<CTxIn>& vin, std::vector<CTxOut>& vout);
-    void RelayIn(const std::vector<CTxDSIn>& vin, const int64_t& nAmount, const CTransaction& txCollateral, const std::vector<CTxDSOut>& vout);
+    void RelayIn(const std::vector<CTxDSIn>& vin, const CAmount& nAmount, const CTransaction& txCollateral, const std::vector<CTxDSOut>& vout);
     void RelayStatus(const int sessionID, const int newState, const int newEntriesCount, const int newAccepted, const int errorID = MSG_NOERR);
     void RelayCompletedTransaction(const int sessionID, const bool error, const int errorID);
 };

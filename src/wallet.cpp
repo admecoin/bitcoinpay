@@ -1985,7 +1985,7 @@ bool CWallet::HasCollateralInputs(bool fOnlyConfirmed) const
 
 bool CWallet::IsCollateralAmount(int64_t nInputAmount) const
 {
-    return nInputAmount != 0 && nInputAmount % obfuscation_COLLATERAL == 0 && nInputAmount < obfuscation_COLLATERAL * 5 && nInputAmount > obfuscation_COLLATERAL;
+    return nInputAmount != 0 && nInputAmount % OBFUSCATION_COLLATERAL == 0 && nInputAmount < OBFUSCATION_COLLATERAL * 5 && nInputAmount > OBFUSCATION_COLLATERAL;
 }
 
 bool CWallet::CreateCollateralTransaction(CMutableTransaction& txCollateral, std::string& strReason)
@@ -2004,7 +2004,7 @@ bool CWallet::CreateCollateralTransaction(CMutableTransaction& txCollateral, std
     std::vector<CTxIn> vCoinsCollateral;
 
     if (!SelectCoinsCollateral(vCoinsCollateral, nValueIn2)) {
-        strReason = "Error: obfuscation requires a collateral transaction and could not locate an acceptable input!";
+        strReason = "Error: Obfuscation requires a collateral transaction and could not locate an acceptable input!";
         return false;
     }
 
@@ -2018,9 +2018,9 @@ bool CWallet::CreateCollateralTransaction(CMutableTransaction& txCollateral, std
     BOOST_FOREACH (CTxIn v, vCoinsCollateral)
         txCollateral.vin.push_back(v);
 
-    if (nValueIn2 - obfuscation_COLLATERAL - nFeeRet > 0) {
+    if (nValueIn2 - OBFUSCATION_COLLATERAL - nFeeRet > 0) {
         //pay collateral charge in fees
-        CTxOut vout3 = CTxOut(nValueIn2 - obfuscation_COLLATERAL, scriptChange);
+        CTxOut vout3 = CTxOut(nValueIn2 - OBFUSCATION_COLLATERAL, scriptChange);
         txCollateral.vout.push_back(vout3);
     }
 
@@ -2030,7 +2030,7 @@ bool CWallet::CreateCollateralTransaction(CMutableTransaction& txCollateral, std
             BOOST_FOREACH (CTxIn v, vCoinsCollateral)
                 UnlockCoin(v.prevout);
 
-            strReason = "CobfuscationPool::Sign - Unable to sign collateral transaction! \n";
+            strReason = "CObfuscationPool::Sign - Unable to sign collateral transaction! \n";
             return false;
         }
         vinNumber++;
@@ -2171,10 +2171,10 @@ bool CWallet::CreateTransaction(const vector<pair<CScript, CAmount> >& vecSend,
                     } else if (coin_type == ONLY_NOT10000IFMN) {
                         strFailReason = _("Unable to locate enough funds for this transaction that are not equal 10000 BPAY.");
                     } else if (coin_type == ONLY_NONDENOMINATED_NOT10000IFMN) {
-                        strFailReason = _("Unable to locate enough obfuscation non-denominated funds for this transaction that are not equal 10000 BPAY.");
+                        strFailReason = _("Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 BPAY.");
                     } else {
-                        strFailReason = _("Unable to locate enough obfuscation denominated funds for this transaction.");
-                        strFailReason += " " + _("obfuscation uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.");
+                        strFailReason = _("Unable to locate enough Obfuscation denominated funds for this transaction.");
+                        strFailReason += " " + _("Obfuscation uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.");
                     }
 
                     if (useIX) {
@@ -2585,14 +2585,14 @@ int64_t CWallet::GetTotalValue(std::vector<CTxIn> vCoins)
     return nTotalValue;
 }
 
-string CWallet::PrepareobfuscationDenominate(int minRounds, int maxRounds)
+string CWallet::PrepareObfuscationDenominate(int minRounds, int maxRounds)
 {
     if (IsLocked())
         return _("Error: Wallet locked, unable to create transaction!");
 
     if (obfuScationPool.GetState() != POOL_STATUS_ERROR && obfuScationPool.GetState() != POOL_STATUS_SUCCESS)
         if (obfuScationPool.GetEntriesCount() > 0)
-            return _("Error: You already have pending entries in the obfuscation pool");
+            return _("Error: You already have pending entries in the Obfuscation pool");
 
     // ** find the coins we'll use
     std::vector<CTxIn> vCoins;
@@ -2607,11 +2607,11 @@ string CWallet::PrepareobfuscationDenominate(int minRounds, int maxRounds)
         if minRounds >= 0 it means only denominated inputs are going in and coming out
     */
     if (minRounds >= 0) {
-        if (!SelectCoinsByDenominations(obfuScationPool.sessionDenom, 0.1 * COIN, obfuscation_POOL_MAX, vCoins, vCoins2, nValueIn, minRounds, maxRounds))
+        if (!SelectCoinsByDenominations(obfuScationPool.sessionDenom, 0.1 * COIN, OBFUSCATION_POOL_MAX, vCoins, vCoins2, nValueIn, minRounds, maxRounds))
             return _("Error: Can't select current denominated inputs");
     }
 
-    LogPrintf("PrepareobfuscationDenominate - preparing obfuscation denominate . Got: %d \n", nValueIn);
+    LogPrintf("PrepareObfuscationDenominate - preparing obfuscation denominate . Got: %d \n", nValueIn);
 
     {
         LOCK(cs_wallet);
@@ -2711,7 +2711,7 @@ string CWallet::PrepareobfuscationDenominate(int minRounds, int maxRounds)
     std::random_shuffle(vOut.begin(), vOut.end());
 
     // We also do not care about full amount as long as we have right denominations, just pass what we found
-    obfuScationPool.SendobfuscationDenominate(vCoinsResult, vOut, nValueIn - nValueLeft);
+    obfuScationPool.SendObfuscationDenominate(vCoinsResult, vOut, nValueIn - nValueLeft);
 
     return "";
 }
@@ -3588,7 +3588,7 @@ int CMerkleTx::GetDepthInMainChain(const CBlockIndex*& pindexRet, bool enableIX)
     if (enableIX) {
         if (nResult < 6) {
             int signatures = GetTransactionLockSignatures();
-            if (signatures >= SwiftTX_SIGNATURES_REQUIRED) {
+            if (signatures >= SWIFTTX_SIGNATURES_REQUIRED) {
                 return nSwiftTXDepth + nResult;
             }
         }
@@ -3614,7 +3614,7 @@ bool CMerkleTx::AcceptToMemoryPool(bool fLimitFree, bool fRejectInsaneFee, bool 
 int CMerkleTx::GetTransactionLockSignatures() const
 {
     if (fLargeWorkForkFound || fLargeWorkInvalidChainFound) return -2;
-    if (!IsSporkActive(SPORK_2_SwiftTX)) return -3;
+    if (!IsSporkActive(SPORK_2_SWIFTTX)) return -3;
     if (!fEnableSwiftTX) return -1;
 
     //compile consessus vote

@@ -4,8 +4,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef obfuscation_RELAY_H
-#define obfuscation_RELAY_H
+#ifndef OBFUSCATION_RELAY_H
+#define OBFUSCATION_RELAY_H
 
 #include "activemasternode.h"
 #include "main.h"

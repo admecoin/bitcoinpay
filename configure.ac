@@ -11,6 +11,16 @@ AC_CONFIG_SRCDIR([src/main.cpp])
 AC_CONFIG_HEADERS([src/config/bitcoin-config.h])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([build-aux/m4])
+BITCOIN_DAEMON_NAME=bitcoinpayd
+BITCOIN_GUI_NAME=bitcoinpay-qt
+BITCOIN_CLI_NAME=bitcoinpay-cli
+BITCOIN_TX_NAME=bitcoinpay-tx
+
+dnl Unless the user specified ARFLAGS, force it to be cr
+AC_ARG_VAR(ARFLAGS, [Flags for the archiver, defaults to <cr> if not set])
+if test "x${ARFLAGS+set}" != "xset"; then
+  ARFLAGS="cr"
+fi
 
 AC_CANONICAL_HOST
 

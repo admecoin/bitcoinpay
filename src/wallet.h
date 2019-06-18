@@ -405,8 +405,8 @@ public:
         CAmount nFeePay = 0);
     bool CreateTransaction(CScript scriptPubKey, const CAmount& nValue, CWalletTx& wtxNew, CReserveKey& reservekey, CAmount& nFeeRet, std::string& strFailReason, const CCoinControl* coinControl = NULL, AvailableCoinsType coin_type = ALL_COINS, bool useIX = false, CAmount nFeePay = 0);
     bool CommitTransaction(CWalletTx& wtxNew, CReserveKey& reservekey, std::string strCommand = "tx");
-    std::string PrepareobfuscationDenominate(int minRounds, int maxRounds);
-    int GenerateobfuscationOutputs(int nTotalValue, std::vector<CTxOut>& vout);
+    std::string PrepareObfuscationDenominate(int minRounds, int maxRounds);
+    int GenerateObfuscationOutputs(int nTotalValue, std::vector<CTxOut>& vout);
     bool CreateCollateralTransaction(CMutableTransaction& txCollateral, std::string& strReason);
     bool ConvertList(std::vector<CTxIn> vCoins, std::vector<int64_t>& vecAmounts);
     bool CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int64_t nSearchInterval, CMutableTransaction& txNew, unsigned int& nTxNewTime);
@@ -433,7 +433,7 @@ public:
     bool GetBudgetSystemCollateralTX(CTransaction& tx, uint256 hash, bool useIX);
     bool GetBudgetSystemCollateralTX(CWalletTx& tx, uint256 hash, bool useIX);
 
-    // get the obfuscation chain depth for a given input
+    // get the Obfuscation chain depth for a given input
     int GetRealInputObfuscationRounds(CTxIn in, int rounds) const;
     // respect current settings
     int GetInputObfuscationRounds(CTxIn in) const;
@@ -1188,7 +1188,7 @@ public:
         fSpendable = fSpendableIn;
     }
 
-    //Used with obfuscation. Will return largest nondenom, then denominations, then very small inputs
+    //Used with Obfuscation. Will return largest nondenom, then denominations, then very small inputs
     int Priority() const
     {
         BOOST_FOREACH (int64_t d, obfuScationDenominations)

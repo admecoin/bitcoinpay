@@ -81,8 +81,8 @@ bool IsSporkActive(int nSporkID)
     if (mapSporksActive.count(nSporkID)) {
         r = mapSporksActive[nSporkID].nValue;
     } else {
-        if (nSporkID == SPORK_2_SwiftTX) r = SPORK_2_SwiftTX_DEFAULT;
-        if (nSporkID == SPORK_3_SwiftTX_BLOCK_FILTERING) r = SPORK_3_SwiftTX_BLOCK_FILTERING_DEFAULT;
+        if (nSporkID == SPORK_2_SWIFTTX) r = SPORK_2_SWIFTTX_DEFAULT;
+        if (nSporkID == SPORK_3_SWIFTTX_BLOCK_FILTERING) r = SPORK_3_SWIFTTX_BLOCK_FILTERING_DEFAULT;
         if (nSporkID == SPORK_5_MAX_VALUE) r = SPORK_5_MAX_VALUE_DEFAULT;
         if (nSporkID == SPORK_7_MASTERNODE_SCANNING) r = SPORK_7_MASTERNODE_SCANNING_DEFAULT;
         if (nSporkID == SPORK_8_MASTERNODE_PAYMENT_ENFORCEMENT) r = SPORK_8_MASTERNODE_PAYMENT_ENFORCEMENT_DEFAULT;
@@ -110,8 +110,8 @@ int64_t GetSporkValue(int nSporkID)
     if (mapSporksActive.count(nSporkID)) {
         r = mapSporksActive[nSporkID].nValue;
     } else {
-        if (nSporkID == SPORK_2_SwiftTX) r = SPORK_2_SwiftTX_DEFAULT;
-        if (nSporkID == SPORK_3_SwiftTX_BLOCK_FILTERING) r = SPORK_3_SwiftTX_BLOCK_FILTERING_DEFAULT;
+        if (nSporkID == SPORK_2_SWIFTTX) r = SPORK_2_SWIFTTX_DEFAULT;
+        if (nSporkID == SPORK_3_SWIFTTX_BLOCK_FILTERING) r = SPORK_3_SWIFTTX_BLOCK_FILTERING_DEFAULT;
         if (nSporkID == SPORK_5_MAX_VALUE) r = SPORK_5_MAX_VALUE_DEFAULT;
         if (nSporkID == SPORK_7_MASTERNODE_SCANNING) r = SPORK_7_MASTERNODE_SCANNING_DEFAULT;
         if (nSporkID == SPORK_8_MASTERNODE_PAYMENT_ENFORCEMENT) r = SPORK_8_MASTERNODE_PAYMENT_ENFORCEMENT_DEFAULT;
@@ -258,8 +258,8 @@ bool CSporkManager::SetPrivKey(std::string strPrivKey)
 
 int CSporkManager::GetSporkIDByName(std::string strName)
 {
-    if (strName == "SPORK_2_SwiftTX") return SPORK_2_SwiftTX;
-    if (strName == "SPORK_3_SwiftTX_BLOCK_FILTERING") return SPORK_3_SwiftTX_BLOCK_FILTERING;
+    if (strName == "SPORK_2_SWIFTTX") return SPORK_2_SWIFTTX;
+    if (strName == "SPORK_3_SWIFTTX_BLOCK_FILTERING") return SPORK_3_SWIFTTX_BLOCK_FILTERING;
     if (strName == "SPORK_5_MAX_VALUE") return SPORK_5_MAX_VALUE;
     if (strName == "SPORK_7_MASTERNODE_SCANNING") return SPORK_7_MASTERNODE_SCANNING;
     if (strName == "SPORK_8_MASTERNODE_PAYMENT_ENFORCEMENT") return SPORK_8_MASTERNODE_PAYMENT_ENFORCEMENT;
@@ -277,8 +277,8 @@ int CSporkManager::GetSporkIDByName(std::string strName)
 
 std::string CSporkManager::GetSporkNameByID(int id)
 {
-    if (id == SPORK_2_SwiftTX) return "SPORK_2_SwiftTX";
-    if (id == SPORK_3_SwiftTX_BLOCK_FILTERING) return "SPORK_3_SwiftTX_BLOCK_FILTERING";
+    if (id == SPORK_2_SWIFTTX) return "SPORK_2_SWIFTTX";
+    if (id == SPORK_3_SWIFTTX_BLOCK_FILTERING) return "SPORK_3_SWIFTTX_BLOCK_FILTERING";
     if (id == SPORK_5_MAX_VALUE) return "SPORK_5_MAX_VALUE";
     if (id == SPORK_7_MASTERNODE_SCANNING) return "SPORK_7_MASTERNODE_SCANNING";
     if (id == SPORK_8_MASTERNODE_PAYMENT_ENFORCEMENT) return "SPORK_8_MASTERNODE_PAYMENT_ENFORCEMENT";
