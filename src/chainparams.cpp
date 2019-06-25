@@ -28,7 +28,7 @@ struct SeedSpec6 {
 
 #include "chainparamsseeds.h"
 
-int64_t fGenTime = 1560808800; //Monday, 17 June 2019 23:00:00 GMT+01:00
+static uint32_t fGenTime = 1560808800; //Monday, 17 June 2019 23:00:00 GMT+01:00
 
 void MineGenesis(CBlock genesis) {
 
@@ -169,8 +169,8 @@ public:
 
         //vFixedSeeds.clear();
         //vSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("seed1.bitcoinpay.abcdef", "seed1.bitcoinpay.abcdef"));
-        vSeeds.push_back(CDNSSeedData("seed2.bitcoinpay.abcdef", "seed2.bitcoinpay.abcdef"));		
+        vSeeds.push_back(CDNSSeedData("seed1.bitcoin-pay.com", "seed1.bitcoin-pay.com"));
+        vSeeds.push_back(CDNSSeedData("seed2.bitcoin-pay.com", "seed2.bitcoin-pay.com"));
 
 
         // BitcoinPay addresses start with '1'
@@ -200,7 +200,7 @@ public:
         fHeadersFirstSyncingActive = false;
 
         nPoolMaxTransactions = 3;
-        strSporkKey = "041b191ef0f1583f220b18332b0c3190a64da9a296691db7b81da06b71982e39f3caf08f7c6d46c77000bc34ab872d47ddb21fcd5f28f375df813f739b2c5bfc7c";
+        strSporkKey = "04A9DCD59BE57EA44E65E672DF6F32C25B0671AE19C21B08C068C7DCFD2CF1639FF132E8FF1269D74D7448712CBC1D168761EC70F9F39E756086C9BDBA159B407E";
         strObfuscationPoolDummyAddress = "BpBXVv2LMB6pRUboFqCYwUACCa8oKHQyqn";
         nStartMasternodePayments = 2403728576;
         nBudget_Fee_Confirmations = 6; // Number of confirmations for the finalization fee
@@ -279,7 +279,7 @@ public:
         fTestnetToBeDeprecatedFieldRPC = true;
 
         nPoolMaxTransactions = 2;
-        strSporkKey = "04348C2F50F90267E64FACC65BFDC9D0EB147D090872FB97ABAE92E9A36E6CA60983E28E741F8E7277B11A7479B626AC115BA31463AC48178A5075C5A9319D4A38";
+        strSporkKey = "049823802EFB8A72D9C677AFD111ADD147E1D9066D01096DD092ED1166BB49EE56BE80DF1D6826E316D0C3908C1FC3EDA929C18CA56941A251EEFCB6A18D23B608";
         strObfuscationPoolDummyAddress = "y57cqfGRkekRyDRNeJiLtYVEbvhXrNbmox";
         nStartMasternodePayments = 1420837558; //
     }

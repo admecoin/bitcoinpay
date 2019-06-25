@@ -1,8 +1,8 @@
 package=tor
-$(package)_version=0.3.4.9
+$(package)_version=0.4.0.5
 $(package)_download_path=https://dist.torproject.org
 $(package)_file_name=$(package)-$($(package)_version).tar.gz
-$(package)_sha256_hash=1a171081f02b9a6ff9e28c0898defb7670e5bbb3bdbcaddfcf4e4304aedd164a
+$(package)_sha256_hash=b5a2cbf0dcd3f1df2675dbd5ec10bbe6f8ae995c41b68cebe2bc95bffc90696e
 $(package)_dependencies=zlib libevent openssl
 $(package)_patches=remove_libcap.patch
 
@@ -25,14 +25,12 @@ endef
 define $(package)_stage_cmds
   $(MAKE) DESTDIR=$($(package)_staging_dir) install && \
   mkdir -p $($(package)_staging_prefix_dir)/lib && \
-  cp $($(package)_build_dir)/src/or/libtor.a $($(package)_staging_prefix_dir)/lib/libtor.a && \
-  cp $($(package)_build_dir)/src/common/libor.a $($(package)_staging_prefix_dir)/lib/libor.a && \
-  cp $($(package)_build_dir)/src/common/libor-ctime.a $($(package)_staging_prefix_dir)/lib/libor-ctime.a && \
-  cp $($(package)_build_dir)/src/common/libor-crypto.a $($(package)_staging_prefix_dir)/lib/libor-crypto.a && \
-  cp $($(package)_build_dir)/src/common/libor-event.a $($(package)_staging_prefix_dir)/lib/libor-event.a && \
-	cp $($(package)_build_dir)/src/common/libcurve25519_donna.a $($(package)_staging_prefix_dir)/lib/libcurve25519_donna.a && \
+  cp $($(package)_build_dir)/src/core/libtor-app.a $($(package)_staging_prefix_dir)/lib/libtor-app.a && \
+  cp $($(package)_build_dir)/src/lib/libtor-ctime.a $($(package)_staging_prefix_dir)/lib/libtor-ctime.a && \
+  cp $($(package)_build_dir)/src/lib/libtor-crypt-ops.a $($(package)_staging_prefix_dir)/lib/libtor-crypt-ops.a && \
+  cp $($(package)_build_dir)/src/lib/libcurve25519_donna.a $($(package)_staging_prefix_dir)/lib/libcurve25519_donna.a && \
   cp $($(package)_build_dir)/src/trunnel/libor-trunnel.a $($(package)_staging_prefix_dir)/lib/libor-trunnel.a && \
-	cp $($(package)_build_dir)/src/ext/ed25519/donna/libed25519_donna.a $($(package)_staging_prefix_dir)/lib/libed25519_donna.a && \
+  cp $($(package)_build_dir)/src/ext/ed25519/donna/libed25519_donna.a $($(package)_staging_prefix_dir)/lib/libed25519_donna.a && \
   cp $($(package)_build_dir)/src/ext/ed25519/ref10/libed25519_ref10.a $($(package)_staging_prefix_dir)/lib/libed25519_ref10.a && \
   cp $($(package)_build_dir)/src/ext/keccak-tiny/libkeccak-tiny.a $($(package)_staging_prefix_dir)/lib/libkeccak-tiny.a
 endef
