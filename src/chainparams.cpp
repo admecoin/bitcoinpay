@@ -178,7 +178,7 @@ public:
         // BitcoinPay script addresses start with '3'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 6);
         // BitcoinPay private keys start with 'K'
-        base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 46);
+        base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 128);
         // BitcoinPay BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
         // BitcoinPay BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
@@ -260,7 +260,7 @@ public:
         // Testnet BitcoinPay script addresses start with '5' or '6'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 12);
         // Testnet private keys start with 'k'
-        base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 108);
+        base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 233);     // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
         // Testnet BitcoinPay BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
         // Testnet BitcoinPay BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
