@@ -169,8 +169,8 @@ public:
 
         //vFixedSeeds.clear();
         //vSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("seed1.bitcoin-pay.com", "seed1.bitcoin-pay.com"));
-        vSeeds.push_back(CDNSSeedData("seed2.bitcoin-pay.com", "seed2.bitcoin-pay.com"));
+        vSeeds.push_back(CDNSSeedData("seed1.bitcoin-pay.io", "seed1.bitcoin-pay.io"));
+        vSeeds.push_back(CDNSSeedData("seed2.bitcoin-pay.io", "seed2.bitcoin-pay.io"));
 
 
         // BitcoinPay addresses start with '1'
