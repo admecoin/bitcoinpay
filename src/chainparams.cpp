@@ -5,10 +5,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "chainparams.h"
-
 #include "bignum.h"
-
+#include "chainparams.h"
 
 #include "random.h"
 #include "util.h"
@@ -145,6 +143,7 @@ public:
         nMasternodeCountDrift = 20;
         nModifierUpdateBlock = 1;
         nMaxMoneyOut = 21000000 * COIN;
+        nRequiredMasternodeCollateral = 10000 * COIN;
 
         const char* pszTimestamp = "BBC News 17th June 2019: Egypt's ousted president Mohammed Morsi dies during trial";
         CMutableTransaction txNew;
@@ -240,6 +239,7 @@ public:
         nMasternodeCountDrift = 4;
         nModifierUpdateBlock = 1;
         nMaxMoneyOut = 21000000 * COIN;
+        nRequiredMasternodeCollateral = 10000 * COIN;
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = fGenTime;
