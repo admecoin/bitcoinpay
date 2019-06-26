@@ -1,4 +1,4 @@
-Bitcoin Pay integration/staging repository
+Bitcoin Pay (BPAY) integration/staging repository
 =====================================
 https://bitcoin-pay.io
 =====================================
@@ -12,12 +12,12 @@ https://bitcoin-pay.io
 [![Build Status](https://travis-ci.com/mammix2/bitcoinpay.svg?branch=Travis-CI)](https://travis-ci.com/mammix2/bitcoinpay)
 
 
-bitcoinpay is a cutting edge cryptocurrency, with many features not available in most other cryptocurrencies.
+Bitcoinpay is a cutting edge cryptocurrency, with many features not available in most other cryptocurrencies.
 - Anonymized transactions using coin mixing technology, we call it _Obfuscation_.
 - Fast transactions featuring guaranteed zero confirmation transactions, we call it _SwiftTX_.
 - Decentralized blockchain voting providing for consensus based advancement of the current Masternode
   technology used to secure the network and provide the above features, each Masternode is secured
-  with collateral of 10000 bitcoinpay
+  with collateral of 10000 BPAY
 
 
 ### Coin Specs
