@@ -35,10 +35,10 @@ def check_json_precision():
 def determine_db_dir():
     """Return the default location of the bitcoinpay data directory"""
     if platform.system() == "Darwin":
-        return os.path.expanduser("~/Library/Application Support/bitcoinpayV2/")
+        return os.path.expanduser("~/Library/Application Support/bitcoinpay/")
     elif platform.system() == "Windows":
-        return os.path.join(os.environ['APPDATA'], "bitcoinpayV2")
-    return os.path.expanduser("~/.bitcoinpayV2")
+        return os.path.join(os.environ['APPDATA'], "bitcoinpay")
+    return os.path.expanduser("~/.bitcoinpay")
 
 def read_bitcoin_config(dbdir):
     """Read the bitcoinpay.conf file from dbdir, returns dictionary of settings"""
