@@ -140,6 +140,7 @@ public:
         nTargetSpacing = 1 * 60;  // bitcoinpay: 1 minute
         nLastPOWBlock = 1000; // extend PoW run to help setup the network
         nMaturity = 30;
+        nStakeMinAge = 60 * 60 * 8;
         nMasternodeCountDrift = 20;
         nModifierUpdateBlock = 1;
         nMaxMoneyOut = 21000000 * COIN;
