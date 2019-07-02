@@ -128,7 +128,7 @@ public:
         pchMessageStart[2] = 0xc5;
         pchMessageStart[3] = 0x46;
         vAlertPubKey = ParseHex("04397ef02c67dd66fce78fdd72cd58d26c2f5a7da23f15c029463297ca776d2e6b5e123280b9970fd060d2e5a89154334978ec8d250ad6d7afa809b833b22cbaaa");
-        nDefaultPort = 2609;
+        nDefaultPort = 12568;
         bnProofOfWorkLimit = ~uint256(0) >> 20; // bitcoinpay starting difficulty is 1 / 2^12
         nSubsidyHalvingInterval = 9999999;
         nMaxReorganizationDepth = 100;
@@ -306,6 +306,7 @@ public:
         pchMessageStart[2] = 0x74;
         pchMessageStart[3] = 0xa6;
         nSubsidyHalvingInterval = 150;
+		nDefaultPort = 32568;
         nEnforceBlockUpgradeMajority = 750;
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
