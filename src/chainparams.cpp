@@ -238,6 +238,7 @@ public:
         nTargetTimespan = 1 * 60; // BitcoinPay: 1 day
         nTargetSpacing = 2 * 60;  // BitcoinPay: 1 minute
         nLastPOWBlock = 200;
+        nStakeMinAge = 10 * 60;
         nMaturity = 15;
         nMasternodeCountDrift = 4;
         nModifierUpdateBlock = 1;
