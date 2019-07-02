@@ -95,6 +95,8 @@ public:
     int64_t StartMasternodePayments() const { return nStartMasternodePayments; }
     int64_t Budget_Fee_Confirmations() const { return nBudget_Fee_Confirmations; }
     CBaseChainParams::Network NetworkID() const { return networkID; }
+    unsigned int GetModifierInterval() const { return nModifierInterval; }
+    unsigned int GetModifierIntervalRatio() const { return nModifierIntervalRatio; }
     CAmount GetRequiredMasternodeCollateral() const { return nRequiredMasternodeCollateral; }
 
 protected:
@@ -139,6 +141,8 @@ protected:
     std::string strObfuscationPoolDummyAddress;
     int64_t nStartMasternodePayments;
     int64_t nBudget_Fee_Confirmations;
+    unsigned int nModifierInterval;
+    unsigned int nModifierIntervalRatio;
     CAmount nRequiredMasternodeCollateral;
 };
 

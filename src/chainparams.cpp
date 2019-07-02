@@ -143,6 +143,8 @@ public:
         nMasternodeCountDrift = 20;
         nModifierUpdateBlock = 1;
         nMaxMoneyOut = 21000000 * COIN;
+        nModifierInterval = 60;
+        nModifierIntervalRatio = 3;
         nRequiredMasternodeCollateral = 10000 * COIN;
 
         const char* pszTimestamp = "BBC News 17th June 2019: Egypt's ousted president Mohammed Morsi dies during trial";
@@ -318,7 +320,7 @@ public:
         genesis.nBits = 0x207fffff;
         genesis.nNonce = 12346;
 
-		//MineGenesis(genesis);
+        // MineGenesis(genesis);
         hashGenesisBlock = genesis.GetHash();
 		assert(hashGenesisBlock == uint256("22343e4b610a54eb65e9a35c578eed3264a821209b2b2a124d4b08768dfa5b41"));
         assert(genesis.hashMerkleRoot == uint256("0902e0dc146fd0f6c6bceac1e1f0106e5314ac3767278ccda808670ae44fbdb9"));
