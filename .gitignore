@@ -9,6 +9,8 @@ src/.deps/*
 src/qt/.deps/*
 src/zmq/.deps/*
 
+push_all_repos.sh
+
 *.tar.gz
 
 *.exe
