@@ -1619,13 +1619,23 @@ int64_t GetBlockValue(int nHeight) //M2: need reviewing
         if (nHeight < Params().LAST_POW_BLOCK() && nHeight > 0)
             return 2500 * COIN;
     }
+	
 
     if (nHeight <= 10) {
         nSubsidy = 10000 * COIN;
     } else {
         nSubsidy = 20 * COIN;
     }
-    return nSubsidy;
+
+    if (nHeight > 1000) {
+        if (IsSporkActive(SPORK_17_POW_ENABLER)) {
+			LogPrintf("@@@ Information @@@ SPORK_17_POW_ENABLER active: disabling rewards until made inactive");
+            nSubsidy = 0 * COIN;
+        }
+    }
+
+		
+	    return nSubsidy;
 }
 
 int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCount)
