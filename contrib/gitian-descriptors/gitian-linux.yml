@@ -32,8 +32,8 @@ packages:
 - "ca-certificates"
 - "python"
 remotes:
-- "url": "https://github.com/bitcoinpay-project/bitcoin-pay.git"
-  "dir": "bitcoin-pay"
+- "url": "https://github.com/bitcoinpay-project/bitcoinpay.git"
+  "dir": "bitcoinpay"
 files: []
 script: |
 
@@ -121,7 +121,7 @@ script: |
   chmod +x ${WRAP_DIR}/${prog}
   done
 
-  cd bitcoin-pay
+  cd bitcoinpay
   BASEPREFIX=`pwd`/depends
   # Build dependencies for each host
   for i in $HOSTS; do

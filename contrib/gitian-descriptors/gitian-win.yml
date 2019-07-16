@@ -23,8 +23,8 @@ packages:
 - "ca-certificates"
 - "python"
 remotes:
-- "url": "https://github.com/bitcoinpay-project/bitcoin-pay.git"
-  "dir": "bitcoin-pay"
+- "url": "https://github.com/bitcoinpay-project/bitcoinpay.git"
+  "dir": "bitcoinpay"
 files: []
 script: |
   set -e -o pipefail
@@ -105,7 +105,7 @@ script: |
   create_per-host_linker_wrapper "2000-01-01 12:00:00"
   export PATH=${WRAP_DIR}:${PATH}
 
-  cd bitcoin-pay
+  cd bitcoinpay
   BASEPREFIX=`pwd`/depends
   # Build dependencies for each host
   for i in $HOSTS; do
