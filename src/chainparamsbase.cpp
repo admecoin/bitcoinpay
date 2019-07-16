@@ -51,7 +51,7 @@ public:
     CBaseRegTestParams()
     {
         networkID = CBaseChainParams::REGTEST;
-		nRPCPort = 31567;
+        nRPCPort = 32567;
         strDataDir = "regtest";
     }
 };
