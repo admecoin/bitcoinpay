@@ -32,8 +32,8 @@ packages:
 - "ca-certificates"
 - "python"
 remotes:
-- "url": "https://github.com/BitcoinPay-Project/Bitcoin-Pay.git"
-  "dir": "bitcoinpay"
+- "url": "https://github.com/bitcoinpay-project/bitcoin-pay.git"
+  "dir": "bitcoin-pay"
 files: []
 script: |
 

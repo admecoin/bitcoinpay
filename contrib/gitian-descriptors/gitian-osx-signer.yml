@@ -7,7 +7,7 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/mammix2/bitcoinpay/bitcoinpay-detached-sigs.git"
+- "url": "https://github.com/bitcoinpay-project/bitcoin-pay-detached-sigs.git"
   "dir": "signature"
 files:
 - "bitcoinpay-osx-unsigned.tar.gz"

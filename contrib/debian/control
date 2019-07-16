@@ -23,8 +23,8 @@ Build-Depends: debhelper,
  libprotobuf-dev, protobuf-compiler
 Standards-Version: 3.9.2
 Homepage: https://bitcoin-pay.io
-Vcs-Git: git://github.com/mammix2/bitcoinpay.git
-Vcs-Browser: http://github.com/mammix2/bitcoinpay
+Vcs-Git: git://github.com/bitcoinpay-project/bitcoin-pay.git
+Vcs-Browser: http://github.com/bitcoinpay-project/bitcoin-pay
 
 Package: bitcoinpayd
 Architecture: any
