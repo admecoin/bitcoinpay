@@ -1650,11 +1650,11 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
 
     }
 	
-	// 75% for Masternodes
+	// 45% for Masternodes
 	if (nHeight == 0) {
 	      ret = blockValue  / 100 * 0;
 	} else if (nHeight > 1) {
-		  ret = blockValue  / 100 * 75;// 75% for masternode //M2: is this correct?
+		  ret = blockValue  / 100 * 45;
 		
 	}
 			
