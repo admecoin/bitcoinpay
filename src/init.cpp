@@ -325,6 +325,7 @@ std::string HelpMessage(HelpMessageMode mode)
 #endif
     strUsage += HelpMessageOpt("-reindex", _("Rebuild block chain index from current blk000??.dat files") + " " + _("on startup"));
 	strUsage += HelpMessageOpt("-reindexmoneysupply", _("Reindex the bitcoinpay money supply statistics") + " " + _("on startup"));
+    strUsage += HelpMessageOpt("-resync", _("Delete blockchain folders and resync from scratch") + " " + _("on startup"));
 #if !defined(WIN32)
     strUsage += HelpMessageOpt("-sysperms", _("Create new files with system default permissions, instead of umask 077 (only effective with disabled wallet functionality)"));
 #endif
@@ -1020,6 +1021,37 @@ bool AppInit2(boost::thread_group& threadGroup)
                         }
                     }
                 }
+            }
+        }
+
+        if (GetBoolArg("-resync", false)) {
+            uiInterface.InitMessage(_("Preparing for resync..."));
+            // Delete the local blockchain folders to force a resync from scratch to get a consitent blockchain-state
+            filesystem::path blocksDir = GetDataDir() / "blocks";
+            filesystem::path chainstateDir = GetDataDir() / "chainstate";
+            filesystem::path sporksDir = GetDataDir() / "sporks";
+            
+            LogPrintf("-resync: Deleting blockchain folders blocks, chainstate and sporks\n");
+            // We delete in 3 individual steps in case one of the folder is missing already
+            try {
+                if (filesystem::exists(blocksDir)){
+                    boost::filesystem::remove_all(blocksDir);
+                    LogPrintf("-resync: folder deleted: %s\n", blocksDir.string().c_str());
+                }
+
+                if (filesystem::exists(chainstateDir)){
+                    boost::filesystem::remove_all(chainstateDir);
+                    LogPrintf("-resync: folder deleted: %s\n", chainstateDir.string().c_str());
+                }
+
+                if (filesystem::exists(sporksDir)){
+                    boost::filesystem::remove_all(sporksDir);
+                    LogPrintf("-resync: folder deleted: %s\n", sporksDir.string().c_str());
+                }
+
+
+            } catch (boost::filesystem::filesystem_error& error) {
+                LogPrintf("Failed to delete blockchain folders %s\n", error.what());
             }
         }
 
