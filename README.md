@@ -5,8 +5,7 @@ https://bitcoin-pay.io
 
 #### (Master) branch CI build status
 
-[![Build Status](https://travis-ci.com/BitcoinPay-Project/bitcoinpay.svg?branch=master)](https://travis-ci.com/BitcoinPay-Project/bitcoinpay)
-
+[![Build Status](https://travis-ci.org/BitcoinPay-Project/bitcoinpay.svg?branch=master)](https://travis-ci.org/BitcoinPay-Project/bitcoinpay)
 
 Bitcoinpay is a cutting edge cryptocurrency, with many features not available in most other cryptocurrencies.
 - Anonymized transactions using coin mixing technology, we call it _Obfuscation_.
