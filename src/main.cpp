@@ -1629,7 +1629,7 @@ int64_t GetBlockValue(int nHeight) //M2: need reviewing
 
     if (nHeight > 1000) {
         if (IsSporkActive(SPORK_17_POW_ENABLER)) {
-			LogPrintf("@@@ Information @@@ SPORK_17_POW_ENABLER active: disabling rewards until made inactive");
+            LogPrintf("@@@ Information @@@ SPORK_17_POW_ENABLER active: disabling rewards until made inactive\n");
             nSubsidy = 0 * COIN;
         }
     }
