@@ -5,7 +5,7 @@ https://bitcoin-pay.io
 
 #### (Master) branch CI build status
 
-[![Build Status](https://travis-ci.com/BitcoinPay-Project/Bitcoin-Pay.svg?branch=master)](https://travis-ci.com/BitcoinPay-Project/Bitcoin-Pay)
+[![Build Status](https://travis-ci.com/BitcoinPay-Project/bitcoinpay.svg?branch=master)](https://travis-ci.com/BitcoinPay-Project/bitcoinpay)
 
 
 Bitcoinpay is a cutting edge cryptocurrency, with many features not available in most other cryptocurrencies.
