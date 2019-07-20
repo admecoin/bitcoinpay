@@ -1620,11 +1620,12 @@ int64_t GetBlockValue(int nHeight) //M2: need reviewing
             return 2500 * COIN;
     }
 	
+	if (nHeight == 0) return 300000 * COIN;
 
-    if (nHeight <= 10) {
-        nSubsidy = 10000 * COIN;
-    } else {
+	if(nHeight > 0 && nHeight <= 25) {
         nSubsidy = 20 * COIN;
+	} else if (nHeight > 25 ) {
+		nSubsidy = 20 * COIN;
     }
 
     if (nHeight > 1000) {
