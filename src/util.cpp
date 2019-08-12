@@ -504,11 +504,34 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 {
     boost::filesystem::ifstream streamConfig(GetConfigFile());
     if (!streamConfig.good()) {
-        // Create empty bitcoinpay.conf if it does not exist
+        // Create empty cgencore.conf if it does not exist
         FILE* configFile = fopen(GetConfigFile().string().c_str(), "a");
-        if (configFile != NULL)
+        if (configFile != NULL) {
+            unsigned char rand_pwd[32];
+            char rpc_passwd[32];
+            GetRandBytes(rand_pwd, 32);
+            for (int i = 0; i < 32; i++) {
+                rpc_passwd[i] = (rand_pwd[i] % 26) + 97;
+            }
+            rpc_passwd[31] = '\0';
+            unsigned char rand_user[16];
+            char rpc_user[16];
+            GetRandBytes(rand_user, 16);
+            for (int i = 0; i < 16; i++) {
+                rpc_user[i] = (rand_user[i] % 26) + 97;
+            }
+            rpc_user[15] = '\0';
+            std::string strHeader = "rpcuser=";
+            strHeader += rpc_user;
+            strHeader += "\nrpcpassword=";
+            strHeader += rpc_passwd;
+            strHeader += "\naddnode=seed1.bitcoin-pay.io\naddnode=seed2.bitcoin-pay.io\naddnode=167.71.175.184\naddnode=167.71.160.98\naddnode=165.227.83.122\n";
+            strHeader += "txindex=1\nstaking=0\n";
+            fwrite(strHeader.c_str(), std::strlen(strHeader.c_str()), 1, configFile);
             fclose(configFile);
-        return; // Nothing to read, so just return
+        }
+        // return; // Nothing to read, so just return
+        streamConfig.open(GetConfigFile());
     }
 
     set<string> setOptions;
@@ -517,11 +540,12 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
     for (boost::program_options::detail::config_file_iterator it(streamConfig, setOptions), end; it != end; ++it) {
         // Don't overwrite existing settings so command line settings override bitcoinpay.conf
         string strKey = string("-") + it->string_key;
-        string strValue = it->value[0];
-        InterpretNegativeSetting(strKey, strValue);
-        if (mapSettingsRet.count(strKey) == 0)
-            mapSettingsRet[strKey] = strValue;
-        mapMultiSettingsRet[strKey].push_back(strValue);
+    	string strValue = it->value[0];
+	InterpretNegativeSetting(strKey, strValue);
+	if (mapSettingsRet.count(strKey) == 0)
+		mapSettingsRet[strKey] = strValue;
+	mapMultiSettingsRet[strKey].push_back(strValue);
+
     }
     // If datadir is changed in .conf file:
     ClearDatadirCache();

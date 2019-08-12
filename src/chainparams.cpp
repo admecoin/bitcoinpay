@@ -108,7 +108,7 @@ static const Checkpoints::CCheckpointData dataTestnet = {
 
 static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
     boost::assign::map_list_of
-	(0, uint256("0x22343e4b610a54eb65e9a35c578eed3264a821209b2b2a124d4b08768dfa5b41"));
+	(0, uint256("6e8e3220c087cb5fc11c9c7e60c59d041f78fe6aa08bc7e02dc295b2fe93626c"));
 static const Checkpoints::CCheckpointData dataRegtest = {
     &mapCheckpointsRegtest,
     1563890123,
@@ -173,6 +173,9 @@ public:
         //vSeeds.clear();
         vSeeds.push_back(CDNSSeedData("seed1.bitcoin-pay.io", "seed1.bitcoin-pay.io"));
         vSeeds.push_back(CDNSSeedData("seed2.bitcoin-pay.io", "seed2.bitcoin-pay.io"));
+        vSeeds.push_back(CDNSSeedData("167.71.175.184", "167.71.175.184"));
+        vSeeds.push_back(CDNSSeedData("167.71.160.98", "167.71.160.98"));
+        vSeeds.push_back(CDNSSeedData("165.227.83.122", "165.227.83.122"));
 
 
         // BitcoinPay addresses start with '1'
